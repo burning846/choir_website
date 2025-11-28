@@ -9,7 +9,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center space-x-3">
               <img
-                src="https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Minimal modern choir logo with vibrant rainbow arc, clean typography, white background, vector style, elegant music theme&image_size=square_hd"
+                src="/logo.svg"
                 alt="星光合唱团 Logo"
                 className="w-10 h-10 rounded-lg object-cover"
               />
