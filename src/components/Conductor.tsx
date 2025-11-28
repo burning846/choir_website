@@ -1,18 +1,43 @@
 import { User, Music, Award } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Conductor() {
-  const conductor = {
-    name: "李明华",
+  const [conductor, setConductor] = useState({
+    name: "",
     title: "音乐总监 & 首席指挥",
-    experience: "20年",
-    education: "中央音乐学院指挥系硕士",
+    experience: "",
+    education: "",
     achievements: [
-      "全国合唱比赛金奖获得者",
-      "国际合唱联盟认证指挥",
-      "多部原创作品首演指挥"
+      "",
+      "",
+      ""
     ],
-    bio: "李明华老师毕业于中央音乐学院指挥系，拥有20年的合唱指挥经验。他曾在多个国际合唱比赛中担任评委，并带领多支合唱团获得国内外大奖。李老师注重团员个人能力的培养和团队整体音乐素养的提升，致力于将星光合唱团打造成具有国际水准的业余合唱团体。"
-  }
+    bio: ""
+  })
+  const [image, setImage] = useState<string>('')
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (d.conductor && d.conductor.raw) {
+          const raw = d.conductor.raw
+          const parts = raw.split('：')
+          const title = parts[0] || conductor.title
+          const name = parts[1] || ''
+          setConductor({
+            name,
+            title,
+            experience: conductor.experience,
+            education: conductor.education,
+            achievements: [],
+            bio: conductor.bio
+          })
+        }
+        if (d.images && d.images[1]) setImage(d.images[1].file)
+      })
+      .catch(() => {})
+  }, [])
 
   return (
     <section id="conductor" className="py-16 bg-white">
@@ -27,8 +52,8 @@ export default function Conductor() {
             <div className="md:col-span-1">
               <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg p-8 text-center">
                 <img 
-                  src="https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional conductor portrait, middle-aged man, confident expression, wearing formal conductor attire, warm lighting, musical background, artistic portrait style&image_size=square_hd" 
-                  alt="李明华指挥"
+                  src={image || "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional conductor portrait, middle-aged man, confident expression, wearing formal conductor attire, warm lighting, musical background, artistic portrait style&image_size=square_hd"}
+                  alt="指挥"
                   className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-white shadow-lg"
                 />
                 <h3 className="text-xl font-bold text-gray-800 mb-1">{conductor.name}</h3>

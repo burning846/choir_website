@@ -1,6 +1,19 @@
 import { Users, Calendar, Award } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function About() {
+  const [intro, setIntro] = useState<string>('')
+  const [image, setImage] = useState<string>('')
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (d.intro) setIntro(d.intro)
+        if (d.images && d.images.length) setImage(d.images[0].file)
+      })
+      .catch(() => {})
+  }, [])
   return (
     <section id="about" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4">
@@ -11,13 +24,16 @@ export default function About() {
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">星光合唱团简介</h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              星光合唱团成立于2015年，是一支充满活力和激情的业余合唱团体。我们致力于传播美妙的和声艺术，为社区带来高质量的音乐演出。
-            </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              合唱团现有团员60余人，来自各行各业，因为对音乐的热爱而聚集在一起。我们定期举办音乐会，参与社区文化活动，并与其他艺术团体合作演出。
-            </p>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6">合唱团简介</h3>
+            {intro ? (
+              intro.split('\n').map((p, i) => (
+                <p key={i} className="text-gray-600 mb-6 leading-relaxed">{p}</p>
+              ))
+            ) : (
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                我们是一群热爱音乐的人，用和声连接心灵，致力于创造美妙的音乐体验。
+              </p>
+            )}
             
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
@@ -46,8 +62,8 @@ export default function About() {
           
           <div className="relative">
             <img 
-              src="https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional choir group singing together on stage, warm lighting, elegant concert hall, diverse group of singers in formal attire, harmonious atmosphere, musical notation in background&image_size=landscape_16_9" 
-              alt="星光合唱团演出"
+              src={image || "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional choir group singing together on stage, warm lighting, elegant concert hall, diverse group of singers in formal attire, harmonious atmosphere, musical notation in background&image_size=landscape_16_9"}
+              alt="合唱团演出"
               className="rounded-lg shadow-lg w-full h-80 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
