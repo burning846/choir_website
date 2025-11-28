@@ -1,7 +1,22 @@
 import { Sparkles } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import MobileMenu from './MobileMenu'
 
 export default function Header() {
+  const [nameCn, setNameCn] = useState('星光合唱团')
+  const [nameEn, setNameEn] = useState('Starlight Choir')
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (d.choirName) {
+          setNameEn(d.choirName)
+          setNameCn(d.choirName.includes('咏歌堂') ? '咏歌堂' : nameCn)
+        }
+      })
+      .catch(() => {})
+  }, [])
   return (
     <header className="sticky top-0 z-50 text-white">
       <div className="backdrop-blur bg-black/20">
@@ -14,8 +29,8 @@ export default function Header() {
                 className="w-10 h-10 rounded-lg object-cover"
               />
               <div>
-                <h1 className="text-xl md:text-2xl font-bold tracking-wide">星光合唱团</h1>
-                <p className="text-xs md:text-sm text-purple-200">Starlight Choir</p>
+                <h1 className="text-xl md:text-2xl font-bold tracking-wide">{nameCn}</h1>
+                <p className="text-xs md:text-sm text-purple-200">{nameEn}</p>
               </div>
             </a>
 

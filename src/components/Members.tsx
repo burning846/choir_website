@@ -1,4 +1,5 @@
 import { Users, Star } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 interface Member {
   id: number
@@ -10,15 +11,36 @@ interface Member {
 }
 
 export default function Members() {
-  const members: Member[] = [
-    {
-      id: 1,
-      name: "张雅文",
-      voice: "女高音声部长",
-      role: "资深团员",
-      joinYear: 2016,
-      avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a female singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
-    },
+  const [docMembers, setDocMembers] = useState<string[]>([])
+  const [media, setMedia] = useState<string[]>([])
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (d.members && Array.isArray(d.members)) setDocMembers(d.members)
+        if (d.images) setMedia(d.images.map((i: any) => i.file))
+      })
+      .catch(() => {})
+  }, [])
+  const members: Member[] = docMembers.length
+    ? docMembers.map((name, idx) => ({
+        id: idx + 1,
+        name,
+        voice: "团员",
+        role: "团员",
+        joinYear: new Date().getFullYear(),
+        avatar: media[idx % media.length] || "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a choir singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
+      }))
+    : [
+      {
+        id: 1,
+        name: "张雅文",
+        voice: "女高音声部长",
+        role: "资深团员",
+        joinYear: 2016,
+        avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a female singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
+      },
     {
       id: 2,
       name: "王志强",
