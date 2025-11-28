@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sparkles } from 'lucide-react'
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -53,6 +53,14 @@ export default function MobileMenu() {
                 </a>
               ))}
             </nav>
+
+            <div className="mt-8 flex flex-col items-center space-y-4">
+              <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                <Sparkles className="h-5 w-5" />
+                <span>加入我们</span>
+              </button>
+              <div className="text-sm text-purple-200">中文 / EN</div>
+            </div>
           </div>
         </div>
       )}
