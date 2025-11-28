@@ -1,35 +1,57 @@
-import { Play, Calendar, MapPin } from 'lucide-react'
+import { Play, Calendar, MapPin, Link as LinkIcon } from 'lucide-react'
 
 interface Video {
-  id: string
+  id?: string
   title: string
-  date: string
-  venue: string
-  description: string
+  date?: string
+  venue?: string
+  description?: string
+  search?: string
 }
 
 export default function Videos() {
   const videos: Video[] = [
     {
-      id: "dQw4w9WgXcQ",
-      title: "《茉莉花》经典合唱",
-      date: "2024年春季音乐会",
-      venue: "市音乐厅",
-      description: "经典中国民歌的全新演绎，展现东方音乐的魅力。"
+      title: "拥抱夕阳",
+      date: "近期发布",
+      venue: "线上发布",
+      description: "Konzert Singers 演绎经典中文作品",
+      search: "https://www.youtube.com/results?search_query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3+Konzert+Singers"
     },
     {
-      id: "9bZkp7q19f0",
-      title: "《欢乐颂》贝多芬第九交响曲",
-      date: "2023年新年音乐会",
-      venue: "大剧院",
-      description: "与交响乐团合作演出贝多芬不朽名作。"
+      title: "青春不留白",
+      date: "近期发布",
+      venue: "线上发布",
+      description: "Konzert Singers 青春主题作品",
+      search: "https://www.youtube.com/results?search_query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD+Konzert+Singers"
     },
     {
-      id: "JGwWNGJdvx8",
-      title: "《我和我的祖国》",
-      date: "2023年国庆专场",
-      venue: "文化广场",
-      description: "深情演绎爱国歌曲，表达对祖国的热爱。"
+      title: "歌唱高山和大海",
+      date: "近期发布",
+      venue: "线上发布",
+      description: "Sing of Mountain and Sea",
+      search: "https://www.youtube.com/results?search_query=Sing+of+Mountain+and+Sea+Konzert+Singers"
+    },
+    {
+      title: "Keindahan Taman",
+      date: "近期发布",
+      venue: "线上发布",
+      description: "马来语合唱作品",
+      search: "https://www.youtube.com/results?search_query=Keindahan+Taman+Konzert+Singers"
+    },
+    {
+      title: "细水长流",
+      date: "近期发布",
+      venue: "线上发布",
+      description: "The Stream Flows",
+      search: "https://www.youtube.com/results?search_query=The+Stream+Flows+Konzert+Singers"
+    },
+    {
+      title: "Hope 希望",
+      date: "近期发布",
+      venue: "线上发布",
+      description: "温暖人心的主题作品",
+      search: "https://www.youtube.com/results?search_query=Hope+%E5%B8%8C%E6%9C%9B+Konzert+Singers"
     }
   ]
 
@@ -48,14 +70,30 @@ export default function Videos() {
           {videos.map((video, index) => (
             <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-video bg-gray-900 relative group">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                {video.id ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <a
+                    href={video.search}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div className="text-center">
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 ring-1 ring-white/20 mb-4">
+                        <Play className="h-8 w-8 text-white" />
+                      </div>
+                      <p className="text-white/90">前往播放页面</p>
+                    </div>
+                  </a>
+                )}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                   <Play className="h-12 w-12 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -78,15 +116,27 @@ export default function Videos() {
                 <p className="text-gray-600 text-sm leading-relaxed">{video.description}</p>
                 
                 <div className="mt-4 pt-4 border-t border-gray-200">
-                  <a
-                    href={`https://www.youtube.com/watch?v=${video.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
-                  >
-                    <Play className="h-4 w-4" />
-                    <span className="text-sm font-medium">在YouTube上观看</span>
-                  </a>
+                  {video.id ? (
+                    <a
+                      href={`https://www.youtube.com/watch?v=${video.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
+                    >
+                      <Play className="h-4 w-4" />
+                      <span className="text-sm font-medium">在YouTube上观看</span>
+                    </a>
+                  ) : (
+                    <a
+                      href={video.search}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
+                    >
+                      <LinkIcon className="h-4 w-4" />
+                      <span className="text-sm font-medium">前往频道搜索结果</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -95,13 +145,13 @@ export default function Videos() {
         
         <div className="text-center mt-12">
           <a
-            href="https://www.youtube.com/@starlightchoir"
+            href="https://www.youtube.com/@KonzertSingers"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors"
           >
             <Play className="h-5 w-5" />
-            <span className="font-medium">访问我们的YouTube频道</span>
+            <span className="font-medium">访问Konzert Singers频道</span>
           </a>
         </div>
       </div>
