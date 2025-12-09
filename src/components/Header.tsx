@@ -10,10 +10,10 @@ export default function Header() {
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
-        if (d.choirName) {
-          setNameEn(d.choirName)
-          setNameCn(d.choirName.includes('咏歌堂') ? '咏歌堂' : nameCn)
-        }
+        const en = d.choirNameEn || d.choirName || nameEn
+        const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
+        setNameEn(en)
+        setNameCn(cn)
       })
       .catch(() => {})
   }, [])

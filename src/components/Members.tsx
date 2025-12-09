@@ -11,7 +11,7 @@ interface Member {
 }
 
 export default function Members() {
-  const [docMembers, setDocMembers] = useState<string[]>([])
+  const [docMembers, setDocMembers] = useState<any[]>([])
   const [media, setMedia] = useState<string[]>([])
   useEffect(() => {
     fetch('/choir-doc.json')
@@ -24,13 +24,17 @@ export default function Members() {
       .catch(() => {})
   }, [])
   const members: Member[] = docMembers.length
-    ? docMembers.map((name, idx) => ({
+    ? docMembers.map((m: any, idx: number) => ({
         id: idx + 1,
-        name,
-        voice: "团员",
-        role: "团员",
-        joinYear: new Date().getFullYear(),
-        avatar: media[idx % media.length] || "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a choir singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
+        name: typeof m === 'string' ? m : (m.name || `团员${idx + 1}`),
+        voice: typeof m === 'string' ? '团员' : (m.role || '团员'),
+        role: typeof m === 'string' ? '团员' : (m.role || '团员'),
+        joinYear: typeof m === 'string' ? new Date().getFullYear() : (m.joinYear || new Date().getFullYear()),
+        avatar: (() => {
+          const a = typeof m === 'string' ? '' : (m.avatar || '')
+          const normalized = a ? (a.startsWith('/') ? a : `/${a}`) : ''
+          return normalized || media[idx % (media.length || 1)] || "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a choir singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
+        })()
       }))
     : [
       {
