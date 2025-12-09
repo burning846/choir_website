@@ -1,6 +1,17 @@
-import { Mail, Phone, MapPin, Globe, Facebook, Instagram } from 'lucide-react'
+import { Mail, Phone, MapPin, Globe, Facebook, Instagram, QrCode } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Contact() {
+  const [qrcode, setQrcode] = useState<string>('')
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (d.qrcode) setQrcode(d.qrcode.startsWith('/') ? d.qrcode : `/${d.qrcode}`)
+      })
+      .catch(() => {})
+  }, [])
   const contactInfo = [
     {
       icon: Mail,
@@ -54,8 +65,8 @@ export default function Contact() {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div>
+        <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="lg:col-span-2">
             <h3 className="text-2xl font-semibold mb-6">联系信息</h3>
             <div className="space-y-4 mb-8">
               {contactInfo.map((item, index) => (
@@ -98,7 +109,7 @@ export default function Contact() {
             </div>
           </div>
           
-          <div>
+          <div className="lg:col-span-1">
             <div className="bg-white rounded-lg p-8 text-gray-800">
               <h3 className="text-2xl font-semibold mb-6">发送消息</h3>
               <form className="space-y-4">
@@ -158,6 +169,16 @@ export default function Contact() {
                 </button>
               </form>
             </div>
+            {qrcode && (
+              <div className="bg-white rounded-lg p-6 mt-6 text-gray-800 text-center">
+                <div className="flex items-center justify-center space-x-2 mb-3">
+                  <QrCode className="h-5 w-5 text-gray-700" />
+                  <span className="font-semibold">报名二维码</span>
+                </div>
+                <img src={qrcode} alt="报名二维码" className="w-48 h-48 mx-auto rounded" />
+                <p className="text-sm text-gray-600 mt-2">扫码报名加入合唱团</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

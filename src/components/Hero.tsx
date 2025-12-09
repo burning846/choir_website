@@ -1,23 +1,36 @@
-import { Music, Heart, Star } from 'lucide-react'
+import { Heart, Star } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
+  const [nameCn, setNameCn] = useState('星光合唱团')
+  const [nameEn, setNameEn] = useState('Starlight Choir')
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        const en = d.choirNameEn || d.choirName || nameEn
+        const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
+        setNameEn(en)
+        setNameCn(cn)
+      })
+      .catch(() => {})
+  }, [])
   return (
     <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
       <div className="relative container mx-auto px-4 py-24">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-8">
-            <div className="bg-white bg-opacity-10 rounded-full p-6">
-              <Music className="h-16 w-16 text-yellow-400" />
-            </div>
+            <img src="/logo.svg" alt="Choir Logo" className="w-20 h-20 rounded-lg" />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-            星光合唱团
+            {nameCn}
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-purple-200">
-            Starlight Choir
+            {nameEn}
           </p>
           
           <p className="text-lg md:text-xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto">

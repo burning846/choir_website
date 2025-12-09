@@ -1,21 +1,35 @@
 {
   "choirName": "KonzertSingers",
+  "choirNameEn": "KonzertSingers",
   "conductor": {
     "raw": "咏歌堂艺术总监兼首席指挥：桂乃舜"
   },
   "intro": "KonzertSingers\n咏歌堂\n这是一群热爱音乐之人，坚信声音不仅是听觉的享受，更是心灵的共鸣。身体是最天然的乐器，不同声部的交融，可以幻化出动人的和声。\n这是一群热爱文化之人，崇尚多元。他们深情于中华文化，也拥抱世界的精彩，坚信音乐是最动人的文化桥梁与传承之道。\n这是一群热爱生活之人，音乐是他们表达生活的方式，赋予每一天美好旋律。\n他们中有青年，中年，乐龄。青春活力，稳重从容，岁月静好。\n是音乐让他们走到一起，欢聚一堂！\n他们用音乐表达心声，传递真善美！\n歌咏，咏歌！咏歌堂！",
   "members": [
-    "请扫描二维码或登录报名"
-  ],
-  "images": [
     {
-      "file": "/docx-media/image1.jpeg"
+      "name": "桂乃舜",
+      "role": "指挥",
+      "joinYear": 2024,
+      "avatar": "images/桂乃舜.jpeg"
+    
     },
     {
-      "file": "/docx-media/image2.jpeg"
+      "name": "冯克伦",
+      "role": "指挥",
+      "joinYear": 2024,
+      "avatar": ""
     },
     {
-      "file": "/docx-media/image3.png"
+      "name": "XXX",
+      "role": "女高音",
+      "joinYear": 2024,
+      "avatar": ""
+    },
+    {
+      "name": "XXX",
+      "role": "女中音",
+      "joinYear": 2024,
+      "avatar": ""
     }
   ]
 }
