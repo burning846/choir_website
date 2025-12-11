@@ -1,4 +1,5 @@
 import { Play, Calendar, MapPin, Link as LinkIcon } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 interface Video {
   id?: string
@@ -10,50 +11,24 @@ interface Video {
 }
 
 export default function Videos() {
-  const videos: Video[] = [
-    {
-      title: "拥抱夕阳",
-      date: "近期发布",
-      venue: "线上发布",
-      description: "Konzert Singers 演绎经典中文作品",
-      search: "https://www.youtube.com/results?search_query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3+Konzert+Singers"
-    },
-    {
-      title: "青春不留白",
-      date: "近期发布",
-      venue: "线上发布",
-      description: "Konzert Singers 青春主题作品",
-      search: "https://www.youtube.com/results?search_query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD+Konzert+Singers"
-    },
-    {
-      title: "歌唱高山和大海",
-      date: "近期发布",
-      venue: "线上发布",
-      description: "Sing of Mountain and Sea",
-      search: "https://www.youtube.com/results?search_query=Sing+of+Mountain+and+Sea+Konzert+Singers"
-    },
-    {
-      title: "Keindahan Taman",
-      date: "近期发布",
-      venue: "线上发布",
-      description: "马来语合唱作品",
-      search: "https://www.youtube.com/results?search_query=Keindahan+Taman+Konzert+Singers"
-    },
-    {
-      title: "细水长流",
-      date: "近期发布",
-      venue: "线上发布",
-      description: "The Stream Flows",
-      search: "https://www.youtube.com/results?search_query=The+Stream+Flows+Konzert+Singers"
-    },
-    {
-      title: "Hope 希望",
-      date: "近期发布",
-      venue: "线上发布",
-      description: "温暖人心的主题作品",
-      search: "https://www.youtube.com/results?search_query=Hope+%E5%B8%8C%E6%9C%9B+Konzert+Singers"
-    }
-  ]
+  const [videos, setVideos] = useState<Video[]>([])
+  const [channel, setChannel] = useState<string>('https://www.youtube.com/@KonzertSingers')
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (Array.isArray(d.videos)) setVideos(d.videos)
+        if (d.youtube && d.youtube.channel) setChannel(d.youtube.channel)
+        if (!Array.isArray(d.videos)) {
+          setVideos([
+            { title: '拥抱夕阳', date: '近期发布', venue: '线上发布', description: 'Konzert Singers 演绎经典中文作品', search: 'https://www.youtube.com/results?search_query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3+Konzert+Singers' },
+            { title: '青春不留白', date: '近期发布', venue: '线上发布', description: 'Konzert Singers 青春主题作品', search: 'https://www.youtube.com/results?search_query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD+Konzert+Singers' }
+          ])
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   return (
     <section id="videos" className="py-16 bg-white">
@@ -145,7 +120,7 @@ export default function Videos() {
         
         <div className="text-center mt-12">
           <a
-            href="https://www.youtube.com/@KonzertSingers"
+            href={channel}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors"

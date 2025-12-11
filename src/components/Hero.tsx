@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 export default function Hero() {
   const [nameCn, setNameCn] = useState('星光合唱团')
   const [nameEn, setNameEn] = useState('Starlight Choir')
+  const [logo, setLogo] = useState<string>('/logo.svg')
   useEffect(() => {
     fetch('/choir-doc.json')
       .then((r) => (r.ok ? r.json() : null))
@@ -13,6 +14,7 @@ export default function Hero() {
         const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
         setNameEn(en)
         setNameCn(cn)
+        if (d.logo) setLogo(d.logo)
       })
       .catch(() => {})
   }, [])
@@ -22,7 +24,7 @@ export default function Hero() {
       <div className="relative container mx-auto px-4 py-24">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-8">
-            <img src="/logo.svg" alt="Choir Logo" className="w-20 h-20 rounded-lg" />
+            <img src={logo} alt="Choir Logo" className="w-20 h-20 rounded-lg" />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">

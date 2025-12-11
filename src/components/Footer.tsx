@@ -1,6 +1,17 @@
 import { Music, Heart } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Footer() {
+  const [footer, setFooter] = useState<any>({})
+  useEffect(() => {
+    fetch('/choir-doc.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return
+        if (d.footer) setFooter(d.footer)
+      })
+      .catch(() => {})
+  }, [])
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -11,7 +22,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold">星光合唱团</h3>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              用音乐传递美好，用和声连接心灵。我们致力于创造美妙的音乐体验，为社区带来艺术的享受。
+              {footer?.about || '用音乐传递美好，用和声连接心灵。我们致力于创造美妙的音乐体验，为社区带来艺术的享受。'}
             </p>
           </div>
           
@@ -29,9 +40,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">演出时间</h4>
             <div className="text-gray-400 space-y-2">
-              <p>每周三 19:00-21:30</p>
-              <p>每周日 14:00-17:00</p>
-              <p>排练地点：音乐大厦8楼</p>
+              {(footer?.schedule || ['每周三 19:00-21:30', '每周日 14:00-17:00']).map((s: string, i: number) => (
+                <p key={i}>{s}</p>
+              ))}
+              <p>{footer?.location || '排练地点：音乐大厦8楼'}</p>
             </div>
           </div>
         </div>
@@ -43,7 +55,7 @@ export default function Footer() {
             <span>星光合唱团</span>
           </div>
           <p className="text-gray-500 text-sm">
-            © 2024 星光合唱团. 保留所有权利. | 让音乐点亮生活
+            {footer?.copyright || '© 2024 星光合唱团. 保留所有权利. | 让音乐点亮生活'}
           </p>
         </div>
       </div>
