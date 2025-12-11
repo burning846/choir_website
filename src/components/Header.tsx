@@ -5,6 +5,7 @@ import MobileMenu from './MobileMenu'
 export default function Header() {
   const [nameCn, setNameCn] = useState('星光合唱团')
   const [nameEn, setNameEn] = useState('Starlight Choir')
+  const [logo, setLogo] = useState<string>('/logo.svg')
   useEffect(() => {
     fetch('/choir-doc.json')
       .then((r) => (r.ok ? r.json() : null))
@@ -14,6 +15,7 @@ export default function Header() {
         const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
         setNameEn(en)
         setNameCn(cn)
+        if (d.logo) setLogo(d.logo)
       })
       .catch(() => {})
   }, [])
@@ -24,7 +26,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center space-x-3">
               <img
-                src="/logo.svg"
+                src={logo}
                 alt="星光合唱团 Logo"
                 className="w-10 h-10 rounded-lg object-cover"
               />
