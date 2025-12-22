@@ -1,7 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import IntroFromDoc from '@/components/IntroFromDoc'
 import Conductor from '@/components/Conductor'
 import Members from '@/components/Members'
 import Videos from '@/components/Videos'
@@ -18,7 +17,6 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <IntroFromDoc />
         <Conductor />
         <Members />
         <Videos />

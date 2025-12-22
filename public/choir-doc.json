@@ -52,12 +52,12 @@
     "channel": "https://www.youtube.com/@KonzertSingers"
   },
   "videos": [
-    { "title": "拥抱夕阳", "description": "Konzert Singers 演绎经典中文作品", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3" },
-    { "title": "青春不留白", "description": "青春主题作品", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD" },
-    { "title": "歌唱高山和大海", "description": "Sing of Mountain and Sea", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E6%AD%8C%E5%94%B1%E9%AB%98%E5%B1%B1%E5%92%8C%E5%A4%A7%E6%B5%B7" },
-    { "title": "Keindahan Taman", "description": "马来语合唱作品", "url": "https://www.youtube.com/@KonzertSingers/search?query=Keindahan%20Taman" },
-    { "title": "细水长流", "description": "The Stream Flows", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E7%BB%86%E6%B0%B4%E9%95%BF%E6%B5%81" },
-    { "title": "Hope 希望", "description": "温暖人心的主题作品", "url": "https://www.youtube.com/@KonzertSingers/search?query=Hope%20%E5%B8%8C%E6%9C%9B" }
+    { "title": "拥抱夕阳", "description": "Konzert Singers 演绎经典中文作品", "url": "https://www.youtube.com/watch?v=ZATHqkgieAo" },
+    { "title": "青春不留白", "description": "青春主题作品", "url": "https://www.youtube.com/watch?v=Lpgh9dMAoLc" },
+    { "title": "歌唱高山和大海", "description": "Sing of Mountain and Sea", "url": "https://www.youtube.com/watch?v=3skdoKEcqCY" },
+    { "title": "Keindahan Taman", "description": "马来语合唱作品", "url": "https://www.youtube.com/watch?v=Zrb1ISWUvuA" },
+    { "title": "细水长流", "description": "The Stream Flows", "url": "https://www.youtube.com/watch?v=aQU43BwE6x8" },
+    { "title": "Hope 希望", "description": "温暖人心的主题作品", "url": "https://www.youtube.com/watch?v=S960m0B95lQ" }
   ],
   "footer": {
     "about": "用音乐传递美好，用和声连接心灵。我们致力于创造美妙的音乐体验，为社区带来艺术的享受。",
