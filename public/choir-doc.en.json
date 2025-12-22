@@ -16,12 +16,14 @@
   "intro": "We are a group of music lovers who believe the human voice is the most natural instrument. Through the fusion of different parts, we create moving harmony and share beauty with the community.",
   "members": [
     { "name": "Gui Naishun", "role": "Conductor", "joinYear": 2024, "avatar": "/images/桂乃顺.jpeg" },
-    { "name": "Feng Kelen", "role": "Conductor", "joinYear": 2024, "avatar": "/images/冯克伦.jpeg" }
+    { "name": "Feng Kelen", "role": "Conductor", "joinYear": 2024, "avatar": "/images/冯克伦.jpeg" },
+    { "name": "xxx", "role": "Soprano", "joinYear": 2024, "avatar": "" },
+    { "name": "xxx", "role": "Alto", "joinYear": 2024, "avatar": "" },
+    { "name": "xxx", "role": "Tenor", "joinYear": 2024, "avatar": "" },
+    { "name": "xxx", "role": "Bass", "joinYear": 2024, "avatar": "" }
   ],
-  "images": [
-    { "file": "/images/桂乃顺.jpeg" },
-    { "file": "/images/冯克伦.jpeg" }
-  ],
+
+  "aboutImage": "/images/桂乃顺.jpeg",
   "qrcode": "/images/qrcode.png",
   "logo": "/logo.svg",
   "youtube": {
