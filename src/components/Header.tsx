@@ -8,13 +8,15 @@ export default function Header() {
   const [logo, setLogo] = useState<string>('/logo.svg')
   const { lang, setLang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
         const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
         setNameCn(cn)
         if (d.logo) setLogo(d.logo)
+        const title = lang==='en' ? (d.choirNameEn || d.choirName || 'Choir') : (cn || '合唱团')
+        if (typeof document !== 'undefined') document.title = title
       })
       .catch(() => {})
   }, [lang])
@@ -36,23 +38,23 @@ export default function Header() {
 
             <nav className="hidden md:flex items-center space-x-2">
               <a href="#about" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">介绍</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'About':'介绍'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#conductor" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">艺术总监</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Artistic Director':'艺术总监'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#videos" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">作品</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Works':'作品'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#performances" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">演出</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Performances':'演出'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#collab" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">合作与探索</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Collaboration':'合作与探索'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </nav>
@@ -60,7 +62,7 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-4">
               <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-md">
                 <Sparkles className="h-4 w-4" />
-                <span>加入我们</span>
+                <span>{lang==='en'?'Join Us':'加入我们'}</span>
               </button>
               <div className="flex items-center space-x-2 text-sm">
                 <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-white/15 ${lang==='zh'?'bg-white/20 text-white':'text-purple-200 hover:text-white hover:bg-white/10'}`}>中文</button>

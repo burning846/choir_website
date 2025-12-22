@@ -7,7 +7,7 @@ export default function About() {
   const [image, setImage] = useState<string>('')
   const { lang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return

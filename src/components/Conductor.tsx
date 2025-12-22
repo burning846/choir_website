@@ -15,7 +15,7 @@ export default function Conductor() {
   const [image, setImage] = useState<string>('')
   const { lang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -44,7 +44,7 @@ export default function Conductor() {
     <section id="conductor" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">指挥介绍</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">{lang==='en'?'Artistic Director':'指挥介绍'}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
         </div>
         
@@ -63,7 +63,7 @@ export default function Conductor() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-center space-x-2">
                     <User className="h-4 w-4 text-gray-600" />
-                    <span className="text-sm text-gray-600">{conductor.experience} 经验</span>
+                    <span className="text-sm text-gray-600">{conductor.experience}</span>
                   </div>
                   <div className="flex items-center justify-center space-x-2">
                     <Music className="h-4 w-4 text-gray-600" />
@@ -76,14 +76,14 @@ export default function Conductor() {
             <div className="md:col-span-2">
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">个人简介</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3">{lang==='en'?'Biography':'个人简介'}</h4>
                   <p className="text-gray-600 leading-relaxed">{conductor.bio}</p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
                     <Award className="h-5 w-5 text-yellow-500 mr-2" />
-                    主要成就
+                     {lang==='en'?'Key Achievements':'主要成就'}
                   </h4>
                   <ul className="space-y-2">
                     {conductor.achievements.map((achievement, index) => (
@@ -96,8 +96,8 @@ export default function Conductor() {
                 </div>
                 
                 <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">指挥理念</h4>
-                  <p className="text-gray-600 italic leading-relaxed">{conductor.philosophy || "音乐是人类共同的语言，合唱是心灵交流的桥梁。我希望通过我们的演唱，让每一个听众都能感受到音乐的力量和美好。"}</p>
+                   <h4 className="text-lg font-semibold text-gray-800 mb-3">{lang==='en'?'Conducting Philosophy':'指挥理念'}</h4>
+                  <p className="text-gray-600 italic leading-relaxed">{conductor.philosophy || (lang==='en'?"Music is a universal language; choir connects hearts in harmony.":"音乐是人类共同的语言，合唱是心灵交流的桥梁。我希望通过我们的演唱，让每一个听众都能感受到音乐的力量和美好。")}</p>
                 </div>
               </div>
             </div>

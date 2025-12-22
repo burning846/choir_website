@@ -16,7 +16,7 @@ export default function Members() {
   const [media, setMedia] = useState<string[]>([])
   const { lang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -93,10 +93,10 @@ export default function Members() {
     <section id="members" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">团员风采</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">{lang==='en'?'Members':'团员风采'}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            我们的团员来自不同背景，因为对音乐的热爱而聚集在一起。每个人都在为创造美妙的和声贡献自己的力量。
+            {lang==='en'?'Our members come from diverse backgrounds, united by a love for music. Everyone contributes to creating beautiful harmony.':'我们的团员来自不同背景，因为对音乐的热爱而聚集在一起。每个人都在为创造美妙的和声贡献自己的力量。'}
           </p>
         </div>
         
@@ -123,7 +123,7 @@ export default function Members() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Star className="h-4 w-4 text-yellow-500" />
-                    <span className="text-sm text-gray-600">{member.joinYear}年加入</span>
+                    <span className="text-sm text-gray-600">{lang==='en'?`Joined in ${member.joinYear}`:`${member.joinYear}年加入`}</span>
                   </div>
                 </div>
               </div>
@@ -133,23 +133,23 @@ export default function Members() {
         
         <div className="text-center mt-12">
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">声部构成</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">{lang==='en'?'Voice Sections':'声部构成'}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600">18</div>
-                <div className="text-sm text-gray-600">女高音</div>
+                <div className="text-sm text-gray-600">{lang==='en'?'Soprano':'女高音'}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">15</div>
-                <div className="text-sm text-gray-600">女中音</div>
+                <div className="text-sm text-gray-600">{lang==='en'?'Alto':'女中音'}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-green-600">14</div>
-                <div className="text-sm text-gray-600">男高音</div>
+                <div className="text-sm text-gray-600">{lang==='en'?'Tenor':'男高音'}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-orange-600">16</div>
-                <div className="text-sm text-gray-600">男低音</div>
+                <div className="text-sm text-gray-600">{lang==='en'?'Bass':'男低音'}</div>
               </div>
             </div>
           </div>
