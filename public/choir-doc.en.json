@@ -29,12 +29,12 @@
     "channel": "https://www.youtube.com/@KonzertSingers"
   },
   "videos": [
-    { "title": "Embracing the Sunset", "description": "Konzert Singers perform a classic Chinese piece", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3" },
-    { "title": "Youth Unfading", "description": "A vibrant youth-themed work", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD" },
-    { "title": "Sing of Mountain and Sea", "description": "A piece inspired by nature", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E6%AD%8C%E5%94%B1%E9%AB%98%E5%B1%B1%E5%92%8C%E5%A4%A7%E6%B5%B7" },
-    { "title": "Keindahan Taman", "description": "Malay choral work", "url": "https://www.youtube.com/@KonzertSingers/search?query=Keindahan%20Taman" },
-    { "title": "The Stream Flows", "description": "Flowing melodies and emotions", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E7%BB%86%E6%B0%B4%E9%95%BF%E6%B5%81" },
-    { "title": "Hope", "description": "Warm and uplifting themes", "url": "https://www.youtube.com/@KonzertSingers/search?query=Hope%20%E5%B8%8C%E6%9C%9B" }
+    { "title": "Embracing the Sunset", "description": "Konzert Singers perform a classic Chinese piece", "url": "https://www.youtube.com/watch?v=ZATHqkgieAo" },
+    { "title": "Youth Unfading", "description": "A vibrant youth-themed work", "url": "https://www.youtube.com/watch?v=Lpgh9dMAoLc" },
+    { "title": "Sing of Mountain and Sea", "description": "A piece inspired by nature", "url": "https://www.youtube.com/watch?v=3skdoKEcqCY" },
+    { "title": "Keindahan Taman", "description": "Malay choral work", "url": "https://www.youtube.com/watch?v=Zrb1ISWUvuA" },
+    { "title": "The Stream Flows", "description": "Flowing melodies and emotions", "url": "https://www.youtube.com/watch?v=aQU43BwE6x8" },
+    { "title": "Hope", "description": "Warm and uplifting themes", "url": "https://www.youtube.com/watch?v=S960m0B95lQ" }
   ],
   "footer": {
     "about": "Sharing beauty through music, connecting hearts in harmony.",
