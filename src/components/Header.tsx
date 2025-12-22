@@ -23,53 +23,53 @@ export default function Header() {
   }, [lang])
   return (
     <header className="sticky top-0 z-50 text-white">
-      <div className="backdrop-blur bg-black/20">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+      <div className="bg-gray-900">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between rounded-xl px-4 py-2 bg-gray-900 shadow-lg">
             <a href="#home" className="flex items-center space-x-3">
               <img
                 src={logo}
                 alt="星光合唱团 Logo"
-                className="w-10 h-10 rounded-lg object-cover"
+                className="w-10 h-10 rounded-lg object-cover ring-2 ring-white/20"
               />
               <div>
-                <h1 className="text-xl md:text-2xl font-bold tracking-wide">{nameCn}</h1>
-                <p className="text-xs md:text-sm text-purple-200">{nameEn}</p>
+                <h1 className="text-xl md:text-2xl font-extrabold tracking-wide bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 bg-clip-text text-transparent">{nameCn}</h1>
+                <p className="text-xs md:text-sm text-purple-200/90">{nameEn}</p>
               </div>
             </a>
 
-            <nav className="hidden md:flex items-center space-x-6">
-              <a href="#about" className="relative py-1 hover:text-white group">
+            <nav className="hidden md:flex items-center space-x-2">
+              <a href="#about" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
                 <span className="hover:opacity-100 opacity-90">介绍</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#conductor" className="relative py-1 hover:text-white group">
+              <a href="#conductor" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
                 <span className="hover:opacity-100 opacity-90">艺术总监</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#videos" className="relative py-1 hover:text-white group">
+              <a href="#videos" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
                 <span className="hover:opacity-100 opacity-90">作品</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#performances" className="relative py-1 hover:text-white group">
+              <a href="#performances" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
                 <span className="hover:opacity-100 opacity-90">演出</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#collab" className="relative py-1 hover:text-white group">
+              <a href="#collab" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
                 <span className="hover:opacity-100 opacity-90">合作与探索</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
-              <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity">
+              <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-md">
                 <Sparkles className="h-4 w-4" />
                 <span>加入我们</span>
               </button>
               <div className="flex items-center space-x-2 text-sm">
-                <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded ${lang==='zh'?'bg-white/20 text-white':'text-purple-200 hover:text-white'}`}>中文</button>
+                <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-white/15 ${lang==='zh'?'bg-white/20 text-white':'text-purple-200 hover:text-white hover:bg-white/10'}`}>中文</button>
                 <span className="text-purple-300">/</span>
-                <button onClick={() => setLang('en')} className={`px-3 py-1 rounded ${lang==='en'?'bg-white/20 text-white':'text-purple-200 hover:text-white'}`}>EN</button>
+                <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full ring-1 ring-white/15 ${lang==='en'?'bg-white/20 text-white':'text-purple-200 hover:text-white hover:bg-white/10'}`}>EN</button>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="h-1 w-full bg-[length:200%_100%] bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 via-green-400 via-cyan-400 to-purple-500 animate-rainbow"></div>
+      <div className="h-1 w-full bg-[length:200%_100%] bg-gradient-to-r from-pink-500 via-orange-400 via-yellow-300 via-green-400 via-cyan-400 to-purple-500 animate-rainbow shadow-[0_1px_8px_rgba(0,0,0,0.3)]"></div>
     </header>
   )
 }
