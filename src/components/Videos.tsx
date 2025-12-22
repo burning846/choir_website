@@ -26,7 +26,7 @@ export default function Videos() {
   }
   const { lang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -41,10 +41,10 @@ export default function Videos() {
     <section id="videos" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">作品展示</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">{lang==='en'?'Works':'作品展示'}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            欣赏我们的精彩演出，感受合唱艺术的魅力。每一首歌曲都承载着我们的热情和用心。
+            {lang==='en' ? 'Enjoy our performances and feel the charm of choral art. Every song carries our passion and care.' : '欣赏我们的精彩演出，感受合唱艺术的魅力。每一首歌曲都承载着我们的热情和用心。'}
           </p>
         </div>
         
@@ -67,7 +67,7 @@ export default function Videos() {
                 >
                   <div className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                     <Youtube className="h-5 w-5" />
-                    <span>在 YouTube 播放</span>
+                    <span>{lang==='en'?'Play on YouTube':'在 YouTube 播放'}</span>
                   </div>
                 </a>
                 <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
@@ -99,7 +99,7 @@ export default function Videos() {
                     className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
                   >
                     <Play className="h-4 w-4" />
-                    <span className="text-sm font-medium">在YouTube上观看</span>
+                    <span className="text-sm font-medium">{lang==='en'?'Watch on YouTube':'在YouTube上观看'}</span>
                   </a>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function Videos() {
             className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors"
           >
             <Play className="h-5 w-5" />
-            <span className="font-medium">访问Konzert Singers频道</span>
+            <span className="font-medium">{lang==='en'?'Visit Channel':'访问频道'}</span>
           </a>
         </div>
       </div>

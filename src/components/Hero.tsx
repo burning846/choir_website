@@ -7,7 +7,7 @@ export default function Hero() {
   const [logo, setLogo] = useState<string>('/logo.svg')
   const { lang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -31,7 +31,9 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto">
-            用音乐点亮生活，用和声温暖人心。我们是一支充满激情的合唱团，致力于创造美妙的音乐体验。
+            {lang==='en'
+              ? 'Let music light up life and harmony warm hearts. We are a passionate choir creating beautiful musical experiences.'
+              : '用音乐点亮生活，用和声温暖人心。我们是一支充满激情的合唱团，致力于创造美妙的音乐体验。'}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -40,14 +42,14 @@ export default function Hero() {
               className="inline-flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               <Heart className="h-5 w-5" />
-              <span>欣赏我们的演出</span>
+              <span>{lang==='en'?'Watch Our Performances':'欣赏我们的演出'}</span>
             </a>
             <a 
               href="#contact" 
               className="inline-flex items-center space-x-2 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               <Star className="h-5 w-5" />
-              <span>加入我们</span>
+              <span>{lang==='en'?'Join Us':'加入我们'}</span>
             </a>
           </div>
         </div>

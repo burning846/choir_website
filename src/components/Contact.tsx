@@ -10,7 +10,7 @@ export default function Contact() {
   const [socialLinks, setSocialLinks] = useState<any[]>([])
   const { lang } = useLang()
   useEffect(() => {
-    fetch(docUrl(lang))
+    fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -51,7 +51,7 @@ export default function Contact() {
         
         <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-semibold mb-6">联系信息</h3>
+            <h3 className="text-2xl font-semibold mb-6">{lang==='en'?'Contact Info':'联系信息'}</h3>
             <div className="space-y-4 mb-8">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -76,7 +76,7 @@ export default function Contact() {
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4">关注我们</h4>
+              <h4 className="text-lg font-semibold mb-4">{lang==='en'?'Follow Us':'关注我们'}</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -98,10 +98,10 @@ export default function Contact() {
               <div className="bg-white rounded-lg p-6 text-gray-800 text-center">
                 <div className="flex items-center justify-center space-x-2 mb-3">
                   <QrCode className="h-5 w-5 text-gray-700" />
-                  <span className="font-semibold">报名二维码</span>
+                  <span className="font-semibold">{lang==='en'?'Join QR Code':'报名二维码'}</span>
                 </div>
-                <img src={qrcode} alt="报名二维码" className="w-56 h-56 mx-auto rounded" />
-                <p className="text-sm text-gray-600 mt-2">扫码报名加入合唱团</p>
+                <img src={qrcode} alt={lang==='en'?"Join QR Code":"报名二维码"} className="w-56 h-56 mx-auto rounded" />
+                <p className="text-sm text-gray-600 mt-2">{lang==='en'?'Scan to join the choir':'扫码报名加入合唱团'}</p>
               </div>
             )}
           </div>
