@@ -4,7 +4,6 @@ import { useLang, docUrl } from '@/lib/lang'
 
 export default function Hero() {
   const [nameCn, setNameCn] = useState('星光合唱团')
-  const [nameEn, setNameEn] = useState('Starlight Choir')
   const [logo, setLogo] = useState<string>('/logo.svg')
   const { lang } = useLang()
   useEffect(() => {
@@ -12,9 +11,7 @@ export default function Hero() {
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
-        const en = d.choirNameEn || d.choirName || nameEn
         const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
-        setNameEn(en)
         setNameCn(cn)
         if (d.logo) setLogo(d.logo)
       })
@@ -29,13 +26,9 @@ export default function Hero() {
             <img src={logo} alt="Choir Logo" className="w-20 h-20 rounded-lg" />
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tracking-wide">
             {nameCn}
           </h1>
-          
-          <p className="text-xl md:text-2xl mb-8 text-purple-200">
-            {nameEn}
-          </p>
           
           <p className="text-lg md:text-xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto">
             用音乐点亮生活，用和声温暖人心。我们是一支充满激情的合唱团，致力于创造美妙的音乐体验。

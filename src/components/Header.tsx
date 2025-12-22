@@ -5,7 +5,6 @@ import { useLang, docUrl } from '@/lib/lang'
 
 export default function Header() {
   const [nameCn, setNameCn] = useState('星光合唱团')
-  const [nameEn, setNameEn] = useState('Starlight Choir')
   const [logo, setLogo] = useState<string>('/logo.svg')
   const { lang, setLang } = useLang()
   useEffect(() => {
@@ -13,9 +12,7 @@ export default function Header() {
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
-        const en = d.choirNameEn || d.choirName || nameEn
         const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
-        setNameEn(en)
         setNameCn(cn)
         if (d.logo) setLogo(d.logo)
       })
@@ -34,7 +31,6 @@ export default function Header() {
               />
               <div>
                 <h1 className="text-xl md:text-2xl font-extrabold tracking-wide bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 bg-clip-text text-transparent">{nameCn}</h1>
-                <p className="text-xs md:text-sm text-purple-200/90">{nameEn}</p>
               </div>
             </a>
 
