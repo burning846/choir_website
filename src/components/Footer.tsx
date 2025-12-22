@@ -1,17 +1,22 @@
 import { Music, Heart } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useLang, docUrl } from '@/lib/lang'
 
 export default function Footer() {
   const [footer, setFooter] = useState<any>({})
+  const [nameCn, setNameCn] = useState<string>('')
+  const { lang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
         if (d.footer) setFooter(d.footer)
+        const cn = d.choirName || d.choirNameEn || ''
+        setNameCn(cn)
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -19,7 +24,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Music className="h-6 w-6 text-yellow-400" />
-              <h3 className="text-xl font-bold">星光合唱团</h3>
+              <h3 className="text-xl font-bold">{nameCn || '合唱团'}</h3>
             </div>
             <p className="text-gray-400 leading-relaxed">
               {footer?.about || '用音乐传递美好，用和声连接心灵。我们致力于创造美妙的音乐体验，为社区带来艺术的享受。'}
@@ -52,7 +57,7 @@ export default function Footer() {
           <div className="flex items-center justify-center space-x-2 text-gray-400 mb-4">
             <span>用心制作</span>
             <Heart className="h-4 w-4 text-red-500" />
-            <span>星光合唱团</span>
+            <span>{nameCn || '合唱团'}</span>
           </div>
           <p className="text-gray-500 text-sm">
             {footer?.copyright || '© 2024 星光合唱团. 保留所有权利. | 让音乐点亮生活'}
