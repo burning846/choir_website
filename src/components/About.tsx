@@ -1,11 +1,13 @@
 import { Users, Calendar, Award } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useLang, docUrl } from '@/lib/lang'
 
 export default function About() {
   const [intro, setIntro] = useState<string>('')
   const [image, setImage] = useState<string>('')
+  const { lang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -13,7 +15,7 @@ export default function About() {
         if (d.images && d.images.length) setImage(d.images[0].file)
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
   return (
     <section id="about" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4">

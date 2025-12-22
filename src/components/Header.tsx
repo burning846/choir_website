@@ -1,13 +1,15 @@
 import { Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import MobileMenu from './MobileMenu'
+import { useLang, docUrl } from '@/lib/lang'
 
 export default function Header() {
   const [nameCn, setNameCn] = useState('星光合唱团')
   const [nameEn, setNameEn] = useState('Starlight Choir')
   const [logo, setLogo] = useState<string>('/logo.svg')
+  const { lang, setLang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -18,7 +20,7 @@ export default function Header() {
         if (d.logo) setLogo(d.logo)
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
   return (
     <header className="sticky top-0 z-50 text-white">
       <div className="backdrop-blur bg-black/20">
@@ -37,24 +39,24 @@ export default function Header() {
             </a>
 
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#about" className="relative py-1 hover:text-white">
-                <span className="hover:opacity-100 opacity-90">关于我们</span>
+              <a href="#about" className="relative py-1 hover:text-white group">
+                <span className="hover:opacity-100 opacity-90">介绍</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#conductor" className="relative py-1 hover:text-white">
-                <span className="hover:opacity-100 opacity-90">指挥介绍</span>
+              <a href="#conductor" className="relative py-1 hover:text-white group">
+                <span className="hover:opacity-100 opacity-90">艺术总监</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#members" className="relative py-1 hover:text-white">
-                <span className="hover:opacity-100 opacity-90">团员风采</span>
+              <a href="#videos" className="relative py-1 hover:text-white group">
+                <span className="hover:opacity-100 opacity-90">作品</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#videos" className="relative py-1 hover:text-white">
-                <span className="hover:opacity-100 opacity-90">作品展示</span>
+              <a href="#performances" className="relative py-1 hover:text-white group">
+                <span className="hover:opacity-100 opacity-90">演出</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#contact" className="relative py-1 hover:text-white">
-                <span className="hover:opacity-100 opacity-90">联系我们</span>
+              <a href="#collab" className="relative py-1 hover:text-white group">
+                <span className="hover:opacity-100 opacity-90">合作与探索</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </nav>
@@ -64,7 +66,11 @@ export default function Header() {
                 <Sparkles className="h-4 w-4" />
                 <span>加入我们</span>
               </button>
-              <div className="text-sm text-purple-200">中文 / EN</div>
+              <div className="flex items-center space-x-2 text-sm">
+                <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded ${lang==='zh'?'bg-white/20 text-white':'text-purple-200 hover:text-white'}`}>中文</button>
+                <span className="text-purple-300">/</span>
+                <button onClick={() => setLang('en')} className={`px-3 py-1 rounded ${lang==='en'?'bg-white/20 text-white':'text-purple-200 hover:text-white'}`}>EN</button>
+              </div>
             </div>
 
             <div className="md:hidden">

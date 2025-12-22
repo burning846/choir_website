@@ -5,6 +5,8 @@ import IntroFromDoc from '@/components/IntroFromDoc'
 import Conductor from '@/components/Conductor'
 import Members from '@/components/Members'
 import Videos from '@/components/Videos'
+import Performances from '@/components/Performances'
+import Collaboration from '@/components/Collaboration'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
@@ -20,6 +22,8 @@ export default function Home() {
         <Conductor />
         <Members />
         <Videos />
+        <Performances />
+        <Collaboration />
         <Contact />
       </main>
       <Footer />

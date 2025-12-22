@@ -1,5 +1,6 @@
 import { Users, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useLang, docUrl } from '@/lib/lang'
 
 interface Member {
   id: number
@@ -13,8 +14,9 @@ interface Member {
 export default function Members() {
   const [docMembers, setDocMembers] = useState<any[]>([])
   const [media, setMedia] = useState<string[]>([])
+  const { lang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -22,7 +24,7 @@ export default function Members() {
         if (d.images) setMedia(d.images.map((i: any) => i.file))
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
   const members: Member[] = docMembers.length
     ? docMembers.map((m: any, idx: number) => ({
         id: idx + 1,

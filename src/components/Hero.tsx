@@ -1,12 +1,14 @@
 import { Heart, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useLang, docUrl } from '@/lib/lang'
 
 export default function Hero() {
   const [nameCn, setNameCn] = useState('星光合唱团')
   const [nameEn, setNameEn] = useState('Starlight Choir')
   const [logo, setLogo] = useState<string>('/logo.svg')
+  const { lang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
@@ -17,7 +19,7 @@ export default function Hero() {
         if (d.logo) setLogo(d.logo)
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
   return (
     <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
