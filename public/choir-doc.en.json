@@ -1,0 +1,57 @@
+{
+  "choirName": "Konzert Singers",
+  "choirNameEn": "Konzert Singers",
+  "conductor": {
+    "raw": "Artistic Director & Principal Conductor: Gui Naishun",
+    "avatar": "/images/桂乃顺.jpeg",
+    "bio": "Gui Naishun is dedicated to choral art, focusing on vocal blend and cultural inheritance, leading Konzert Singers to pursue beauty and harmony across diverse repertoire.",
+    "education": "Background in music and choral conducting",
+    "experience": "Years of choral conducting and teaching",
+    "achievements": [
+      "Organized multiple themed concerts",
+      "Explored multilingual and multicultural repertoire",
+      "Improved members' expression and stage performance"
+    ],
+    "philosophy": "Music is a bridge of the soul; choir connects us in harmony."
+  },
+  "intro": "We are a group of music lovers who believe the human voice is the most natural instrument. Through the fusion of different parts, we create moving harmony and share beauty with the community.",
+  "members": [
+    { "name": "Gui Naishun", "role": "Conductor", "joinYear": 2024, "avatar": "/images/桂乃顺.jpeg" },
+    { "name": "Feng Kelen", "role": "Conductor", "joinYear": 2024, "avatar": "/images/冯克伦.jpeg" }
+  ],
+  "images": [
+    { "file": "/images/桂乃顺.jpeg" },
+    { "file": "/images/冯克伦.jpeg" }
+  ],
+  "qrcode": "/images/qrcode.png",
+  "logo": "/logo.svg",
+  "youtube": {
+    "channel": "https://www.youtube.com/@KonzertSingers"
+  },
+  "videos": [
+    { "title": "Embracing the Sunset", "description": "Konzert Singers perform a classic Chinese piece", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3" },
+    { "title": "Youth Unfading", "description": "A vibrant youth-themed work", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD" },
+    { "title": "Sing of Mountain and Sea", "description": "A piece inspired by nature", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E6%AD%8C%E5%94%B1%E9%AB%98%E5%B1%B1%E5%92%8C%E5%A4%A7%E6%B5%B7" },
+    { "title": "Keindahan Taman", "description": "Malay choral work", "url": "https://www.youtube.com/@KonzertSingers/search?query=Keindahan%20Taman" },
+    { "title": "The Stream Flows", "description": "Flowing melodies and emotions", "url": "https://www.youtube.com/@KonzertSingers/search?query=%E7%BB%86%E6%B0%B4%E9%95%BF%E6%B5%81" },
+    { "title": "Hope", "description": "Warm and uplifting themes", "url": "https://www.youtube.com/@KonzertSingers/search?query=Hope%20%E5%B8%8C%E6%9C%9B" }
+  ],
+  "footer": {
+    "about": "Sharing beauty through music, connecting hearts in harmony.",
+    "schedule": ["Wednesday 19:00–21:30", "Sunday 14:00–17:00"],
+    "location": "Rehearsal: Music Building, 8F",
+    "copyright": "© 2024 Konzert Singers. All rights reserved. | Let music light up life"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "intro": "If you’re interested in our performances or wish to join us, feel free to get in touch. We look forward to sharing the beauty of music with you.",
+    "email": "info@starlightchoir.com",
+    "phone": "+86 138-0000-0000",
+    "address": "Chaoyang District, Beijing, Music Building 8F",
+    "website": "www.starlightchoir.com",
+    "socials": [
+      { "name": "Facebook", "href": "https://facebook.com/starlightchoir" },
+      { "name": "Instagram", "href": "https://instagram.com/starlightchoir" }
+    ]
+  }
+}

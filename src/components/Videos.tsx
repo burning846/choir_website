@@ -1,5 +1,6 @@
-import { Play, Calendar, MapPin, Link as LinkIcon } from 'lucide-react'
+import { Play, Calendar, MapPin, Link as LinkIcon, Youtube } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useLang, docUrl } from '@/lib/lang'
 
 interface Video {
   id?: string
@@ -7,28 +8,34 @@ interface Video {
   date?: string
   venue?: string
   description?: string
-  search?: string
+  url?: string
 }
 
 export default function Videos() {
   const [videos, setVideos] = useState<Video[]>([])
   const [channel, setChannel] = useState<string>('https://www.youtube.com/@KonzertSingers')
+  const getVideoId = (url?: string) => {
+    if (!url) return ''
+    const m = url.match(/[?&]v=([\w-]+)/) || url.match(/youtu\.be\/([\w-]+)/)
+    return m ? m[1] : ''
+  }
+  const getWatchUrl = (video: Video) => (video.id ? `https://www.youtube.com/watch?v=${video.id}` : (video.url || channel))
+  const getThumbUrl = (video: Video) => {
+    const vidId = video.id || getVideoId(video.url)
+    return vidId ? `https://img.youtube.com/vi/${vidId}/hqdefault.jpg` : ''
+  }
+  const { lang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
         if (Array.isArray(d.videos)) setVideos(d.videos)
         if (d.youtube && d.youtube.channel) setChannel(d.youtube.channel)
-        if (!Array.isArray(d.videos)) {
-          setVideos([
-            { title: '拥抱夕阳', date: '近期发布', venue: '线上发布', description: 'Konzert Singers 演绎经典中文作品', search: 'https://www.youtube.com/results?search_query=%E6%8B%A5%E6%8A%B1%E5%A4%95%E9%98%B3+Konzert+Singers' },
-            { title: '青春不留白', date: '近期发布', venue: '线上发布', description: 'Konzert Singers 青春主题作品', search: 'https://www.youtube.com/results?search_query=%E9%9D%92%E6%98%A5%E4%B8%8D%E7%95%99%E7%99%BD+Konzert+Singers' }
-          ])
-        }
+        if (!Array.isArray(d.videos)) setVideos([])
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
 
   return (
     <section id="videos" className="py-16 bg-white">
@@ -45,32 +52,26 @@ export default function Videos() {
           {videos.map((video, index) => (
             <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-video bg-gray-900 relative group">
-                {video.id ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                {getThumbUrl(video) ? (
+                  <img src={getThumbUrl(video)} alt={video.title} className="w-full h-full object-cover" />
                 ) : (
-                  <a
-                    href={video.search}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 ring-1 ring-white/20 mb-4">
-                        <Play className="h-8 w-8 text-white" />
-                      </div>
-                      <p className="text-white/90">前往播放页面</p>
-                    </div>
-                  </a>
+                  <div className="w-full h-full flex items-center justify-center">
+                    <LinkIcon className="h-10 w-10 text-white/80" />
+                  </div>
                 )}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                  <Play className="h-12 w-12 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                <a
+                  href={getWatchUrl(video)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center"
+                >
+                  <div className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Youtube className="h-5 w-5" />
+                    <span>在 YouTube 播放</span>
+                  </div>
+                </a>
+                <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                  YouTube
                 </div>
               </div>
               
@@ -91,30 +92,18 @@ export default function Videos() {
                 <p className="text-gray-600 text-sm leading-relaxed">{video.description}</p>
                 
                 <div className="mt-4 pt-4 border-t border-gray-200">
-                  {video.id ? (
-                    <a
-                      href={`https://www.youtube.com/watch?v=${video.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
-                    >
-                      <Play className="h-4 w-4" />
-                      <span className="text-sm font-medium">在YouTube上观看</span>
-                    </a>
-                  ) : (
-                    <a
-                      href={video.search}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
-                    >
-                      <LinkIcon className="h-4 w-4" />
-                      <span className="text-sm font-medium">前往频道搜索结果</span>
-                    </a>
-                  )}
-                </div>
+                  <a
+                    href={getWatchUrl(video)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
+                  >
+                    <Play className="h-4 w-4" />
+                    <span className="text-sm font-medium">在YouTube上观看</span>
+                  </a>
               </div>
             </div>
+          </div>
           ))}
         </div>
         

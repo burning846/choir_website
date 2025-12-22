@@ -1,5 +1,6 @@
 import { User, Music, Award } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useLang, docUrl } from '@/lib/lang'
 
 export default function Conductor() {
   const [conductor, setConductor] = useState({
@@ -7,37 +8,37 @@ export default function Conductor() {
     title: "音乐总监 & 首席指挥",
     experience: "",
     education: "",
-    achievements: [
-      "",
-      "",
-      ""
-    ],
-    bio: ""
+    achievements: [] as string[],
+    bio: "",
+    philosophy: ""
   })
   const [image, setImage] = useState<string>('')
+  const { lang } = useLang()
   useEffect(() => {
-    fetch('/choir-doc.json')
+    fetch(docUrl(lang))
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return
-        if (d.conductor && d.conductor.raw) {
-          const raw = d.conductor.raw
+        if (d.conductor) {
+          const raw = d.conductor.raw || ''
           const parts = raw.split('：')
           const title = parts[0] || conductor.title
-          const name = parts[1] || ''
-          setConductor({
-            name,
-            title,
-            experience: conductor.experience,
-            education: conductor.education,
-            achievements: [],
-            bio: conductor.bio
-          })
+          const name = parts[1] || conductor.name
+          const experience = d.conductor.experience || ''
+          const education = d.conductor.education || ''
+          const achievements = Array.isArray(d.conductor.achievements) ? d.conductor.achievements : []
+          const bio = d.conductor.bio || ''
+          const philosophy = d.conductor.philosophy || ''
+          setConductor({ name, title, experience, education, achievements, bio, philosophy })
+          if (d.conductor.avatar) {
+            setImage(d.conductor.avatar.startsWith('/') ? d.conductor.avatar : `/${d.conductor.avatar}`)
+          } else if (d.images && d.images[1]) {
+            setImage(d.images[1].file)
+          }
         }
-        if (d.images && d.images[1]) setImage(d.images[1].file)
       })
       .catch(() => {})
-  }, [])
+  }, [lang])
 
   return (
     <section id="conductor" className="py-16 bg-white">
@@ -96,9 +97,7 @@ export default function Conductor() {
                 
                 <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-gray-800 mb-3">指挥理念</h4>
-                  <p className="text-gray-600 italic leading-relaxed">
-                    "音乐是人类共同的语言，合唱是心灵交流的桥梁。我希望通过我们的演唱，让每一个听众都能感受到音乐的力量和美好。"
-                  </p>
+                  <p className="text-gray-600 italic leading-relaxed">{conductor.philosophy || "音乐是人类共同的语言，合唱是心灵交流的桥梁。我希望通过我们的演唱，让每一个听众都能感受到音乐的力量和美好。"}</p>
                 </div>
               </div>
             </div>
