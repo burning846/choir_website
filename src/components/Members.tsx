@@ -89,6 +89,18 @@ export default function Members() {
     }
   ]
 
+  const counts = (() => {
+    const c = { soprano: 0, alto: 0, tenor: 0, bass: 0 }
+    members.forEach((m) => {
+      const v = (m.voice || m.role || '').toLowerCase()
+      if (v.includes('女高音') || v.includes('soprano')) c.soprano++
+      else if (v.includes('女中音') || v.includes('alto')) c.alto++
+      else if (v.includes('男高音') || v.includes('tenor')) c.tenor++
+      else if (v.includes('男低音') || v.includes('bass')) c.bass++
+    })
+    return c
+  })()
+
   return (
     <section id="members" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
@@ -136,19 +148,19 @@ export default function Members() {
             <h3 className="text-xl font-semibold text-gray-800 mb-4">{lang==='en'?'Voice Sections':'声部构成'}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">18</div>
+                <div className="text-2xl font-bold text-purple-600">{counts.soprano}</div>
                 <div className="text-sm text-gray-600">{lang==='en'?'Soprano':'女高音'}</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">15</div>
+                <div className="text-2xl font-bold text-blue-600">{counts.alto}</div>
                 <div className="text-sm text-gray-600">{lang==='en'?'Alto':'女中音'}</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">14</div>
+                <div className="text-2xl font-bold text-green-600">{counts.tenor}</div>
                 <div className="text-sm text-gray-600">{lang==='en'?'Tenor':'男高音'}</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">16</div>
+                <div className="text-2xl font-bold text-orange-600">{counts.bass}</div>
                 <div className="text-sm text-gray-600">{lang==='en'?'Bass':'男低音'}</div>
               </div>
             </div>

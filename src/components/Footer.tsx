@@ -38,7 +38,7 @@ export default function Footer() {
               <li><a href="#conductor" className="hover:text-white transition-colors">{lang==='en'?'Artistic Director':'指挥介绍'}</a></li>
               <li><a href="#members" className="hover:text-white transition-colors">{lang==='en'?'Members':'团员风采'}</a></li>
               <li><a href="#videos" className="hover:text-white transition-colors">{lang==='en'?'Works':'作品展示'}</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">{lang==='en'?'Contact':'联系我们'}</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">{lang==='en'?'Contact & Collaboration':'联系与合作'}</a></li>
             </ul>
           </div>
           

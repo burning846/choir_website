@@ -1,15 +1,18 @@
 import { useState } from 'react'
+import { useLang } from '@/lib/lang'
 import { Menu, X, Sparkles } from 'lucide-react'
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const { lang } = useLang()
 
   const menuItems = [
-    { href: '#about', label: '关于我们' },
-    { href: '#conductor', label: '指挥介绍' },
-    { href: '#members', label: '团员风采' },
-    { href: '#videos', label: '作品展示' },
-    { href: '#contact', label: '联系我们' }
+    { href: '#about', label: lang==='en'?'About':'关于我们' },
+    { href: '#conductor', label: lang==='en'?'Artistic Director':'指挥介绍' },
+    { href: '#members', label: lang==='en'?'Members':'团员风采' },
+    { href: '#videos', label: lang==='en'?'Works':'作品展示' },
+    { href: '#performances', label: lang==='en'?'Performances':'演出' },
+    { href: '#contact', label: lang==='en'?'Contact & Collaboration':'联系与合作' }
   ]
 
   const toggleMenu = () => {
@@ -57,7 +60,7 @@ export default function MobileMenu() {
             <div className="mt-8 flex flex-col items-center space-y-4">
               <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
                 <Sparkles className="h-5 w-5" />
-                <span>加入我们</span>
+                <span>{lang==='en'?'Join Us':'加入我们'}</span>
               </button>
               <div className="text-sm text-purple-200">中文 / EN</div>
             </div>
