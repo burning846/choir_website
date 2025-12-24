@@ -1,4 +1,3 @@
-import { Users, Calendar, Award } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useLang, docUrl } from '@/lib/lang'
 
@@ -38,29 +37,7 @@ export default function About() {
               </p>
             )}
             
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="bg-purple-100 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                  <Users className="h-8 w-8 text-purple-600" />
-                </div>
-                <h4 className="font-semibold text-gray-800">60+</h4>
-                <p className="text-sm text-gray-600">{lang==='en'?'Members':'团员人数'}</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                  <Calendar className="h-8 w-8 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-gray-800">9 {lang==='en'?'years':'年'}</h4>
-                <p className="text-sm text-gray-600">{lang==='en'?'History':'成立历史'}</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-green-100 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                  <Award className="h-8 w-8 text-green-600" />
-                </div>
-                <h4 className="font-semibold text-gray-800">15+</h4>
-                <p className="text-sm text-gray-600">{lang==='en'?'Awards':'获奖次数'}</p>
-              </div>
-            </div>
+            
           </div>
           
           <div className="relative">

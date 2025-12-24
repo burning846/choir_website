@@ -20,11 +20,17 @@ export default function Contact() {
           setIntro(d.contact.intro || intro)
           const website = d.contact.website || ''
           const websiteHref = website ? (website.startsWith('http') ? website : `https://${website}`) : ''
+          const labels = {
+            email: lang==='en' ? 'Email' : '邮箱',
+            phone: lang==='en' ? 'Phone' : '电话',
+            address: lang==='en' ? 'Address' : '地址',
+            website: lang==='en' ? 'Website' : '官网'
+          }
           setContactInfo([
-            { icon: Mail, label: '邮箱', value: d.contact.email || '', href: d.contact.email ? `mailto:${d.contact.email}` : null },
-            { icon: Phone, label: '电话', value: d.contact.phone || '', href: d.contact.phone ? `tel:${d.contact.phone.replace(/\s+/g,'')}` : null },
-            { icon: MapPin, label: '地址', value: d.contact.address || '', href: null },
-            { icon: Globe, label: '官网', value: website || '', href: websiteHref || null }
+            { icon: Mail, label: labels.email, value: d.contact.email || '', href: d.contact.email ? `mailto:${d.contact.email}` : null },
+            { icon: Phone, label: labels.phone, value: d.contact.phone || '', href: d.contact.phone ? `tel:${d.contact.phone.replace(/\s+/g,'')}` : null },
+            { icon: MapPin, label: labels.address, value: d.contact.address || '', href: null },
+            { icon: Globe, label: labels.website, value: website || '', href: websiteHref || null }
           ])
           const socials = Array.isArray(d.contact.socials) ? d.contact.socials : []
           setSocialLinks(socials.map((s: any) => ({
@@ -42,10 +48,15 @@ export default function Contact() {
     <section id="contact" className="py-16 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">{title}</h2>
+          <h2 className="text-4xl font-bold mb-4">{lang==='en'?'Contact & Collaboration':'联系与合作'}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto mb-4"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
             {intro}
+          </p>
+          <p className="text-gray-300 max-w-2xl mx-auto mt-2">
+            {lang==='en'
+              ? 'Get in touch to explore cross-cultural choir, original works, joint performances and more.'
+              : '欢迎与我们联系，共同探索跨文化合唱、原创作品、联合演出等合作机会。'}
           </p>
         </div>
         

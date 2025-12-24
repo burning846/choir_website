@@ -53,8 +53,8 @@ export default function Header() {
                 <span className="hover:opacity-100 opacity-90">{lang==='en'?'Performances':'演出'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#collab" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Collaboration':'合作与探索'}</span>
+              <a href="#contact" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Contact & Collaboration':'联系与合作'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </nav>
