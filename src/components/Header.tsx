@@ -38,15 +38,19 @@ export default function Header() {
 
             <nav className="hidden md:flex items-center space-x-2">
               <a href="#about" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">{lang==='en'?'About':'介绍'}</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'About':'关于我们'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#conductor" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Artistic Director':'艺术总监'}</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Artistic Director':'指挥介绍'}</span>
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#members" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Members':'团员风采'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#videos" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
-                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Works':'作品'}</span>
+                <span className="hover:opacity-100 opacity-90">{lang==='en'?'Works':'作品展示'}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#performances" className="relative px-3 py-2 rounded-full hover:text-white group hover:bg-white/10 transition-colors">
