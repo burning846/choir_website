@@ -91,14 +91,14 @@
       "name": "SG60 Choral Festival",
       "date": "2025-08-17",
       "intro": "A grand choral celebration for Singapore’s 60th anniversary, gathering outstanding choirs to perform together.",
-      "image": "https://picsum.photos/seed/sg60/1200/600",
+      "image": "/images/sg60.jpg",
       "venue": "Singapore"
     },
     {
       "name": "SOTA Musicians Association 15th Anniversary Celebration",
       "date": "2025-11-09",
       "intro": "A commemorative concert at SOTA, honoring fifteen years of artistry and education.",
-      "image": "https://picsum.photos/seed/sota15/1200/600",
+      "image": "/images/sota-15th.jpg",
       "venue": "SOTA Concert Hall"
     }
   ],

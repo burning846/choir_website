@@ -91,14 +91,14 @@
       "name": "SG60 合唱节",
       "date": "2025-08-17",
       "intro": "庆祝新加坡建国60周年的合唱盛会，汇聚多支优秀合唱团共同献唱。",
-      "image": "https://picsum.photos/seed/sg60/1200/600",
+      "image": "/images/sg60.jpg",
       "venue": "新加坡"
     },
     {
       "name": "SOTA 音乐家协会15周年音乐庆典",
       "date": "2025-11-09",
       "intro": "新加坡艺术学院音乐家协会十五周年庆典音乐会，致敬艺术与教育的传承。",
-      "image": "https://picsum.photos/seed/sota15/1200/600",
+      "image": "/images/sota-15th.jpg",
       "venue": "SOTA Concert Hall"
     }
   ],
