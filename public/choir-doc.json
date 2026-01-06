@@ -1,0 +1,124 @@
+{
+  "choirName": "咏歌堂",
+  "conductor": {
+    "raw": "咏歌堂艺术总监兼首席指挥：桂乃舜",
+    "avatar": "/images/桂乃顺.jpeg",
+    "bio": "桂乃舜是新加坡合唱界的领军人物，毕业自英国伦敦皇家音乐学院的高级合唱指挥研究班，他也是伦敦音乐学院的院士。他所指挥的合唱团多次获得世界级最重要的冠军大奖，双手挥出超过一百多项国际金奖，个人也多次获得来自德国，意大利，奥地利及捷克的最佳指挥奖。\n桂乃舜是”歌之旅“及”亚洲欢唱“二项著名国际合唱节系列的艺术总监，也是新加坡合唱节的创始人兼艺术总监。他担任国家艺术理事会的合唱顾问和音乐鉴赏评估官员，也是人民协会艺术顾问团的委员。\n近年来桂指挥致力于培养本地合唱人才，在他的努力耕耘下接近四成的新加坡合唱指挥是出自他的培训与教导。",
+    "education": "音乐与合唱指挥相关专业背景",
+    "experience": "多年合唱指挥与教学经验",
+    "achievements": [
+      "组织并完成多场主题音乐会",
+      "推动合唱团多语种与多文化曲目的探索",
+      "指导团员在演绎与舞台表达上取得进步"
+    ],
+    "philosophy": "音乐是心灵的桥梁，合唱是连接彼此的和声。"
+  },
+  "conductors": [
+    {
+      "name": "桂乃舜",
+      "title": "艺术总监 & 首席指挥",
+      "avatar": "/images/桂乃顺.jpeg",
+      "bio": "长期致力于合唱艺术推广与实践，注重声音融合与文化传承。",
+      "education": "音乐与合唱指挥相关专业背景",
+      "experience": "多年合唱指挥与教学经验",
+      "achievements": [
+        "组织并完成多场主题音乐会",
+        "推动合唱团多语种与多文化曲目的探索"
+      ],
+      "highlights": [
+        "毕业于英国伦敦皇家音乐学院高级合唱指挥研究班，伦敦音乐学院院士",
+        "所指挥合唱团多次获得世界级重要冠军大奖，累计百余项国际金奖",
+        "多次获德国、意大利、奥地利、捷克最佳指挥奖",
+        "“歌之旅”与“亚洲欢唱”国际合唱节艺术总监，新加坡合唱节创始人与艺术总监",
+        "国家艺术理事会合唱顾问与音乐鉴赏评估官员，人民协会艺术顾问团委员",
+        "培养本地合唱人才，约四成新加坡合唱指挥出自其培训"
+      ],
+      "philosophy": "音乐是心灵的桥梁，合唱是连接彼此的和声。"
+    },
+    {
+      "name": "冯克伦",
+      "title": "艺术总监 & 指挥",
+      "avatar": "/images/冯克伦.jpeg",
+      "bio": "专注于合唱训练与舞台呈现，强调细腻表达与整体和声。",
+      "education": "圣约瑟大学合唱指挥硕士（优等）、伦敦音乐学院合唱指挥研究员文凭",
+      "experience": "新加坡青年节长期优等奖；国际合唱比赛多国金奖与总冠军；三次最佳指挥奖",
+      "achievements": [
+        "策划多场主题演出",
+        "提升团队舞台表现力"
+      ],
+      "highlights": [
+        "圣约瑟大学合唱指挥硕士（优等）、伦敦音乐学院合唱指挥研究员文凭",
+        "新加坡唯一在小学、中学、初级学院均获青年节荣誉金奖的指挥",
+        "自2013年起率团在新加坡青年节屡获优等奖",
+        "率团在意大利、捷克、俄罗斯、中国等国际比赛获金奖与总冠军",
+        "三度荣获国际比赛最佳指挥奖",
+        "常任国际比赛评委与合唱指挥导师",
+        "指挥之路始于半职业合唱团“声乐联盟”，师从桂乃舜",
+        "受多位大师指导：佩德罗·蒙泰罗、加博尔·霍勒鲁恩等",
+        "曾指挥新加坡华乐团“和谐之声”音乐会，率领200人合唱团",
+        "为陈洁仪“我的音乐旅程”音乐会担任合唱指挥",
+        "担任音乐人才发展中心（MTDC）项目副指挥，培养中学年轻歌者",
+        "2015年首届新加坡合唱节艺术总监，汇聚1000+名歌者庆祝SG50",
+        "现任圣安德烈初级学院、联邦中学、南华中学等顶尖合唱团指挥"
+      ],
+      "philosophy": "用音乐传递美好，用和声连接心灵。"
+    }
+  ],
+  "intro": "咏歌堂\n这是一群热爱音乐之人，坚信声音不仅是听觉的享受，更是心灵的共鸣。身体是最天然的乐器，不同声部的交融，可以幻化出动人的和声。\n这是一群热爱文化之人，崇尚多元。他们深情于中华文化，也拥抱世界的精彩，坚信音乐是最动人的文化桥梁与传承之道。\n这是一群热爱生活之人，音乐是他们表达生活的方式，赋予每一天美好旋律。\n他们中有青年，中年，乐龄。青春活力，稳重从容，岁月静好。\n是音乐让他们走到一起，欢聚一堂！\n他们用音乐表达心声，传递真善美！\n歌咏，咏歌！咏歌堂！",
+  "members": [
+    { "name": "xxx", "role": "女高音", "joinYear": 2024, "avatar": "" },
+    { "name": "xxx", "role": "女中音", "joinYear": 2024, "avatar": "" },
+    { "name": "xxx", "role": "男高音", "joinYear": 2024, "avatar": "" },
+    { "name": "xxx", "role": "男低音", "joinYear": 2024, "avatar": "" }
+  ],
+
+  "aboutImage": "/images/3.jpg",
+  "qrcode": "/images/qrcode.png",
+  "logo": "/logo.svg",
+  "youtube": {
+    "channel": "https://www.youtube.com/@KonzertSingers"
+  },
+  "videos": [
+    { "title": "拥抱夕阳", "description": "Konzert Singers 演绎经典中文作品", "url": "https://www.youtube.com/watch?v=ZATHqkgieAo" },
+    { "title": "青春不留白", "description": "青春主题作品", "url": "https://www.youtube.com/watch?v=Lpgh9dMAoLc" },
+    { "title": "歌唱高山和大海", "description": "Sing of Mountain and Sea", "url": "https://www.youtube.com/watch?v=3skdoKEcqCY" },
+    { "title": "Keindahan Taman", "description": "马来语合唱作品", "url": "https://www.youtube.com/watch?v=Zrb1ISWUvuA" },
+    { "title": "细水长流", "description": "The Stream Flows", "url": "https://www.youtube.com/watch?v=aQU43BwE6x8" },
+    { "title": "Hope 希望", "description": "温暖人心的主题作品", "url": "https://www.youtube.com/watch?v=S960m0B95lQ" }
+  ],
+  "performances": [
+    {
+      "name": "SG60 合唱节",
+      "date": "2025-08-17",
+      "intro": "庆祝新加坡建国60周年的合唱盛会，汇聚多支优秀合唱团共同献唱。",
+      "image": "/images/sg60.jpg",
+      "venue": "新加坡"
+    },
+    {
+      "name": "SOTA 音乐家协会15周年音乐庆典",
+      "date": "2025-11-09",
+      "intro": "新加坡艺术学院音乐家协会十五周年庆典音乐会，致敬艺术与教育的传承。",
+      "image": "/images/sota-15th.JPG",
+      "venue": "SOTA Concert Hall"
+    }
+  ],
+  "footer": {
+    "about": "用音乐传递美好，用和声连接心灵。我们致力于创造美妙的音乐体验，为社区带来艺术的享受。",
+    "schedule": ["每周三 19:00-21:30", "每周日 14:00-17:00"],
+    "location": "排练地点：音乐大厦8楼",
+    "copyright": "© 2024 咏歌堂 Konzert Singers. 保留所有权利. | 让音乐点亮生活"
+  }
+  ,
+  "contact": {
+    "title": "联系我们",
+    "intro": "如果您对我们的演出感兴趣，或者想要加入我们，请随时与我们联系。我们期待与您分享音乐的美好。",
+    "email": "xxx",
+    "phone": "+65 xxxxxxxx",
+    "address": "xxx",
+    "website": "xxx",
+    "socials": [
+      { "name": "Facebook", "href": "https://facebook.com/KonzertSingers" },
+      { "name": "Instagram", "href": "https://instagram.com/KonzertSingers" }
+    ]
+  }
+}
