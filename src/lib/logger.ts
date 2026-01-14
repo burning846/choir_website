@@ -7,10 +7,8 @@ export function logError(err: unknown, context?: string) {
       time: new Date().toISOString(),
     }
     // Placeholder: integrate Sentry or other provider here
-    // eslint-disable-next-line no-console
     console.error('[LOG][ERROR]', payload)
   } catch {
     // noop
   }
 }
-

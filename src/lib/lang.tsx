@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-
-export type Lang = 'en' | 'zh'
+import { Lang } from './types'
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({ lang: 'en', setLang: () => {} })
 
@@ -20,7 +19,4 @@ export function useLang() {
   return useContext(LangContext)
 }
 
-export function docUrl(lang: Lang) {
-  return lang === 'en' ? '/choir-doc.en.json' : '/choir-doc.json'
-}
-
+export { type Lang }

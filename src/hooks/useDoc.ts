@@ -1,7 +1,7 @@
-import { useDocContext } from '@/context/doc'
+import { useContext } from 'react'
+import { DocContext } from '@/context/DocContext'
 
 export function useDoc() {
-  const { doc, loading, error } = useDocContext()
-  return { doc, loading, error }
+  const context = useContext(DocContext)
+  return context
 }
-

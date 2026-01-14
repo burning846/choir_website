@@ -1,10 +1,11 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { render, waitFor } from '@testing-library/react'
 import { LangProvider } from '@/lib/lang'
-import { DocProvider, useDocContext } from '@/context/doc'
+import { DocProvider } from '@/context/doc'
+import { useDoc } from '@/hooks/useDoc'
 
 function Probe() {
-  const { doc, loading, error } = useDocContext()
+  const { doc, loading, error } = useDoc()
   return (
     <div>
       <span data-testid="loading">{String(loading)}</span>
@@ -20,7 +21,7 @@ describe('DocProvider', () => {
       return {
         ok: true,
         json: async () => ({ choirName: '测试合唱团', choirNameEn: 'Test Choir' }),
-      } as any
+      } as unknown as Response
     }))
   })
 
