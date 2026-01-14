@@ -14,7 +14,7 @@ export default function Hero() {
   })()
   const logoUrl = typeof doc?.logo === 'string' ? doc!.logo : logo
   return (
-    <section className="relative text-white overflow-hidden bg-radial-fade">
+    <section id="home" className="relative text-white overflow-hidden bg-radial-fade">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 opacity-80"></div>
       <div className="relative container mx-auto px-4 pt-16 pb-32 z-10">
         <div className="text-center max-w-4xl mx-auto">
