@@ -1,6 +1,9 @@
 import { Users, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { useLang, docUrl } from '@/lib/lang'
+import { useLang } from '@/lib/lang'
+import { useDoc } from '@/hooks/useDoc'
+import SectionTitle from '@/components/ui/SectionTitle'
+import Card from '@/components/ui/Card'
 
 interface Member {
   id: number
@@ -15,16 +18,13 @@ export default function Members() {
   const [docMembers, setDocMembers] = useState<any[]>([])
   const [media, setMedia] = useState<string[]>([])
   const { lang } = useLang()
+  const { doc } = useDoc()
   useEffect(() => {
-    fetch(docUrl(lang), { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        if (!d) return
-        if (d.members && Array.isArray(d.members)) setDocMembers(d.members)
-        if (d.images) setMedia(d.images.map((i: any) => i.file))
-      })
-      .catch(() => {})
-  }, [lang])
+    const d = doc
+    if (!d) return
+    if (d.members && Array.isArray(d.members)) setDocMembers(d.members)
+    if (d.images) setMedia(d.images.map((i: any) => i.file))
+  }, [doc, lang])
   const members: Member[] = docMembers.length
     ? docMembers.map((m: any, idx: number) => ({
         id: idx + 1,
@@ -35,7 +35,7 @@ export default function Members() {
         avatar: (() => {
           const a = typeof m === 'string' ? '' : (m.avatar || '')
           const normalized = a ? (a.startsWith('/') ? a : `/${a}`) : ''
-          return normalized || media[idx % (media.length || 1)] || "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a choir singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
+          return normalized || media[idx % (media.length || 1)] || "/placeholder-avatar.svg"
         })()
       }))
     : [
@@ -102,69 +102,66 @@ export default function Members() {
   })()
 
   return (
-    <section id="members" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section id="members" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">{lang==='en'?'Members':'团员风采'}</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            {lang==='en'?'Our members come from diverse backgrounds, united by a love for music. Everyone contributes to creating beautiful harmony.':'我们的团员来自不同背景，因为对音乐的热爱而聚集在一起。每个人都在为创造美妙的和声贡献自己的力量。'}
-          </p>
-        </div>
+        <SectionTitle title={lang==='en'?'Members':'团员风采'} />
+        <p className="text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          {lang==='en'?'Our members come from diverse backgrounds, united by a love for music. Everyone contributes to creating beautiful harmony.':'我们的团员来自不同背景，因为对音乐的热爱而聚集在一起。每个人都在为创造美妙的和声贡献自己的力量。'}
+        </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {members.map((member) => (
-            <div key={member.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <Card key={member.id} className="overflow-hidden hover:shadow-xl transition-shadow hover:-translate-y-0.5 transition-transform">
               <div className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
                   <img 
                     src={member.avatar} 
                     alt={member.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
+                    className="w-16 h-16 rounded-full object-cover ring-2 ring-brand-300 ring-offset-2 ring-offset-white dark:ring-offset-slate-900"
                   />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
-                    <p className="text-purple-600 text-sm font-medium">{member.voice}</p>
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{member.name}</h3>
+                    <p className="text-purple-600 dark:text-purple-300 text-sm font-medium">{member.voice}</p>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Users className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm text-gray-600">{member.role}</span>
+                    <Users className="h-4 w-4 text-gray-500 dark:text-slate-400" />
+                    <span className="text-sm text-gray-600 dark:text-slate-300">{member.role}</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Star className="h-4 w-4 text-yellow-500" />
-                    <span className="text-sm text-gray-600">{lang==='en'?`Joined in ${member.joinYear}`:`${member.joinYear}年加入`}</span>
+                    <Star className="h-4 w-4 text-yellow-500 dark:text-yellow-400" />
+                    <span className="text-sm text-gray-600 dark:text-slate-300">{lang==='en'?`Joined in ${member.joinYear}`:`${member.joinYear}年加入`}</span>
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">{lang==='en'?'Voice Sections':'声部构成'}</h3>
+          <Card className="p-8 max-w-2xl mx-auto">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">{lang==='en'?'Voice Sections':'声部构成'}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600">{counts.soprano}</div>
-                <div className="text-sm text-gray-600">{lang==='en'?'Soprano':'女高音'}</div>
+                <div className="text-sm text-gray-600 dark:text-slate-300">{lang==='en'?'Soprano':'女高音'}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">{counts.alto}</div>
-                <div className="text-sm text-gray-600">{lang==='en'?'Alto':'女中音'}</div>
+                <div className="text-sm text-gray-600 dark:text-slate-300">{lang==='en'?'Alto':'女中音'}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-green-600">{counts.tenor}</div>
-                <div className="text-sm text-gray-600">{lang==='en'?'Tenor':'男高音'}</div>
+                <div className="text-sm text-gray-600 dark:text-slate-300">{lang==='en'?'Tenor':'男高音'}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-orange-600">{counts.bass}</div>
-                <div className="text-sm text-gray-600">{lang==='en'?'Bass':'男低音'}</div>
+                <div className="text-sm text-gray-600 dark:text-slate-300">{lang==='en'?'Bass':'男低音'}</div>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

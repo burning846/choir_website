@@ -27,19 +27,19 @@ export default function MobileMenu() {
     <div className="md:hidden">
       <button
         onClick={toggleMenu}
-        className="text-white p-2 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
+        className="text-gray-900 dark:text-white p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-colors"
         aria-label={isOpen ? (lang==='en'?'Close Menu':'关闭菜单') : (lang==='en'?'Open Menu':'打开菜单')}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-95">
+        <div className="fixed inset-0 z-50 bg-white/95 dark:bg-gray-900/95">
           <div className="flex flex-col h-full pt-16 px-4 overflow-y-auto">
             <div className="flex justify-end mb-8">
               <button
                 onClick={toggleMenu}
-                className="text-white p-2 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors"
+                className="text-gray-900 dark:text-white p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-colors"
               >
                 <X className="h-8 w-8" />
               </button>
@@ -51,7 +51,7 @@ export default function MobileMenu() {
                   key={item.href}
                   href={item.href}
                   onClick={handleLinkClick}
-                  className="text-white text-xl font-medium py-3 px-4 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors text-center"
+                  className="text-gray-900 dark:text-white text-xl font-medium py-3 px-4 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-colors text-center"
                 >
                   {item.label}
                 </a>
@@ -64,9 +64,9 @@ export default function MobileMenu() {
                 <span>{lang==='en'?'Join':'加入'}</span>
               </button>
               <div className="flex items-center space-x-2 text-sm">
-                <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-white/15 ${lang==='zh'?'bg-white/20 text-white':'text-purple-200 hover:text-white hover:bg-white/10'}`}>中文</button>
-                <span className="text-purple-300">/</span>
-                <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full ring-1 ring-white/15 ${lang==='en'?'bg-white/20 text-white':'text-purple-200 hover:text-white hover:bg-white/10'}`}>EN</button>
+                <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='zh'?'bg-black/5 dark:bg-white/10':'text-purple-600 dark:text-purple-200 hover:text-inherit hover:bg-black/5 dark:hover:bg-white/10'}`}>中文</button>
+                <span className="text-purple-400">/</span>
+                <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='en'?'bg-black/5 dark:bg-white/10':'text-purple-600 dark:text-purple-200 hover:text-inherit hover:bg-black/5 dark:hover:bg-white/10'}`}>EN</button>
               </div>
             </div>
           </div>

@@ -1,18 +1,5 @@
 {
   "choirName": "Konzert Singers",
-  "conductor": {
-    "raw": "Artistic Director & Principal Conductor: Gui Naishun",
-    "avatar": "/images/桂乃顺.jpeg",
-    "bio": "Gui Naishun is dedicated to choral art, focusing on vocal blend and cultural inheritance, leading Konzert Singers to pursue beauty and harmony across diverse repertoire.",
-    "education": "Background in music and choral conducting",
-    "experience": "Years of choral conducting and teaching",
-    "achievements": [
-      "Organized multiple themed concerts",
-      "Explored multilingual and multicultural repertoire",
-      "Improved members' expression and stage performance"
-    ],
-    "philosophy": "Music is a bridge of the soul; choir connects us in harmony."
-  },
   "conductors": [
     {
       "name": "Gui Naishun",
@@ -22,10 +9,6 @@
       "education": "Background in music and choral conducting",
       "experience": "Years of choral conducting and teaching",
       "achievements": [
-        "Organized multiple themed concerts",
-        "Explored multilingual and multicultural repertoire"
-      ],
-      "highlights": [
         "Advanced choral conducting at the Royal Academy of Music; Fellow of the London College of Music",
         "Led choirs to win top international championships; over 100 international gold awards",
         "Multiple Best Conductor awards in Germany, Italy, Austria and Czech Republic",
@@ -43,10 +26,6 @@
       "education": "Master in Choral Conducting (Honors) at Saint Joseph University; Conducting Fellowship Diploma at London College of Music",
       "experience": "Consistent top awards at Singapore Youth Festival; multiple international golds and grand prix; three-time Best Conductor",
       "achievements": [
-        "Planned multiple themed performances",
-        "Enhanced the team’s stage performance"
-      ],
-      "highlights": [
         "Master in Choral Conducting (Honors), Saint Joseph University; Conducting Fellowship, London College of Music",
         "Only Singapore conductor achieving SYF Honours Gold across primary, secondary and junior college",
         "Since 2013, choirs under his baton winning top awards at SYF",
@@ -74,7 +53,7 @@
 
   "aboutImage": "/images/3.jpg",
   "qrcode": "/images/qrcode.png",
-  "logo": "/logo.svg",
+  "logo": "/logo.png",
   "youtube": {
     "channel": "https://www.youtube.com/@KonzertSingers"
   },
@@ -104,20 +83,20 @@
   ],
   "footer": {
     "about": "Sharing beauty through music, connecting hearts in harmony.",
-    "schedule": ["Wednesday 19:00–21:30", "Sunday 14:00–17:00"],
+    "schedule": ["Tuesday 19:30–21:30"],
     "location": "Rehearsal: Music Building, 8F",
     "copyright": "© 2024 Konzert Singers. All rights reserved. | Let music light up life"
   },
   "contact": {
     "title": "Contact Us",
     "intro": "If you’re interested in our performances or wish to join us, feel free to get in touch. We look forward to sharing the beauty of music with you.",
-    "email": "info@starlightchoir.com",
-    "phone": "+86 138-0000-0000",
-    "address": "Chaoyang District, Beijing, Music Building 8F",
-    "website": "www.starlightchoir.com",
+    "email": "xxx",
+    "phone": "+65 xxxx xxxx",
+    "address": "xxx",
+    "website": "choirwebsite.vercel.app",
     "socials": [
-      { "name": "Facebook", "href": "https://facebook.com/starlightchoir" },
-      { "name": "Instagram", "href": "https://instagram.com/starlightchoir" }
+      { "name": "Facebook", "href": "https://facebook.com/konzertsingers" },
+      { "name": "Instagram", "href": "https://instagram.com/konzertsingers" }
     ]
   }
 }
