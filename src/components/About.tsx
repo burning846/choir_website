@@ -17,7 +17,7 @@ export default function About() {
     else if (d.images && d.images.length) setImage(d.images[0].file)
   }, [doc, lang])
   return (
-    <section id="about" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900">
+    <section id="about" className="py-16 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'About':'关于我们'} />
         

@@ -38,7 +38,7 @@ export default function Videos() {
   }, [doc, lang])
 
   return (
-    <section id="videos" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
+    <section id="videos" className="py-16 bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'Works':'作品展示'} />
         
