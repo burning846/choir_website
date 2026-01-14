@@ -4,7 +4,7 @@ import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
 
 export default function Hero() {
-  const [nameCn] = useState('星光合唱团')
+  const [nameCn] = useState('咏歌堂')
   const [logo] = useState<string>('/logo.svg')
   const { lang } = useLang()
   const { doc } = useDoc()

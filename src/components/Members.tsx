@@ -35,7 +35,8 @@ export default function Members() {
         avatar: (() => {
           const a = typeof m === 'string' ? '' : (m.avatar || '')
           const normalized = a ? (a.startsWith('/') ? a : `/${a}`) : ''
-          return normalized || media[idx % (media.length || 1)] || "/placeholder-avatar.svg"
+          const localFallback = idx % 2 === 0 ? '/images/boys.JPG' : '/images/girls.JPG'
+          return normalized || media[idx % (media.length || 1)] || localFallback
         })()
       }))
     : [
@@ -102,7 +103,7 @@ export default function Members() {
   })()
 
   return (
-    <section id="members" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
+    <section id="members" className="py-16 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'Members':'团员风采'} />
         
