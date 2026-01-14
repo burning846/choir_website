@@ -1,16 +1,9 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { useLang, docUrl } from '@/lib/lang'
+import { useEffect, useMemo, useState } from 'react'
+import { useLang } from '@/lib/lang'
+import { docUrl } from '@/lib/utils'
 import { logError } from '@/lib/logger'
-
-type Doc = Record<string, any>
-
-type DocContextValue = {
-  doc: Doc | null
-  loading: boolean
-  error: string | null
-}
-
-const DocContext = createContext<DocContextValue>({ doc: null, loading: false, error: null })
+import { Doc } from '@/lib/types'
+import { DocContext } from './DocContext'
 
 export function DocProvider({ children }: { children: React.ReactNode }) {
   const { lang } = useLang()
@@ -24,7 +17,7 @@ export function DocProvider({ children }: { children: React.ReactNode }) {
     setError(null)
     fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
+      .then((d: Doc | null) => {
         if (cancelled) return
         if (!d) {
           setDoc(null)
@@ -57,8 +50,4 @@ export function DocProvider({ children }: { children: React.ReactNode }) {
 
   const value = useMemo(() => ({ doc, loading, error }), [doc, loading, error])
   return <DocContext.Provider value={value}>{children}</DocContext.Provider>
-}
-
-export function useDocContext() {
-  return useContext(DocContext)
 }

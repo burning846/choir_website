@@ -1,6 +1,6 @@
 import { vi } from 'vitest'
 
-export function mockFetchSequence(responses: Array<Record<string, any>>) {
+export function mockFetchSequence(responses: Array<Record<string, unknown>>) {
   let i = 0
   vi.stubGlobal('fetch', vi.fn(async () => {
     const data = responses[Math.min(i, responses.length - 1)]
@@ -8,7 +8,6 @@ export function mockFetchSequence(responses: Array<Record<string, any>>) {
     return {
       ok: true,
       json: async () => data,
-    } as any
+    } as unknown as Response
   }))
 }
-
