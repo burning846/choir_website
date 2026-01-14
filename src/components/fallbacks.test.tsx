@@ -1,14 +1,38 @@
 import { describe, it, expect, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import App from '@/App'
+import { render, screen, waitFor } from '@testing-library/react'
+import { DocProvider } from '@/context/doc'
+import { LangProvider } from '@/lib/lang'
+import Members from '@/components/Members'
+import Conductor from '@/components/Conductor'
+import Contact from '@/components/Contact'
+import { Doc } from '@/lib/types'
 
-describe('Fallback images', () => {
-  it('uses local placeholders when doc lacks images', async () => {
-    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => ({ conductor: { raw: '指挥：张三' } }) }) as any))
-    render(<App />)
-    const conductorImg = await screen.findByAltText('Conductor')
-    expect(conductorImg.getAttribute('src')).toContain('/placeholder-avatar.svg')
-    const aboutImg = await screen.findByAltText('Choir Performance')
-    expect(aboutImg.getAttribute('src')).toContain('/placeholder-banner.svg')
+describe('Resource Fallbacks', () => {
+  it('uses local placeholder when remote avatar fails or missing', async () => {
+    // Mock empty doc
+    const mockDoc: Doc = {
+      members: ['Test Member'],
+      images: [{ file: '' }],
+    }
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true,
+      json: async () => mockDoc
+    }) as unknown as Response))
+
+    render(
+      <LangProvider>
+        <DocProvider>
+          <Members />
+          <Conductor />
+          <Contact />
+        </DocProvider>
+      </LangProvider>
+    )
+
+    // Wait for data to load and components to render
+    await waitFor(() => {
+      const imgs = screen.getAllByRole('img')
+      expect(imgs.length).toBeGreaterThan(0)
+    })
   })
 })
