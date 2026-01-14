@@ -59,10 +59,10 @@ export default function MobileMenu() {
             </nav>
 
             <div className="mt-8 flex flex-col items-center space-y-4">
-              <button className="inline-flex items-center space-x-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-3 py-1 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
+              <a href="#contact" onClick={handleLinkClick} className="inline-flex items-center space-x-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-3 py-1 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
                 <Sparkles className="h-5 w-5" />
                 <span>{lang==='en'?'Join':'加入'}</span>
-              </button>
+              </a>
               <div className="flex items-center space-x-2 text-sm">
                 <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='zh'?'bg-black/5 dark:bg-white/10':'text-purple-600 dark:text-purple-200 hover:text-inherit hover:bg-black/5 dark:hover:bg-white/10'}`}>中文</button>
                 <span className="text-purple-400">/</span>
