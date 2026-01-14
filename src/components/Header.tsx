@@ -51,10 +51,10 @@ export default function Header() {
             </nav>
 
             <div className="hidden md:flex items-center space-x-3 flex-shrink-0 whitespace-nowrap">
-              <button className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity shadow-md whitespace-nowrap">
+              <a href="#contact" className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity shadow-md whitespace-nowrap">
                 <Sparkles className="h-4 w-4" />
                 <span>{lang==='en'?'Join':'加入'}</span>
-              </button>
+              </a>
               <div className="flex items-center space-x-3 text-sm">
                 <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='zh'?'bg-black/5 text-gray-900 dark:bg-white/20 dark:text-white':'text-purple-700 dark:text-purple-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>中文</button>
                 <span className="text-purple-500 dark:text-purple-300">/</span>

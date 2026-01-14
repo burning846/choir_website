@@ -60,7 +60,7 @@ export default function IntroFromDoc() {
               ) : (
                 <div className="p-8">
                   <div className="flex items-center text-yellow-600 mb-4"><AlertCircle className="h-5 w-5 mr-2"/>中文预览暂不可用</div>
-                  <a href="/Konzert Singers - 咏歌堂 _CN.docx" className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-semibold">
+                  <a href="/choir-doc.json" className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-semibold">
                     <Download className="h-4 w-4" />
                     <span>下载中文资料</span>
                   </a>
@@ -72,7 +72,7 @@ export default function IntroFromDoc() {
               ) : (
                 <div className="p-8">
                   <div className="flex items-center text-yellow-600 mb-4"><AlertCircle className="h-5 w-5 mr-2"/>English preview unavailable</div>
-                  <a href="/Konzert Singers _EN.docx" className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold">
+                  <a href="/choir-doc.en.json" className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold">
                     <Download className="h-4 w-4" />
                     <span>Download English profile</span>
                   </a>
@@ -95,4 +95,3 @@ export default function IntroFromDoc() {
     </section>
   )
 }
-
