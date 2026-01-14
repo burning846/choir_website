@@ -17,7 +17,7 @@ export default function Performances() {
   }, [doc, lang])
 
   return (
-    <section id="performances" className="py-16 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900">
+    <section id="performances" className="py-16 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'Performances':'演出'} />
 
