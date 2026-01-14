@@ -5,52 +5,46 @@
       "name": "Gui Naishun",
       "title": "Artistic Director & Principal Conductor",
       "avatar": "/images/桂乃顺.jpeg",
-      "bio": "Dedicated to choral promotion and practice, focusing on vocal blend and cultural inheritance.",
-      "education": "Background in music and choral conducting",
-      "experience": "Years of choral conducting and teaching",
+      "bio": "A distinguished choral conductor, dedicated to the promotion and practice of choral art, renowned for his exquisite musical interpretation and profound artistic attainments.",
+      "education": "Graduate of the Advanced Choral Conducting program at the Royal Academy of Music, London; Fellow of the London College of Music (FLCM).",
+      "experience": "Founder and Artistic Director of the Singapore Choral Festival; frequently invited as an adjudicator for international choral competitions.",
       "achievements": [
-        "Advanced choral conducting at the Royal Academy of Music; Fellow of the London College of Music",
-        "Led choirs to win top international championships; over 100 international gold awards",
-        "Multiple Best Conductor awards in Germany, Italy, Austria and Czech Republic",
-        "Artistic Director of ‘Song Journey’ and ‘Asia Singing’; Founder and Artistic Director of Singapore Choral Festival",
-        "Choral advisor and music appraisal officer at National Arts Council; member of People’s Association arts advisory",
-        "Cultivated local talent; ~40% of Singapore choral conductors trained by him"
+        "Graduated from the Advanced Choral Conducting program at the Royal Academy of Music; awarded Fellowship of the London College of Music.",
+        "Led choirs to achieve prestigious awards on the international stage, accumulating over 100 gold medals and Grand Prix titles.",
+        "Multiple recipient of the 'Best Conductor' award at international choral festivals in Germany, Italy, Austria, and the Czech Republic.",
+        "Founder and Artistic Director of 'Song Journey' and 'Asia Singing' International Choral Festivals.",
+        "Served as Choral Advisor and Music Appraisal Officer for the National Arts Council of Singapore.",
+        "Dedicated to nurturing local talent; approximately 40% of active Singaporean choral conductors have been trained under his guidance."
       ],
-      "philosophy": "Music is a bridge of the soul; choir connects us in harmony."
+      "philosophy": "Music is the bridge of the soul; choral singing is the harmony that connects us. I hope that through every performance, every listener can feel the power and beauty of music."
     },
     {
       "name": "Feng Kelen",
       "title": "Artistic Director & Conductor",
       "avatar": "/images/冯克伦.jpeg",
-      "bio": "Focuses on choral training and stage presentation, emphasizing subtle expression and overall harmony.",
-      "education": "Master in Choral Conducting (Honors) at Saint Joseph University; Conducting Fellowship Diploma at London College of Music",
-      "experience": "Consistent top awards at Singapore Youth Festival; multiple international golds and grand prix; three-time Best Conductor",
+      "bio": "An outstanding new-generation choral conductor, adept at interpreting diverse musical styles and shaping choral acoustics, active on both local and international stages.",
+      "education": "Master of Arts in Choral Conducting (Honors), University of Saint Joseph; Conducting Fellowship Diploma, London College of Music.",
+      "experience": "Current conductor for several top school choirs, leading them to consistent international gold awards.",
       "achievements": [
-        "Master in Choral Conducting (Honors), Saint Joseph University; Conducting Fellowship, London College of Music",
-        "Only Singapore conductor achieving SYF Honours Gold across primary, secondary and junior college",
-        "Since 2013, choirs under his baton winning top awards at SYF",
-        "International golds and grand prix in Italy, Czech Republic, Russia, China",
-        "Three-time Best Conductor at international competitions",
-        "Frequently invited juror and conducting mentor internationally",
-        "Started at semi-professional choir ‘Vocal Associates’, mentored by Gui Naishun",
-        "Guided by masters including Pedro Monteiro and Maestro Gábor Hollerung",
-        "Conducted Singapore Chinese Orchestra ‘Harmony Voices’ with 200-voice choir",
-        "Choral director for Kit Chan’s ‘My Musical Journey’ concert",
-        "Assistant Conductor at MTDC program, nurturing young singers in secondary schools",
-        "Artistic Director of the inaugural Singapore Choral Festival 2015 (SG50), 1000+ singers",
-        "Currently conducts SAJC, Commonwealth Sec, and Nan Hua Sec top choirs"
+        "Master of Arts in Choral Conducting (Honors), University of Saint Joseph; Fellowship Diploma in Conducting, London College of Music.",
+        "The only conductor in Singapore to lead choirs from Primary, Secondary, and Junior College levels to achieve Honours Gold/Distinction at the Singapore Youth Festival (SYF).",
+        "Since 2013, choirs under his baton have consistently achieved Distinction awards at the SYF Arts Presentation.",
+        "Led choirs to win Gold medals and Grand Prix titles in Italy, the Czech Republic, Russia, and China.",
+        "Three-time recipient of the 'Best Conductor' award at international competitions.",
+        "Frequently invited as an international adjudicator and clinician for conducting masterclasses.",
+        "Served as Artistic Director for the inaugural Singapore Choral Festival (SG50), conducting a mass choir of over 1,000 singers.",
+        "Conducted the Singapore Chinese Orchestra's 'Harmony Voices' concert and the choral segment of Kit Chan's 'My Musical Journey' concert."
       ],
-      "philosophy": "Share beauty through music; connect hearts in harmony."
+      "philosophy": "Conveying beauty through music; connecting hearts through harmony."
     }
   ],
-  "intro": "This is a group of passionate music lovers who believe that sound is not merely a pleasure to the ears, but a resonance of the soul. The body is the most natural instrument, and the blending of different vocal parts can transform into captivating harmonies.\nThis is a group of cultural enthusiasts who embrace diversity. Deeply rooted in their love for Chinese culture, they also welcome the brilliance of cultures around the world, firmly believing that music is the most powerful bridge between cultures and the most enduring path of cultural heritage.\nThis is a group of people who love life. For them, music is the language through which they express life, infusing each day with beautiful melodies.\nAmong them are the young, the middle-aged, and the elderly. Youthful and vibrant, composed and steady, serene and peaceful.\nIt is music that has brought them together, gathering in harmony!\nThrough music, they express their hearts, and convey truth, beauty, and goodness!\nThey sing, and their songs live on.\nKonzert Singers!",
+  "intro": "Konzert Singers is a vibrant choral ensemble, bringing together a community of music lovers who strive for excellence.\n\nWe believe that sound is not merely a pleasure for the ears, but a resonance of the soul. Here, members of different ages and backgrounds gather for their shared passion for music. Whether it is the energetic youth or the wise and steady seniors, we all interpret every moving movement with the most sincere emotions.\n\nWe embrace cultural diversity, passionately performing the profound depths of Chinese culture while warmly welcoming the richness of world music. We believe that music is a universal language and the most touching bridge between cultures.\n\nSing, and let the song live on! At Konzert Singers, we record life through song and convey truth, goodness, and beauty through harmony. Join us to experience the charm of choral singing and let music light up your life!",
   "members": [
-    { "name": "xxx", "role": "Soprano", "joinYear": 2024, "avatar": "" },
-    { "name": "xxx", "role": "Alto", "joinYear": 2024, "avatar": "" },
-    { "name": "xxx", "role": "Tenor", "joinYear": 2024, "avatar": "" },
-    { "name": "xxx", "role": "Bass", "joinYear": 2024, "avatar": "" }
+    { "name": "TBA", "role": "Soprano", "joinYear": 2024, "avatar": "" },
+    { "name": "TBA", "role": "Alto", "joinYear": 2024, "avatar": "" },
+    { "name": "TBA", "role": "Tenor", "joinYear": 2024, "avatar": "" },
+    { "name": "TBA", "role": "Bass", "joinYear": 2024, "avatar": "" }
   ],
-
   "aboutImage": "/images/3.jpg",
   "qrcode": "/images/qrcode.png",
   "logo": "/logo.png",
@@ -58,41 +52,41 @@
     "channel": "https://www.youtube.com/@KonzertSingers"
   },
   "videos": [
-    { "title": "Embracing the Sunset", "description": "Konzert Singers perform a classic Chinese piece", "url": "https://www.youtube.com/watch?v=ZATHqkgieAo" },
-    { "title": "Youth Unfading", "description": "A vibrant youth-themed work", "url": "https://www.youtube.com/watch?v=Lpgh9dMAoLc" },
-    { "title": "Sing of Mountain and Sea", "description": "A piece inspired by nature", "url": "https://www.youtube.com/watch?v=3skdoKEcqCY" },
-    { "title": "Keindahan Taman", "description": "Malay choral work", "url": "https://www.youtube.com/watch?v=Zrb1ISWUvuA" },
-    { "title": "The Stream Flows", "description": "Flowing melodies and emotions", "url": "https://www.youtube.com/watch?v=aQU43BwE6x8" },
-    { "title": "Hope", "description": "Warm and uplifting themes", "url": "https://www.youtube.com/watch?v=S960m0B95lQ" }
+    { "title": "Embracing the Sunset", "description": "Konzert Singers perform a classic Chinese piece with deep emotion and warmth.", "url": "https://www.youtube.com/watch?v=ZATHqkgieAo" },
+    { "title": "Youth Unfading", "description": "A melody brimming with youthful vitality, singing out infinite aspirations for the future.", "url": "https://www.youtube.com/watch?v=Lpgh9dMAoLc" },
+    { "title": "Sing of Mountain and Sea", "description": "A majestic ode to nature, showcasing the grand narrative of choral art.", "url": "https://www.youtube.com/watch?v=3skdoKEcqCY" },
+    { "title": "Keindahan Taman", "description": "A beautiful Malay choral work, displaying the musical charm of diverse cultures.", "url": "https://www.youtube.com/watch?v=Zrb1ISWUvuA" },
+    { "title": "The Stream Flows", "description": "An adaptation of a classic Xinyao song, telling the story of time like a gentle flowing stream.", "url": "https://www.youtube.com/watch?v=aQU43BwE6x8" },
+    { "title": "Hope", "description": "A theme full of positive energy, conveying hope and strength through song.", "url": "https://www.youtube.com/watch?v=S960m0B95lQ" }
   ],
   "performances": [
     {
       "name": "SG60 Choral Festival",
       "date": "2025-08-17",
-      "intro": "A grand choral celebration for Singapore’s 60th anniversary, gathering outstanding choirs to perform together.",
+      "intro": "Celebrating Singapore's 60th anniversary, Konzert Singers will perform alongside other outstanding choirs to bless the nation with song.",
       "image": "/images/sg60.jpg",
       "venue": "Singapore"
     },
     {
-      "name": "SOTA Musicians Association 15th Anniversary Celebration",
+      "name": "SOTA Musicians Association 15th Anniversary Concert",
       "date": "2025-11-09",
-      "intro": "A commemorative concert at SOTA, honoring fifteen years of artistry and education.",
+      "intro": "Honoring the heritage of art and composing a beautiful chapter together. Konzert Singers is invited to perform at the SOTA Musicians Association's 15th Anniversary Celebration.",
       "image": "/images/sota-15th.JPG",
       "venue": "SOTA Concert Hall"
     }
   ],
   "footer": {
-    "about": "Sharing beauty through music, connecting hearts in harmony.",
-    "schedule": ["Tuesday 19:30–21:30"],
+    "about": "Sharing beauty through music, connecting hearts in harmony. We are committed to creating high-quality musical experiences and bringing artistic enjoyment and cultural enrichment to the community.",
+    "schedule": ["Tuesday 19:30 – 21:30"],
     "location": "Rehearsal: Music Building, 8F",
     "copyright": "© 2024 Konzert Singers. All rights reserved. | Let music light up life"
   },
   "contact": {
     "title": "Contact Us",
-    "intro": "If you’re interested in our performances or wish to join us, feel free to get in touch. We look forward to sharing the beauty of music with you.",
-    "email": "xxx",
-    "phone": "+65 xxxx xxxx",
-    "address": "xxx",
+    "intro": "If you are passionate about choral art and looking for like-minded partners, or if you wish to collaborate with us for performances and artistic exchange, please feel free to contact us.",
+    "email": "contact@konzertsingers.sg",
+    "phone": "+65 1234 5678",
+    "address": "80 Marine Parade Road, Singapore",
     "website": "choirwebsite.vercel.app",
     "socials": [
       { "name": "Facebook", "href": "https://facebook.com/konzertsingers" },
