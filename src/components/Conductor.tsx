@@ -45,7 +45,7 @@ export default function Conductor() {
   }, [doc, lang])
 
   return (
-    <section id="conductor" className="py-16 bg-gradient-to-br from-slate-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
+    <section id="conductor" className="py-16 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'Artistic Director':'指挥介绍'} />
         
@@ -56,7 +56,7 @@ export default function Conductor() {
                 <div className="grid md:grid-cols-3">
                   <div className="bg-gradient-to-br from-purple-100 to-blue-100 dark:from-slate-800 dark:to-slate-700 p-8 flex flex-col items-center justify-center h-full space-y-4">
                     <img
-                      src={c.avatar || "/placeholder-avatar.svg"}
+                      src={c.avatar || "/images/3.jpg"}
                       alt={lang==='en'?"Conductor":"指挥"}
                       className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-white dark:ring-white/70 shadow"
                     />
