@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FileText, Download, Languages, AlertCircle } from 'lucide-react'
+import { FileText, Languages, AlertCircle } from 'lucide-react'
 
 function usePublicFile(path: string) {
   const [content, setContent] = useState<string>('')
@@ -59,11 +59,7 @@ export default function IntroFromDoc() {
                 <iframe src="/intro-cn.html" className="w-full h-[600px]" />
               ) : (
                 <div className="p-8">
-                  <div className="flex items-center text-yellow-600 mb-4"><AlertCircle className="h-5 w-5 mr-2"/>中文预览暂不可用</div>
-                  <a href="/choir-doc.json" className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-semibold">
-                    <Download className="h-4 w-4" />
-                    <span>下载中文资料</span>
-                  </a>
+                  <div className="flex items-center text-yellow-600"><AlertCircle className="h-5 w-5 mr-2"/>中文预览暂不可用</div>
                 </div>
               )
             ) : (
@@ -71,11 +67,7 @@ export default function IntroFromDoc() {
                 <iframe src="/intro-en.html" className="w-full h-[600px]" />
               ) : (
                 <div className="p-8">
-                  <div className="flex items-center text-yellow-600 mb-4"><AlertCircle className="h-5 w-5 mr-2"/>English preview unavailable</div>
-                  <a href="/choir-doc.en.json" className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold">
-                    <Download className="h-4 w-4" />
-                    <span>Download English profile</span>
-                  </a>
+                  <div className="flex items-center text-yellow-600"><AlertCircle className="h-5 w-5 mr-2"/>English preview unavailable</div>
                 </div>
               )
             )}
