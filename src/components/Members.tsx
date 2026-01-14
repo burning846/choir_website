@@ -112,7 +112,7 @@ export default function Members() {
         <SectionTitle title={lang === 'en' ? 'Members' : '团员风采'} />
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {members.map((member) => (
+          {members.slice(0, 6).map((member) => (
             <Card key={member.id} className="overflow-hidden hover:shadow-xl transition-shadow hover:-translate-y-0.5 transition-transform">
               <div className="p-6">
                 <div className="flex items-center space-x-4 mb-4">
