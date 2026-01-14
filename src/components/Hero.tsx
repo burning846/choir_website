@@ -5,7 +5,7 @@ import { useDoc } from '@/hooks/useDoc'
 
 export default function Hero() {
   const [nameCn] = useState('咏歌堂')
-  const [logo] = useState<string>('/logo.svg')
+  const [logo] = useState<string>('/logo.png')
   const { lang } = useLang()
   const { doc } = useDoc()
   const choirName = (() => {
