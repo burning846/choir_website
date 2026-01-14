@@ -105,9 +105,6 @@ export default function Members() {
     <section id="members" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'Members':'团员风采'} />
-        <p className="text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
-          {lang==='en'?'Our members come from diverse backgrounds, united by a love for music. Everyone contributes to creating beautiful harmony.':'我们的团员来自不同背景，因为对音乐的热爱而聚集在一起。每个人都在为创造美妙的和声贡献自己的力量。'}
-        </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {members.map((member) => (

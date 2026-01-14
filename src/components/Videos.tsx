@@ -41,9 +41,6 @@ export default function Videos() {
     <section id="videos" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
         <SectionTitle title={lang==='en'?'Works':'作品展示'} />
-          <p className="text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
-            {lang==='en' ? 'Enjoy our performances and feel the charm of choral art. Every song carries our passion and care.' : '欣赏我们的精彩演出，感受合唱艺术的魅力。每一首歌曲都承载着我们的热情和用心。'}
-          </p>
         
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {videos.map((video, index) => (
