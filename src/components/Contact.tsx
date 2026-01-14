@@ -45,7 +45,7 @@ export default function Contact() {
   }, [doc, lang])
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 text-gray-900 dark:from-gray-900 dark:to-blue-900 dark:text-white">
+    <section id="contact" className="py-16 bg-gradient-to-br from-slate-50 to-gray-100 text-gray-900 dark:from-slate-950 dark:to-slate-900 dark:text-white">
       <div className="container mx-auto px-4">
         <SectionTitle
           title={lang==='en'?'Contact & Collaboration':'联系与合作'}
