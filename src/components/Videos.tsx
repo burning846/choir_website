@@ -1,6 +1,9 @@
 import { Play, Calendar, MapPin, Link as LinkIcon, Youtube } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { useLang, docUrl } from '@/lib/lang'
+import { useLang } from '@/lib/lang'
+import { useDoc } from '@/hooks/useDoc'
+import SectionTitle from '@/components/ui/SectionTitle'
+import Card from '@/components/ui/Card'
 
 interface Video {
   id?: string
@@ -25,32 +28,26 @@ export default function Videos() {
     return vidId ? `https://img.youtube.com/vi/${vidId}/hqdefault.jpg` : ''
   }
   const { lang } = useLang()
+  const { doc } = useDoc()
   useEffect(() => {
-    fetch(docUrl(lang), { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        if (!d) return
-        if (Array.isArray(d.videos)) setVideos(d.videos)
-        if (d.youtube && d.youtube.channel) setChannel(d.youtube.channel)
-        if (!Array.isArray(d.videos)) setVideos([])
-      })
-      .catch(() => {})
-  }, [lang])
+    const d = doc
+    if (!d) return
+    if (Array.isArray(d.videos)) setVideos(d.videos)
+    else setVideos([])
+    if (d.youtube && d.youtube.channel) setChannel(d.youtube.channel)
+  }, [doc, lang])
 
   return (
-    <section id="videos" className="py-16 bg-white">
+    <section id="videos" className="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">{lang==='en'?'Works':'作品展示'}</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <SectionTitle title={lang==='en'?'Works':'作品展示'} />
+          <p className="text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
             {lang==='en' ? 'Enjoy our performances and feel the charm of choral art. Every song carries our passion and care.' : '欣赏我们的精彩演出，感受合唱艺术的魅力。每一首歌曲都承载着我们的热情和用心。'}
           </p>
-        </div>
         
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {videos.map((video, index) => (
-            <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-video bg-gray-900 relative group">
                 {getThumbUrl(video) ? (
                   <img src={getThumbUrl(video)} alt={video.title} className="w-full h-full object-cover" />
@@ -76,20 +73,20 @@ export default function Videos() {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{video.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">{video.title}</h3>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center space-x-2">
                     <Calendar className="h-4 w-4 text-purple-600" />
-                    <span className="text-sm text-gray-600">{video.date}</span>
+                    <span className="text-sm text-gray-600 dark:text-slate-300">{video.date}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <MapPin className="h-4 w-4 text-blue-600" />
-                    <span className="text-sm text-gray-600">{video.venue}</span>
+                    <span className="text-sm text-gray-600 dark:text-slate-300">{video.venue}</span>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 text-sm leading-relaxed">{video.description}</p>
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">{video.description}</p>
                 
                 <div className="mt-4 pt-4 border-t border-gray-200">
                   <a
@@ -103,7 +100,7 @@ export default function Videos() {
                   </a>
               </div>
             </div>
-          </div>
+          </Card>
           ))}
         </div>
         

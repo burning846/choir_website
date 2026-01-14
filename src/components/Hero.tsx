@@ -1,36 +1,32 @@
 import { Heart, Star } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { useLang, docUrl } from '@/lib/lang'
+import { useState } from 'react'
+import { useLang } from '@/lib/lang'
+import { useDoc } from '@/hooks/useDoc'
 
 export default function Hero() {
-  const [nameCn, setNameCn] = useState('星光合唱团')
-  const [logo, setLogo] = useState<string>('/logo.svg')
+  const [nameCn] = useState('星光合唱团')
+  const [logo] = useState<string>('/logo.svg')
   const { lang } = useLang()
-  useEffect(() => {
-    fetch(docUrl(lang), { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        if (!d) return
-        const cn = d.choirName?.includes('咏歌堂') ? '咏歌堂' : (d.choirName || nameCn)
-        setNameCn(cn)
-        if (d.logo) setLogo(d.logo)
-      })
-      .catch(() => {})
-  }, [lang])
+  const { doc } = useDoc()
+  const choirName = (() => {
+    const raw = doc?.choirName || nameCn
+    return typeof raw === 'string' && raw.includes('咏歌堂') ? '咏歌堂' : raw
+  })()
+  const logoUrl = typeof doc?.logo === 'string' ? doc!.logo : logo
   return (
-    <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-      <div className="relative container mx-auto px-4 py-24">
+    <section className="relative text-white overflow-hidden bg-radial-fade">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 opacity-80"></div>
+      <div className="relative container mx-auto px-4 pt-16 pb-32 z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <img src={logo} alt="Choir Logo" className="w-20 h-20 rounded-lg" />
+          <div className="flex justify-center mb-6">
+            <img src={logoUrl} alt="Choir Logo" className="w-40 h-40 rounded-lg object-contain dark:invert" />
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tracking-wide">
-            {nameCn}
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 -mt-12 pb-2 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tracking-tight relative z-20">
+            {choirName}
           </h1>
           
-          <p className="text-lg md:text-xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base md:text-lg mb-10 text-blue-100 leading-relaxed max-w-2xl mx-auto">
             {lang==='en'
               ? 'Let music light up life and harmony warm hearts. We are a passionate choir creating beautiful musical experiences.'
               : '用音乐点亮生活，用和声温暖人心。我们是一支充满激情的合唱团，致力于创造美妙的音乐体验。'}
@@ -39,14 +35,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="#videos" 
-              className="inline-flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="inline-flex items-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-3 rounded-full font-semibold transition-colors shadow-soft ring-1 ring-black/5"
             >
               <Heart className="h-5 w-5" />
               <span>{lang==='en'?'Watch Our Performances':'欣赏我们的演出'}</span>
             </a>
             <a 
               href="#contact" 
-              className="inline-flex items-center space-x-2 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="inline-flex items-center space-x-2 bg-transparent border-2 border-white/80 hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-colors shadow-subtle"
             >
               <Star className="h-5 w-5" />
               <span>{lang==='en'?'Join Us':'加入我们'}</span>
