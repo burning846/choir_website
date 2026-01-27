@@ -1,4 +1,3 @@
-import { Users, Star } from 'lucide-react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
 import SectionTitle from '@/components/ui/SectionTitle'
@@ -45,54 +44,6 @@ export default function Members() {
     } else {
       // Fallback data
       members = [
-        {
-          id: 1,
-          name: "张雅文",
-          voice: "女高音声部长",
-          role: "资深团员",
-          joinYear: 2016,
-          avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a female singer, elegant appearance, warm smile, formal attire, artistic lighting, professional headshot style&image_size=square_hd"
-        },
-        {
-          id: 2,
-          name: "王志强",
-          voice: "男高音声部长",
-          role: "资深团员",
-          joinYear: 2017,
-          avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a male singer, confident expression, formal attire, warm lighting, professional headshot style&image_size=square_hd"
-        },
-        {
-          id: 3,
-          name: "李美玲",
-          voice: "女中音",
-          role: "优秀团员",
-          joinYear: 2018,
-          avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a female singer, graceful appearance, gentle smile, elegant attire, soft lighting&image_size=square_hd"
-        },
-        {
-          id: 4,
-          name: "陈建国",
-          voice: "男低音",
-          role: "优秀团员",
-          joinYear: 2019,
-          avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a male singer, mature appearance, distinguished look, formal attire, professional lighting&image_size=square_hd"
-        },
-        {
-          id: 5,
-          name: "刘小雨",
-          voice: "女高音",
-          role: "新团员",
-          joinYear: 2023,
-          avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a young female singer, fresh appearance, bright smile, modern attire, vibrant lighting&image_size=square_hd"
-        },
-        {
-          id: 6,
-          name: "赵文博",
-          voice: "男高音",
-          role: "新团员",
-          joinYear: 2023,
-          avatar: "https://copilot-sg-og.byteintl.net/api/ide/v1/text_to_image?prompt=Professional portrait of a young male singer, energetic appearance, friendly smile, contemporary attire, dynamic lighting&image_size=square_hd"
-        }
       ]
     }
 
@@ -111,35 +62,13 @@ export default function Members() {
       <div className="container mx-auto px-4">
         <SectionTitle title={lang === 'en' ? 'Members' : '团员风采'} />
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {members.slice(0, 6).map((member) => (
-            <Card key={member.id} className="overflow-hidden hover:shadow-xl transition-shadow hover:-translate-y-0.5 transition-transform">
-              <div className="p-6">
-                <div className="flex items-center space-x-4 mb-4">
-                  <img 
-                    src={member.avatar} 
-                    alt={member.name}
-                    className="w-16 h-16 rounded-full object-cover ring-2 ring-brand-300 ring-offset-2 ring-offset-white dark:ring-offset-slate-900"
-                  />
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{member.name}</h3>
-                    <p className="text-purple-600 dark:text-purple-300 text-sm font-medium">{member.voice}</p>
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Users className="h-4 w-4 text-gray-500 dark:text-slate-400" />
-                    <span className="text-sm text-gray-600 dark:text-slate-300">{member.role}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Star className="h-4 w-4 text-yellow-500 dark:text-yellow-400" />
-                    <span className="text-sm text-gray-600 dark:text-slate-300">{lang === 'en' ? `Joined in ${member.joinYear}` : `${member.joinYear}年加入`}</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+            <img src="/images/boys.JPG" alt={lang === 'en' ? 'Male choir' : '男生合照'} className="w-full h-80 object-cover" />
+          </Card>
+          <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+            <img src="/images/girls.JPG" alt={lang === 'en' ? 'Female choir' : '女生合照'} className="w-full h-80 object-cover" />
+          </Card>
         </div>
         
         <div className="text-center mt-12">
