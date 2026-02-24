@@ -39,16 +39,6 @@
     }
   ],
   "intro": "Konzert Singers is a vibrant choral ensemble, bringing together a community of music lovers who strive for excellence.\n\nWe believe that sound is not merely a pleasure for the ears, but a resonance of the soul. Here, members of different ages and backgrounds gather for their shared passion for music. Whether it is the energetic youth or the wise and steady seniors, we all interpret every moving movement with the most sincere emotions.\n\nWe embrace cultural diversity, passionately performing the profound depths of Chinese culture while warmly welcoming the richness of world music. We believe that music is a universal language and the most touching bridge between cultures.\n\nSing, and let the song live on! At Konzert Singers, we record life through song and convey truth, goodness, and beauty through harmony. Join us to experience the charm of choral singing and let music light up your life!",
-  "members": [
-    { "name": "TBA", "role": "Soprano", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Alto", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Tenor", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Bass", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Soprano", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Alto", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Tenor", "joinYear": 2024, "avatar": "" },
-    { "name": "TBA", "role": "Bass", "joinYear": 2024, "avatar": "" }
-  ],
   "aboutImage": "/images/3.jpg",
   "qrcode": "/images/qrcode.png",
   "logo": "/logo.png",
