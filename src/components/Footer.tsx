@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">{lang === 'en' ? 'Schedule' : '演出时间'}</h4>
+            <h4 className="text-lg font-semibold mb-4">{lang === 'en' ? 'Rehearsal Time' : '排练时间'}</h4>
             <div className="text-gray-600 dark:text-gray-400 space-y-2">
               {(footer.schedule || ['每周三 19:00-21:30', '每周日 14:00-17:00']).map((s, i) => (
                 <p key={i}>{s}</p>
