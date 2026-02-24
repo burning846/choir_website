@@ -1,4 +1,4 @@
-import { Play, Calendar, MapPin, Link as LinkIcon, Youtube } from 'lucide-react'
+import { Play, Calendar, MapPin, Link as LinkIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
