@@ -58,7 +58,7 @@ export default function Footer() {
             <span>{nameCn || '合唱团'}</span>
           </div>
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            {footer.copyright || (lang === 'en' ? '© 2024 Konzert Singers. All rights reserved. | Let music light up life' : '© 2024 咏歌堂. 保留所有权利. | 让音乐点亮生活')}
+            {footer.copyright || (lang === 'en' ? '© 2026 Konzert Singers. All rights reserved. | Let music light up life' : '© 2026 咏歌堂. 保留所有权利. | 让音乐点亮生活')}
           </p>
         </div>
       </div>
