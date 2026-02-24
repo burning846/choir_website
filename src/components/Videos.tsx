@@ -59,45 +59,37 @@ export default function Videos() {
                   rel="noopener noreferrer"
                   className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center"
                 >
-                  <div className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Youtube className="h-5 w-5" />
-                    <span>{lang==='en'?'Play on YouTube':'在 YouTube 播放'}</span>
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all transform scale-75 group-hover:scale-100">
+                    <Play className="h-6 w-6 text-red-600 ml-1" fill="currentColor" />
                   </div>
                 </a>
-                <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
-                  YouTube
-                </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">{video.title}</h3>
+              <div className="p-5">
+                <a href={getWatchUrl(video)} target="_blank" rel="noopener noreferrer" className="block group/title">
+                  <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-2 group-hover/title:text-blue-600 transition-colors">{video.title}</h3>
+                </a>
                 
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="h-4 w-4 text-purple-600" />
-                    <span className="text-sm text-gray-600 dark:text-slate-300">{video.date}</span>
+                {(video.date || video.venue) && (
+                  <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-500 dark:text-slate-400">
+                    {video.date && (
+                      <div className="flex items-center">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        <span>{video.date}</span>
+                      </div>
+                    )}
+                    {video.venue && (
+                      <div className="flex items-center">
+                        <MapPin className="h-3 w-3 mr-1" />
+                        <span>{video.venue}</span>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="h-4 w-4 text-blue-600" />
-                    <span className="text-sm text-gray-600 dark:text-slate-300">{video.venue}</span>
-                  </div>
-                </div>
+                )}
                 
-                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">{video.description}</p>
-                
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <a
-                    href={getWatchUrl(video)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-800 transition-colors"
-                  >
-                    <Play className="h-4 w-4" />
-                    <span className="text-sm font-medium">{lang==='en'?'Watch on YouTube':'在YouTube上观看'}</span>
-                  </a>
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-3">{video.description}</p>
               </div>
-            </div>
-          </Card>
+            </Card>
           ))}
         </div>
         
