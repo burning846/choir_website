@@ -1,18 +1,21 @@
 import { Heart, Star } from 'lucide-react'
-import { useState } from 'react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
 
 export default function Hero() {
-  const [nameCn] = useState('咏歌堂')
-  const [logo] = useState<string>('/logo.png')
   const { lang } = useLang()
   const { doc } = useDoc()
-  const choirName = (() => {
-    const raw = doc?.choirName || nameCn
-    return typeof raw === 'string' && raw.includes('咏歌堂') ? '咏歌堂' : raw
-  })()
-  const logoUrl = typeof doc?.logo === 'string' ? doc!.logo : logo
+  
+  const choirName = doc?.choirName || (lang === 'en' ? 'Konzert Singers' : '咏歌堂')
+  const logoUrl = doc?.logo || '/logo.png'
+  
+  const subtitle = doc?.hero?.subtitle || (lang === 'en'
+    ? 'Let music light up life and harmony warm hearts. We are a passionate choir creating beautiful musical experiences.'
+    : '用音乐点亮生活，用和声温暖人心。我们是一支充满激情的合唱团，致力于创造美妙的音乐体验。')
+    
+  const primaryCta = doc?.hero?.primaryCta || (lang === 'en' ? 'Watch Our Performances' : '欣赏我们的演出')
+  const secondaryCta = doc?.hero?.secondaryCta || (lang === 'en' ? 'Join Us' : '加入我们')
+
   return (
     <section id="home" className="relative text-white overflow-hidden bg-radial-fade">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 opacity-80"></div>
@@ -27,9 +30,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-base md:text-lg mb-10 text-blue-100 leading-relaxed max-w-2xl mx-auto">
-            {lang==='en'
-              ? 'Let music light up life and harmony warm hearts. We are a passionate choir creating beautiful musical experiences.'
-              : '用音乐点亮生活，用和声温暖人心。我们是一支充满激情的合唱团，致力于创造美妙的音乐体验。'}
+            {subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -38,14 +39,14 @@ export default function Hero() {
               className="inline-flex items-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-3 rounded-full font-semibold transition-colors shadow-soft ring-1 ring-black/5"
             >
               <Heart className="h-5 w-5" />
-              <span>{lang==='en'?'Watch Our Performances':'欣赏我们的演出'}</span>
+              <span>{primaryCta}</span>
             </a>
             <a 
               href="#contact" 
               className="inline-flex items-center space-x-2 bg-transparent border-2 border-white/80 hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-colors shadow-subtle"
             >
               <Star className="h-5 w-5" />
-              <span>{lang==='en'?'Join Us':'加入我们'}</span>
+              <span>{secondaryCta}</span>
             </a>
           </div>
         </div>

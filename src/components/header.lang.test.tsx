@@ -3,6 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import Header from '@/components/Header'
 import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
+import { ThemeProvider } from '@/context/theme'
 import { mockFetchSequence } from '@/test/mocks'
 import { Doc } from '@/lib/types'
 
@@ -15,11 +16,13 @@ describe('Language Switching', () => {
     mockFetchSequence([enDoc, cnDoc])
 
     render(
-      <LangProvider>
-        <DocProvider>
-          <Header />
-        </DocProvider>
-      </LangProvider>
+      <ThemeProvider>
+        <LangProvider>
+          <DocProvider>
+            <Header />
+          </DocProvider>
+        </LangProvider>
+      </ThemeProvider>
     )
 
     // Check initial EN

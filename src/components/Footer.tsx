@@ -2,10 +2,13 @@ import { Music, Heart } from 'lucide-react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
 import { FooterInfo } from '@/lib/types'
+import { uiTranslations } from '@/lib/i18n'
 
 export default function Footer() {
   const { lang } = useLang()
   const { doc } = useDoc()
+  const ts = uiTranslations[lang].sections
+  const tf = uiTranslations[lang].footer
 
   let footer: FooterInfo = {}
   let nameCn = ''
@@ -30,18 +33,20 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">{lang === 'en' ? 'Quick Links' : '快速链接'}</h4>
+            <h4 className="text-lg font-semibold mb-4">{tf.quickLinks}</h4>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li><a href="#about" className="hover:text-gray-900 dark:hover:text-white transition-colors">{lang === 'en' ? 'About' : '关于我们'}</a></li>
-              <li><a href="#conductor" className="hover:text-gray-900 dark:hover:text-white transition-colors">{lang === 'en' ? 'Artistic Director' : '指挥介绍'}</a></li>
-              <li><a href="#members" className="hover:text-gray-900 dark:hover:text-white transition-colors">{lang === 'en' ? 'Members' : '团员风采'}</a></li>
-              <li><a href="#videos" className="hover:text-gray-900 dark:hover:text-white transition-colors">{lang === 'en' ? 'Works' : '作品展示'}</a></li>
-              <li><a href="#contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">{lang === 'en' ? 'Contact & Collaboration' : '联系与合作'}</a></li>
+              <li><a href="#about" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.about}</a></li>
+              <li><a href="#conductor" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.conductor}</a></li>
+              {Array.isArray(doc?.members) && doc.members.length > 0 && (
+                <li><a href="#members" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.members}</a></li>
+              )}
+              <li><a href="#videos" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.videos}</a></li>
+              <li><a href="#contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.contact}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">{lang === 'en' ? 'Rehearsal Time' : '排练时间'}</h4>
+            <h4 className="text-lg font-semibold mb-4">{tf.rehearsalTime}</h4>
             <div className="text-gray-600 dark:text-gray-400 space-y-2">
               {(footer.schedule || ['每周三 19:00-21:30', '每周日 14:00-17:00']).map((s, i) => (
                 <p key={i}>{s}</p>
@@ -53,7 +58,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
           <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 mb-4">
-            <span>{lang === 'en' ? 'Made with care' : '用心制作'}</span>
+            <span>{tf.madeWithCare}</span>
             <Heart className="h-4 w-4 text-red-500" />
             <span>{nameCn || '合唱团'}</span>
           </div>

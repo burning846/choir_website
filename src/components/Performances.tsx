@@ -1,29 +1,24 @@
-import { useEffect, useState } from 'react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
+import { uiTranslations } from '@/lib/i18n'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
 
-type Perf = { name: string; date: string; intro: string; image?: string; venue?: string }
-
 export default function Performances() {
   const { lang } = useLang()
-  const [performances, setPerformances] = useState<Perf[]>([])
   const { doc } = useDoc()
-  useEffect(() => {
-    const d = doc
-    if (d && Array.isArray(d.performances)) setPerformances(d.performances)
-    else setPerformances([])
-  }, [doc, lang])
+  const ts = uiTranslations[lang].sections
+  const tc = uiTranslations[lang].common
+  const performances = Array.isArray(doc?.performances) ? doc.performances : []
 
   return (
     <section id="performances" className="py-16 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4">
-        <SectionTitle title={lang==='en'?'Performances':'演出'} />
+        <SectionTitle title={ts.performances} />
 
         {performances.length === 0 ? (
           <div className="max-w-3xl mx-auto text-center text-gray-600">
-            {lang==='en'?'More performance info coming soon.':'敬请期待更多演出信息。'}
+            {tc.moreInfoComingSoon}
           </div>
         ) : (
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">

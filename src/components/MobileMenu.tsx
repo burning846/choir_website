@@ -1,18 +1,23 @@
 import { useState } from 'react'
 import { useLang } from '@/lib/lang'
+import { useDoc } from '@/hooks/useDoc'
 import { Menu, X, Sparkles } from 'lucide-react'
+import { uiTranslations } from '@/lib/i18n'
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const { lang, setLang } = useLang()
+  const { doc } = useDoc()
+  const t = uiTranslations[lang].nav
+  const tc = uiTranslations[lang].common
 
   const menuItems = [
-    { href: '#about', label: lang==='en'?'About':'关于我们' },
-    { href: '#conductor', label: lang==='en'?'Artistic Director':'指挥介绍' },
-    { href: '#members', label: lang==='en'?'Members':'团员风采' },
-    { href: '#videos', label: lang==='en'?'Works':'作品展示' },
-    { href: '#performances', label: lang==='en'?'Performances':'演出' },
-    { href: '#contact', label: lang==='en'?'Contact & Collaboration':'联系与合作' }
+    { href: '#about', label: t.about },
+    { href: '#conductor', label: t.conductor },
+    ...(Array.isArray(doc?.members) && doc!.members.length > 0 ? [{ href: '#members', label: t.members }] : []),
+    { href: '#videos', label: t.videos },
+    { href: '#performances', label: t.performances },
+    { href: '#contact', label: t.contact }
   ]
 
   const toggleMenu = () => {
@@ -61,7 +66,7 @@ export default function MobileMenu() {
             <div className="mt-8 flex flex-col items-center space-y-4">
               <a href="#contact" onClick={handleLinkClick} className="inline-flex items-center space-x-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400 text-gray-900 px-3 py-1 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
                 <Sparkles className="h-5 w-5" />
-                <span>{lang==='en'?'Join':'加入'}</span>
+                <span>{tc.join}</span>
               </a>
               <div className="flex items-center space-x-2 text-sm">
                 <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='zh'?'bg-black/5 dark:bg-white/10':'text-purple-600 dark:text-purple-200 hover:text-inherit hover:bg-black/5 dark:hover:bg-white/10'}`}>中文</button>

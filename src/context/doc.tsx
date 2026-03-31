@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useLang } from '@/lib/lang'
 import { docUrl } from '@/lib/utils'
 import { logError } from '@/lib/logger'
-import { Doc } from '@/lib/types'
+import { Doc, DocSchema } from '@/lib/types'
 import { DocContext } from './DocContext'
 
 export function DocProvider({ children }: { children: React.ReactNode }) {
@@ -17,7 +17,7 @@ export function DocProvider({ children }: { children: React.ReactNode }) {
     setError(null)
     fetch(docUrl(lang), { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : null))
-      .then((d: Doc | null) => {
+      .then((d: unknown) => {
         if (cancelled) return
         if (!d) {
           setDoc(null)
@@ -25,11 +25,24 @@ export function DocProvider({ children }: { children: React.ReactNode }) {
           logError(new Error('doc load failed'), 'DocProvider')
           return
         }
-        setDoc(d)
+        
+        const parseResult = DocSchema.safeParse(d)
+        if (!parseResult.success) {
+          console.error('Doc schema validation failed', parseResult.error)
+          logError(new Error('doc schema validation failed'), 'DocProvider')
+          // Enforce schema validation: reject invalid document
+          setDoc(null)
+          setError('validation_failed')
+          return
+        }
+        
+        const validDoc = parseResult.data
+        setDoc(validDoc)
+        
         const title =
           lang === 'en'
-            ? (d.choirNameEn || d.choirName || document.title)
-            : (d.choirName || d.choirNameEn || document.title)
+            ? (validDoc.choirNameEn || validDoc.choirName || document.title)
+            : (validDoc.choirName || validDoc.choirNameEn || document.title)
         if (typeof title === 'string' && title.trim()) {
           document.title = title
         }
