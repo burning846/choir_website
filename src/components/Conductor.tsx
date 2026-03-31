@@ -1,6 +1,7 @@
 import { User, Music, Award } from 'lucide-react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
+import { uiTranslations } from '@/lib/i18n'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
 import { Conductor as ConductorType } from '@/lib/types'
@@ -8,45 +9,20 @@ import { Conductor as ConductorType } from '@/lib/types'
 export default function Conductor() {
   const { lang } = useLang()
   const { doc } = useDoc()
+  const ts = uiTranslations[lang].sections
 
-  let conductors: ConductorType[] = []
-  if (doc) {
-    if (doc.conductors && Array.isArray(doc.conductors)) {
-      conductors = doc.conductors.map((c) => ({
-        name: c.name || '',
+  const conductors: ConductorType[] = Array.isArray(doc?.conductors) 
+    ? doc.conductors.map(c => ({
+        ...c,
         title: c.title || (lang === 'en' ? 'Artistic Director & Conductor' : '艺术总监 & 指挥'),
-        experience: c.experience || '',
-        education: c.education || '',
-        achievements: Array.isArray(c.achievements) ? c.achievements : [],
-        bio: c.bio || '',
-        philosophy: c.philosophy || '',
-        avatar: c.avatar && (c.avatar.startsWith('/') ? c.avatar : `/${c.avatar}`),
-        highlights: c.highlights || [],
+        avatar: c.avatar && c.avatar.startsWith('/') ? c.avatar : c.avatar ? `/${c.avatar}` : '/placeholder-avatar.svg'
       }))
-    } else if (doc.conductor) {
-      const raw = doc.conductor.raw || ''
-      const parts = raw.split('：')
-      const title = parts[0] || ''
-      const name = parts[1] || ''
-      const single: ConductorType = {
-        name,
-        title: title || (lang === 'en' ? 'Artistic Director & Conductor' : '艺术总监 & 指挥'),
-        experience: doc.conductor.experience || '',
-        education: doc.conductor.education || '',
-        achievements: Array.isArray(doc.conductor.achievements) ? doc.conductor.achievements : [],
-        bio: doc.conductor.bio || '',
-        philosophy: doc.conductor.philosophy || '',
-        avatar: doc.conductor.avatar && (doc.conductor.avatar.startsWith('/') ? doc.conductor.avatar : `/${doc.conductor.avatar}`),
-        highlights: doc.conductor.highlights || [],
-      }
-      conductors = [single]
-    }
-  }
+    : []
 
   return (
     <section id="conductor" className="py-16 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
-        <SectionTitle title={lang === 'en' ? 'Artistic Director' : '指挥介绍'} />
+        <SectionTitle title={ts.conductor} />
         
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 gap-8">

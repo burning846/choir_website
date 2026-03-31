@@ -1,22 +1,21 @@
 import { Play, Calendar, MapPin, Link as LinkIcon } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
-
-interface Video {
-  id?: string
-  title: string
-  date?: string
-  venue?: string
-  description?: string
-  url?: string
-}
+import { uiTranslations } from '@/lib/i18n'
+import { Video } from '@/lib/types'
 
 export default function Videos() {
-  const [videos, setVideos] = useState<Video[]>([])
-  const [channel, setChannel] = useState<string>('https://www.youtube.com/@KonzertSingers')
+  const { lang } = useLang()
+  const { doc } = useDoc()
+  const ts = uiTranslations[lang].sections
+
+  const tc = uiTranslations[lang].common
+
+  const videos = Array.isArray(doc?.videos) ? doc.videos : []
+  const channel = doc?.youtube?.channel || 'https://www.youtube.com/@KonzertSingers'
+
   const getVideoId = (url?: string) => {
     if (!url) return ''
     const m = url.match(/[?&]v=([\w-]+)/) || url.match(/youtu\.be\/([\w-]+)/)
@@ -27,20 +26,11 @@ export default function Videos() {
     const vidId = video.id || getVideoId(video.url)
     return vidId ? `https://img.youtube.com/vi/${vidId}/hqdefault.jpg` : ''
   }
-  const { lang } = useLang()
-  const { doc } = useDoc()
-  useEffect(() => {
-    const d = doc
-    if (!d) return
-    if (Array.isArray(d.videos)) setVideos(d.videos)
-    else setVideos([])
-    if (d.youtube && d.youtube.channel) setChannel(d.youtube.channel)
-  }, [doc, lang])
 
   return (
     <section id="videos" className="py-16 bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-slate-950 dark:to-slate-900">
       <div className="container mx-auto px-4">
-        <SectionTitle title={lang==='en'?'Works':'作品展示'} />
+        <SectionTitle title={ts.videos} />
         
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {videos.map((video, index) => (
@@ -101,7 +91,7 @@ export default function Videos() {
             className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors"
           >
             <Play className="h-5 w-5" />
-            <span className="font-medium">{lang==='en'?'Visit Channel':'访问频道'}</span>
+            <span className="font-medium">{tc.visitChannel}</span>
           </a>
         </div>
       </div>

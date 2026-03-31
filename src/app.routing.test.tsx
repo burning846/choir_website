@@ -7,6 +7,6 @@ describe('Routing', () => {
     vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => ({}) }) as unknown as Response))
     window.history.pushState({}, '', '/unknown')
     render(<App />)
-    expect(await screen.findByText('页面不存在或已移除')).toBeInTheDocument()
+    expect(await screen.findByText(/Page Not Found|页面不存在或已移除/)).toBeInTheDocument()
   })
 })

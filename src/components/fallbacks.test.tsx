@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
+import { ThemeProvider } from '@/context/theme'
 import Members from '@/components/Members'
 import Conductor from '@/components/Conductor'
 import Contact from '@/components/Contact'
@@ -11,7 +12,7 @@ describe('Resource Fallbacks', () => {
   it('uses local placeholder when remote avatar fails or missing', async () => {
     // Mock empty doc
     const mockDoc: Doc = {
-      members: ['Test Member'],
+      members: [{ name: 'Test Member', role: 'Soprano', joinYear: 2024 }],
       images: [{ file: '' }],
     }
     vi.stubGlobal('fetch', vi.fn(async () => ({
@@ -20,13 +21,15 @@ describe('Resource Fallbacks', () => {
     }) as unknown as Response))
 
     render(
-      <LangProvider>
-        <DocProvider>
-          <Members />
-          <Conductor />
-          <Contact />
-        </DocProvider>
-      </LangProvider>
+      <ThemeProvider>
+        <LangProvider>
+          <DocProvider>
+            <Members />
+            <Conductor />
+            <Contact />
+          </DocProvider>
+        </LangProvider>
+      </ThemeProvider>
     )
 
     // Wait for data to load and components to render

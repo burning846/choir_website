@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { render } from '@testing-library/react'
 import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
+import { ThemeProvider } from '@/context/theme'
 import Home from '@/pages/Home'
 import { Doc } from '@/lib/types'
 
@@ -24,11 +25,13 @@ describe('Meta Info', () => {
     }) as unknown as Response))
 
     render(
-      <LangProvider>
-        <DocProvider>
-          <Home />
-        </DocProvider>
-      </LangProvider>
+      <ThemeProvider>
+        <LangProvider>
+          <DocProvider>
+            <Home />
+          </DocProvider>
+        </LangProvider>
+      </ThemeProvider>
     )
 
     // DocProvider updates document.title
