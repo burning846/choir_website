@@ -9,7 +9,9 @@ export default function Performances() {
   const { doc } = useDoc()
   const ts = uiTranslations[lang].sections
   const tc = uiTranslations[lang].common
-  const performances = Array.isArray(doc?.performances) ? doc.performances : []
+  const performances = Array.isArray(doc?.performances) 
+    ? [...doc.performances].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    : []
 
   return (
     <section id="performances" className="py-16 bg-white dark:bg-slate-900">
