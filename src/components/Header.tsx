@@ -19,12 +19,12 @@ export default function Header() {
           <div className="flex items-center justify-between px-4 md:px-6 py-3">
             <a href="#home" className="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0 min-w-0">
               <img
-                src="/images/logo-03.png"
+                src="/images/logo-01.png"
                 alt="Logo"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 max-w-none rounded-lg object-contain p-1 dark:hidden"
               />
               <img
-                src="/images/logo-04.png"
+                src="/images/logo-02.png"
                 alt="Logo"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 max-w-none rounded-lg object-contain p-1 hidden dark:block"
               />
