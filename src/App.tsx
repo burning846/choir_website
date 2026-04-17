@@ -5,6 +5,7 @@ import { DocProvider } from "@/context/doc";
 import { ThemeProvider } from "@/context/theme";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import NotFound from "@/pages/NotFound";
+import May10Performance from "@/pages/May10Performance";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
             <Router>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/performance-may-10" element={<May10Performance />} />
                 <Route path="/other" element={<div className="text-center text-xl">Other Page - Coming Soon</div>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
