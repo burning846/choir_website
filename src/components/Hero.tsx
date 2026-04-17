@@ -25,7 +25,7 @@ export default function Hero() {
             <img src="/images/logo-04.png" alt="Choir Logo" className="w-40 h-40 rounded-lg object-contain hidden dark:block" />
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 -mt-12 pb-2 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tracking-tight relative z-20">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 mt-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tracking-tight relative z-20">
             {choirName}
           </h1>
           
