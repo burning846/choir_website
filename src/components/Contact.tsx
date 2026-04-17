@@ -84,20 +84,20 @@ export default function Contact() {
             <div className="space-y-4 mb-8">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="rounded-full p-2 mt-1 ring-1 ring-black/10 bg-black/5 dark:ring-white/20 dark:bg-white/10">
+                  <div className="rounded-full p-2 mt-1 ring-1 ring-black/10 bg-black/5 dark:ring-white/20 dark:bg-white/10 flex-shrink-0">
                     <item.icon className="h-5 w-5 text-yellow-500 dark:text-yellow-300" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-semibold text-gray-800 dark:text-yellow-300">{item.label}</h4>
                     {item.href ? (
                       <a 
                         href={item.href}
-                        className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                        className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors break-words break-all"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-gray-700 dark:text-gray-300">{item.value}</p>
+                      <p className="text-gray-700 dark:text-gray-300 break-words">{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -126,15 +126,17 @@ export default function Contact() {
             )}
           </div>
           
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex justify-center w-full">
             {qrcode && (
-              <Card className="p-6 text-gray-800 dark:text-slate-200 text-center">
-                <div className="flex items-center justify-center space-x-2 mb-3">
+              <Card className="p-6 md:p-8 text-gray-800 dark:text-slate-200 text-center w-full max-w-sm mx-auto">
+                <div className="flex items-center justify-center space-x-2 mb-4">
                   <QrCode className="h-5 w-5 text-gray-700 dark:text-slate-300" />
-                  <span className="font-semibold">{tc.joinQrCode}</span>
+                  <span className="font-semibold text-lg">{tc.joinQrCode}</span>
                 </div>
-                <img src={qrcode} alt={tc.joinQrCode} className="w-56 h-56 mx-auto rounded" />
-                <p className="text-sm text-gray-600 dark:text-slate-300 mt-2">{tc.scanToJoin}</p>
+                <div className="w-full max-w-[240px] aspect-square mx-auto bg-white rounded-xl shadow-sm ring-1 ring-black/5 overflow-hidden">
+                  <img src={qrcode} alt={tc.joinQrCode} className="w-full h-full object-contain" />
+                </div>
+                <p className="text-sm text-gray-600 dark:text-slate-300 mt-4">{tc.scanToJoin}</p>
               </Card>
             )}
           </div>
