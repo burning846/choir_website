@@ -6,10 +6,18 @@ import Footer from '@/components/Footer'
 import { uiTranslations } from '@/lib/i18n'
 
 interface Song {
+  id?: number
   title: string
   composer: string
+  language?: string
   description: string
   lyrics: string[]
+}
+
+interface PerformancePart {
+  title: string
+  theme: string
+  songs: Song[]
 }
 
 interface PerformanceData {
@@ -19,7 +27,7 @@ interface PerformanceData {
   venue: string
   description: string
   highlights: string[]
-  songs: Song[]
+  parts: PerformancePart[]
 }
 
 export default function May10Performance() {
@@ -117,46 +125,72 @@ export default function May10Performance() {
           )}
 
           {/* Program List */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white flex items-center justify-center space-x-3">
               <Music className="w-8 h-8 text-purple-500" />
               <span>{lang === 'en' ? 'Program & Lyrics' : '节目单与歌词'}</span>
               <Music className="w-8 h-8 text-purple-500" />
             </h2>
             
-            <div className="space-y-8">
-              {data.songs.map((song, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-slate-700 hover:shadow-2xl transition-shadow duration-300">
-                  <div className="p-8 md:p-10">
-                    <div className="mb-6 border-b border-gray-100 dark:border-slate-700 pb-6">
-                      <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                          <span className="text-purple-500 mr-3">{index + 1}.</span>
-                          {song.title}
-                        </h3>
-                        <span className="text-gray-500 dark:text-gray-400 font-medium italic">
-                          {song.composer}
-                        </span>
-                      </div>
-                      <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {song.description}
-                      </p>
-                    </div>
-                    
-                    <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-6 md:p-8">
-                      <h4 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
-                        {lang === 'en' ? 'Lyrics' : '歌词'}
-                      </h4>
-                      <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
-                        {song.lyrics.map((line, i) => (
-                          <p key={i}>{line}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+            {data.parts.map((part, partIndex) => (
+              <div key={partIndex} className="space-y-8">
+                <div className="text-center space-y-2 mb-8">
+                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400">{part.title}</h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">{part.theme}</p>
                 </div>
-              ))}
-            </div>
+                
+                <div className="space-y-8">
+                  {part.songs.map((song, index) => (
+                    <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-slate-700 hover:shadow-2xl transition-shadow duration-300">
+                      <div className="p-8 md:p-10">
+                        <div className="mb-6 border-b border-gray-100 dark:border-slate-700 pb-6">
+                          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
+                            <h4 className="text-2xl font-bold text-gray-900 dark:text-white">
+                              <span className="text-purple-500 mr-3">{song.id || index + 1}.</span>
+                              {song.title}
+                            </h4>
+                            <div className="flex flex-col md:items-end text-sm md:text-base">
+                              <span className="text-gray-500 dark:text-gray-400 font-medium italic">
+                                {song.composer}
+                              </span>
+                              {song.language && (
+                                <span className="text-blue-500/80 dark:text-blue-400/80 mt-1 font-medium">
+                                  {song.language}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                            {song.description}
+                          </p>
+                        </div>
+                        
+                        <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-6 md:p-8">
+                          <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
+                            {lang === 'en' ? 'Lyrics' : '歌词'}
+                          </h5>
+                          <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
+                            {song.lyrics.map((line, i) => (
+                              <p key={i}>{line}</p>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {partIndex === 0 && (
+                  <div className="flex items-center justify-center py-12">
+                    <div className="h-px bg-gray-200 dark:bg-slate-700 w-full max-w-[10rem] md:max-w-xs mx-auto"></div>
+                    <span className="px-6 text-gray-400 dark:text-gray-500 font-medium whitespace-nowrap">
+                      {lang === 'en' ? 'Intermission (15 minutes)' : '中场休息 (15分钟)'}
+                    </span>
+                    <div className="h-px bg-gray-200 dark:bg-slate-700 w-full max-w-[10rem] md:max-w-xs mx-auto"></div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
