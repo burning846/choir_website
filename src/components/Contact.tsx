@@ -126,17 +126,17 @@ export default function Contact() {
             )}
           </div>
           
-          <div className="lg:col-span-1 flex justify-center w-full">
+          <div className="lg:col-span-1 flex justify-center w-full px-2 sm:px-0">
             {qrcode && (
-              <Card className="p-6 md:p-8 text-gray-800 dark:text-slate-200 text-center w-full max-w-sm mx-auto">
+              <Card className="p-4 sm:p-6 md:p-8 text-gray-800 dark:text-slate-200 text-center w-full max-w-sm mx-auto overflow-hidden">
                 <div className="flex items-center justify-center space-x-2 mb-4">
-                  <QrCode className="h-5 w-5 text-gray-700 dark:text-slate-300" />
-                  <span className="font-semibold text-lg">{tc.joinQrCode}</span>
+                  <QrCode className="h-5 w-5 text-gray-700 dark:text-slate-300 flex-shrink-0" />
+                  <span className="font-semibold text-base sm:text-lg whitespace-nowrap">{tc.joinQrCode}</span>
                 </div>
-                <div className="w-full max-w-[240px] aspect-square mx-auto bg-white rounded-xl shadow-sm ring-1 ring-black/5 overflow-hidden">
+                <div className="w-full max-w-[200px] sm:max-w-[240px] aspect-square mx-auto bg-white rounded-xl shadow-sm ring-1 ring-black/5 overflow-hidden">
                   <img src={qrcode} alt={tc.joinQrCode} className="w-full h-full object-contain" />
                 </div>
-                <p className="text-sm text-gray-600 dark:text-slate-300 mt-4">{tc.scanToJoin}</p>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 mt-4 break-words">{tc.scanToJoin}</p>
               </Card>
             )}
           </div>
