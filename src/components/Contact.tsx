@@ -62,7 +62,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-br from-slate-50 to-gray-100 text-gray-900 dark:from-slate-950 dark:to-slate-900 dark:text-white">
+    <section id="contact" className="py-16 bg-gradient-to-br from-slate-50 to-gray-100 text-gray-900 dark:from-slate-950 dark:to-slate-900 dark:text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <SectionTitle
           title={title}
@@ -87,17 +87,17 @@ export default function Contact() {
                   <div className="rounded-full p-2 mt-1 ring-1 ring-black/10 bg-black/5 dark:ring-white/20 dark:bg-white/10 flex-shrink-0">
                     <item.icon className="h-5 w-5 text-yellow-500 dark:text-yellow-300" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-800 dark:text-yellow-300">{item.label}</h4>
                     {item.href ? (
                       <a 
                         href={item.href}
-                        className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors break-words break-all"
+                        className="inline-block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors break-words break-all"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-gray-700 dark:text-gray-300 break-words">{item.value}</p>
+                      <p className="text-gray-700 dark:text-gray-300 break-words break-all">{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default function Contact() {
             {socialLinks.length > 0 && (
               <div>
                 <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{uiTranslations[lang].contact.followUs}</h4>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
