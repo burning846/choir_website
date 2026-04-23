@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { ArrowLeft, Calendar, MapPin, Clock, Music, Loader2 } from 'lucide-react'
+import { ArrowLeft, Calendar, MapPin, Clock, Music, Loader2, Moon, Sun } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLang } from '@/lib/lang'
+import { useTheme } from '@/hooks/useTheme'
 import Footer from '@/components/Footer'
 import { uiTranslations } from '@/lib/i18n'
 
@@ -31,7 +32,8 @@ interface PerformanceData {
 }
 
 export default function May10Performance() {
-  const { lang } = useLang()
+  const { lang, setLang } = useLang()
+  const { isDark, toggleTheme } = useTheme()
   const tc = uiTranslations[lang].common
   const [data, setData] = useState<PerformanceData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -77,10 +79,27 @@ export default function May10Performance() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900 text-gray-900 dark:text-gray-100">
       {/* Header Area */}
       <div className="container mx-auto px-6 py-8">
-        <Link to="/" className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors mb-8 group">
-          <ArrowLeft className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" />
-          <span className="font-medium">{tc.backToHome}</span>
-        </Link>
+        <div className="flex justify-between items-center mb-8">
+          <Link to="/" className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors group">
+            <ArrowLeft className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" />
+            <span className="font-medium">{tc.backToHome}</span>
+          </Link>
+          
+          <div className="flex items-center space-x-3 text-sm">
+            <div className="flex items-center space-x-2">
+              <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='zh'?'bg-black/5 text-gray-900 dark:bg-white/20 dark:text-white':'text-purple-700 dark:text-purple-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>中文</button>
+              <span className="text-purple-500 dark:text-purple-300">/</span>
+              <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='en'?'bg-black/5 text-gray-900 dark:bg-white/20 dark:text-white':'text-purple-700 dark:text-purple-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>EN</button>
+            </div>
+            <button
+              onClick={toggleTheme}
+              aria-label={tc.toggleTheme}
+              className="ml-2 inline-flex items-center justify-center w-10 h-10 rounded-full ring-1 ring-black/10 dark:ring-white/15 bg-slate-200 dark:bg-gray-800/60 hover:bg-slate-300 dark:hover:bg-white/10 transition-colors shadow-subtle"
+            >
+              {isDark ? <Sun className="h-4 w-4 text-yellow-300" /> : <Moon className="h-4 w-4 text-slate-700" />}
+            </button>
+          </div>
+        </div>
         
         <div className="max-w-4xl mx-auto">
           {/* Hero Section */}
