@@ -84,21 +84,6 @@ export default function May10Performance() {
             <ArrowLeft className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">{tc.backToHome}</span>
           </Link>
-          
-          <div className="flex items-center space-x-3 text-sm">
-            <div className="flex items-center space-x-2">
-              <button onClick={() => setLang('zh')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='zh'?'bg-black/5 text-gray-900 dark:bg-white/20 dark:text-white':'text-purple-700 dark:text-purple-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>中文</button>
-              <span className="text-purple-500 dark:text-purple-300">/</span>
-              <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full ring-1 ring-black/10 dark:ring-white/15 ${lang==='en'?'bg-black/5 text-gray-900 dark:bg-white/20 dark:text-white':'text-purple-700 dark:text-purple-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>EN</button>
-            </div>
-            <button
-              onClick={toggleTheme}
-              aria-label={tc.toggleTheme}
-              className="ml-2 inline-flex items-center justify-center w-10 h-10 rounded-full ring-1 ring-black/10 dark:ring-white/15 bg-slate-200 dark:bg-gray-800/60 hover:bg-slate-300 dark:hover:bg-white/10 transition-colors shadow-subtle"
-            >
-              {isDark ? <Sun className="h-4 w-4 text-yellow-300" /> : <Moon className="h-4 w-4 text-slate-700" />}
-            </button>
-          </div>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -214,6 +199,37 @@ export default function May10Performance() {
         </div>
       </div>
       
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 flex flex-col items-center space-y-3">
+        <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg p-2 rounded-full shadow-2xl border border-gray-200/50 dark:border-slate-700/50 flex flex-col space-y-2 items-center">
+          <div className="flex flex-col items-center bg-slate-100/50 dark:bg-slate-900/50 rounded-full p-1 space-y-1">
+            <button 
+              onClick={() => setLang('zh')} 
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${lang==='zh'?'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-md scale-105':'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-700/50'}`}
+              title="切换到中文"
+            >
+              中
+            </button>
+            <div className="w-6 h-px bg-gray-300 dark:bg-slate-600 rounded-full"></div>
+            <button 
+              onClick={() => setLang('en')} 
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${lang==='en'?'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-md scale-105':'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-700/50'}`}
+              title="Switch to English"
+            >
+              EN
+            </button>
+          </div>
+          
+          <button
+            onClick={toggleTheme}
+            aria-label={tc.toggleTheme}
+            className="w-12 h-12 mt-2 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-100 to-purple-100 dark:from-slate-700 dark:to-slate-600 hover:from-blue-200 hover:to-purple-200 dark:hover:from-slate-600 dark:hover:to-slate-500 transition-all shadow-md text-gray-700 dark:text-gray-200"
+          >
+            {isDark ? <Sun className="h-5 w-5 text-yellow-400" /> : <Moon className="h-5 w-5 text-purple-600" />}
+          </button>
+        </div>
+      </div>
+
       <Footer />
     </div>
   )
