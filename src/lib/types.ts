@@ -40,6 +40,7 @@ export const PerformanceSchema = z.object({
   intro: z.string(),
   image: z.string().optional(),
   venue: z.string().optional(),
+  link: z.string().optional(),
 });
 export type Performance = z.infer<typeof PerformanceSchema>;
 
