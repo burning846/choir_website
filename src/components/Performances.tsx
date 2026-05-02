@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '@/lib/lang'
 import { useDoc } from '@/hooks/useDoc'
 import { uiTranslations } from '@/lib/i18n'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
+import { ArrowRight } from 'lucide-react'
 
 export default function Performances() {
   const { lang } = useLang()
@@ -24,22 +26,47 @@ export default function Performances() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {performances.map((p, i) => (
-              <Card key={i} className="overflow-hidden hover:shadow-xl transition-shadow">
-                {p.image && (
-                  <div className="h-48 bg-gray-100">
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+            {performances.map((p, i) => {
+              const content = (
+                <Card key={i} className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col group">
+                  {p.image && (
+                    <div className="h-48 bg-gray-100 overflow-hidden">
+                      <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  )}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">{p.name}</h3>
+                    <div className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-3">
+                      {p.date} {p.venue ? `· ${p.venue}` : ''}
+                    </div>
+                    <p className="text-gray-700 dark:text-slate-300 leading-relaxed flex-grow">{p.intro}</p>
+                    
+                    {p.link && (
+                      <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+                        <span>{lang === 'en' ? 'Learn More' : '查看详情'}</span>
+                        <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    )}
                   </div>
-                )}
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{p.name}</h3>
-                  <div className="text-sm text-gray-600 dark:text-slate-300">
-                    {p.date} {p.venue ? `· ${p.venue}` : ''}
-                  </div>
-                  <p className="text-gray-700 dark:text-slate-300 leading-relaxed">{p.intro}</p>
+                </Card>
+              )
+
+              return p.link ? (
+                p.link.startsWith('http') ? (
+                  <a key={i} href={p.link} target="_blank" rel="noopener noreferrer" className="block h-full outline-none">
+                    {content}
+                  </a>
+                ) : (
+                  <Link key={i} to={p.link} className="block h-full outline-none">
+                    {content}
+                  </Link>
+                )
+              ) : (
+                <div key={i} className="block h-full outline-none">
+                  {content}
                 </div>
-              </Card>
-            ))}
+              )
+            })}
           </div>
         )}
       </div>
