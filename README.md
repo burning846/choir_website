@@ -1,112 +1,92 @@
-# 合唱团网站
+# 咏歌堂合唱团 (Konzert Singers) 官方网站
 
-一个现代化的合唱团介绍网站，包含合唱团信息、指挥介绍、团员风采、作品展示和联系方式。
+一个现代化的双语合唱团官方网站，包含合唱团信息、指挥介绍、团员风采、作品展示、演出详情（包含节目单与歌词）以及联系方式。
 
-## 功能
+## 功能特性
 
-- 合唱团简介与图片
-- 指挥介绍与头像
-- 团员风采与动态声部构成（来自 JSON）
-- 视频作品列表（YouTube 链接）
-- 联系与合作（二维码、联系方式）
+- **响应式设计**：完美适配移动端、平板与桌面端。
+- **双语支持 (i18n)**：支持中英文一键无缝切换，数据完全解耦。
+- **深色模式 (Dark Mode)**：支持明暗主题切换，自动跟随系统偏好设置。
+- **动态数据驱动**：合唱团简介、成员声部、演出曲目、歌词与翻译均通过配置化数据动态渲染。
+- **丰富的页面模块**：
+  - 合唱团简介与历史
+  - 艺术总监与指挥介绍
+  - 动态分类的各声部团员风采
+  - 视频作品展示
+  - 演出活动预告与回顾
+- **独立演出落地页**：
+  - `/firstchord`：咏歌堂首演专场音乐会《咏歌·初韵》主视觉与信息页。
+  - `/performance-may-10`：深度展示《咏歌·初韵》详细的中英文节目单、作曲家介绍以及全套歌词翻译。
 
 ## 技术栈
 
-- React 18 + TypeScript + Vite 6
-- React Router v7
-- Tailwind CSS
-- Lucide 图标
-- Vitest + Testing Library（测试）
-
-## 开发与构建
-
-- 安装依赖：`npm install`
-- 启动开发：`npm run dev`
-- 运行测试：`npm run test`
-- 类型检查：`npm run check`
-- 生产构建：`npm run build`
-- 预览构建：`npm run preview`
+- **前端框架**：React 18 + TypeScript
+- **构建工具**：Vite 6
+- **路由管理**：React Router v7
+- **样式方案**：Tailwind CSS (支持 Dark Mode 与自定义动画)
+- **图标库**：Lucide React
+- **数据验证**：Zod
+- **测试框架**：Vitest + Testing Library
 
 ## 目录结构
 
-```
+```text
 src/
-├── components/          # 页面组件
-│   ├── Header.tsx
-│   ├── Hero.tsx
-│   ├── About.tsx
-│   ├── Conductor.tsx
-│   ├── Members.tsx
-│   ├── Videos.tsx
-│   ├── Performances.tsx
-│   ├── Contact.tsx
-│   ├── Footer.tsx
-│   └── ErrorBoundary.tsx
-├── pages/               # 路由页面
-│   ├── Home.tsx
-│   └── NotFound.tsx
-├── context/             # 数据与状态
-│   └── doc.tsx          # 集中数据层（useDocContext）
-├── hooks/               # 自定义 Hooks
-│   ├── useDoc.ts
-│   ├── useMeta.ts       # SEO 元信息
-│   └── useTheme.ts
-├── lib/                 # 工具
-│   ├── lang.tsx         # 语言切换
-│   ├── logger.ts        # 日志与错误上报
-│   └── types.ts
-└── test/                # 测试辅助
-    ├── setup.ts
-    └── mocks.ts
+├── components/          # 可复用页面模块与 UI 组件
+├── context/             # 全局状态管理 (Doc, Theme)
+├── data/                # 核心配置化数据 (TS/JSON)
+│   ├── choir-doc.ts           # 主页全局数据
+│   ├── firstchord.ts          # 《咏歌·初韵》演出主页数据
+│   └── performance-may-10.ts  # 详细节目单与双语歌词数据
+├── hooks/               # 自定义 Hooks (useDoc, useTheme, useMeta)
+├── lib/                 # 核心工具 (i18n, Zod schemas, logger)
+├── pages/               # 独立路由页面 (Home, FirstChord, NotFound 等)
+└── test/                # 测试配置与 Mocks
+public/
+└── images/              # 静态图片资源
 ```
 
-## 数据与图片
+## 开发与构建
 
-- 文案与数据：`public/choir-doc.json`（中文）、`public/choir-doc.en.json`（英文）
-- 本地图片路径（区分大小写）：`public/images`
-  - 示例：`/images/sg60.jpg`、`/images/sota-15th.JPG`、`/images/3.jpg`
-- 占位图（无图时回退）：`public/placeholder-avatar.svg`、`public/placeholder-banner.svg`
+1. **安装依赖**
+   ```bash
+   npm install
+   ```
+2. **启动本地开发服务器**
+   ```bash
+   npm run dev
+   ```
+3. **运行单元测试**
+   ```bash
+   npm run test
+   ```
+4. **类型检查与代码检查**
+   ```bash
+   npm run check
+   npm run lint
+   ```
+5. **生产环境构建**
+   ```bash
+   npm run build
+   ```
 
-## 核心特性
+## 核心架构设计
 
-### 1. 集中数据层
-- 统一在 `DocProvider` 中加载中/英文 JSON，避免组件重复请求
-- 组件通过 `useDocContext` 获取数据，性能与一致性更好
+### 1. 静态数据驱动
+摒弃了复杂的后端请求，网站所有文案、演出信息、歌词翻译均通过 `src/data/` 目录下的静态 TypeScript 对象管理，实现极致的首屏加载速度和优异的 SEO 表现。
 
-### 2. 错误处理与日志
-- 全局 `ErrorBoundary` 捕获渲染错误，展示友好提示
-- `logError` 统一日志接口，可对接 Sentry 等上报平台
+### 2. 主题与国际化 (Theme & i18n)
+- 实现了统一的 `ThemeProvider` 与 `LangProvider`。
+- 页面右下角提供了全局悬浮的控制按钮 (Floating Action Buttons)，方便用户随时切换中英文及明暗主题。
 
-### 3. SEO 与元信息
-- `useMeta` Hook 集中写入 description/keywords
-- 文档标题随语言切换自动更新
+### 3. 测试与 CI/CD
+- 配置了极其严格的 TypeScript 类型推导与 ESLint 校验。
+- 核心逻辑（数据 Provider、路由回退、国际化切换、组件渲染）均有完善的单元测试覆盖。
+- 集成了 GitHub Actions 工作流，每次 Push 会自动运行 Lint、TypeCheck、Test 与 Build。
 
-### 4. 404 兜底
-- 未匹配路径自动跳转 `/404`，可一键返回首页
+## 部署说明 (Vercel)
 
-### 5. TypeScript 严格模式
-- 已开启 `strict`、`noUnusedLocals/Parameters`，类型检查通过
-
-### 6. 测试与 CI
-- Vitest + Testing Library，覆盖路由、语言切换、数据层、占位图等场景
-- GitHub Actions 自动执行安装、lint、typecheck、test、build
-
-## 部署（Vercel）
-
-- 推送到 `main` 分支自动部署
-- 若线上与本地不一致：
-  - 进入 Vercel 项目 → Deployments → 最新 Production → ⋯ → Purge Cache
-  - 浏览器强制刷新或为资源加查询参数（如 `/images/sg60.jpg?v=ts`）
-
-## 常见问题
-
-- 图片 404：检查大小写是否一致（`.JPG` vs `.jpg`）
-- 数据未更新：确认已修改对应 `choir-doc*.json`，并清缓存
-- 图片加载失败：组件已内置本地回退（如指挥与演出回退到 `/placeholder-avatar.svg`）
-
-## 后续建议
-
-- 完善数据模型类型定义，按模块补强 Doc 类型与组件 props 类型
-- 补充可访问性自动化校验（jest-axe）与快照测试
-- 如需更强的数据缓存与重试策略，可增量引入 SWR/React Query 等库
-- 错误上报可接入 Sentry，并将 sourcemap 上传至上报平台实现隐私与调试的平衡
+本项目已无缝集成 **Vercel** 进行持续部署：
+- 任何推送到 `main` 分支的代码均会自动触发线上生产环境的构建与发布。
+- **自定义域名**：支持绑定自有域名（例如 `konzertsingers.sg` 及 `www.konzertsingers.sg`），Vercel 将自动签发并续期 SSL 证书。
+- **单页应用路由支持**：已在 `vercel.json` 中配置了路由重写 (`rewrites`)，确保用户直接访问子页面（如 `/firstchord`）时不会出现 404 错误。
