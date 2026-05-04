@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowLeft, Calendar, MapPin, Clock, Music, Loader2, Moon, Sun } from 'lucide-react'
+import { ArrowLeft, Music, Loader2, Moon, Sun } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLang } from '@/lib/lang'
 import { useTheme } from '@/hooks/useTheme'
@@ -81,54 +81,13 @@ export default function May10Performance() {
       {/* Header Area */}
       <div className="container mx-auto px-6 py-8">
         <div className="flex justify-between items-center mb-8">
-          <Link to="/" className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors group">
+          <Link to="/firstchord" className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors group">
             <ArrowLeft className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">{tc.backToHome}</span>
+            <span className="font-medium">{lang === 'en' ? 'Back to Performance' : '返回演出介绍'}</span>
           </Link>
         </div>
         
         <div className="max-w-4xl mx-auto">
-          {/* Hero Section */}
-          <div className="text-center space-y-6 mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              {data.title}
-            </h1>
-            <div className="flex flex-wrap justify-center gap-6 text-gray-600 dark:text-gray-300 font-medium text-lg">
-              <div className="flex items-center space-x-2">
-                <Calendar className="w-5 h-5 text-blue-500" />
-                <span>{data.date}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-5 h-5 text-blue-500" />
-                <span>{data.time}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-5 h-5 text-blue-500" />
-                <span>{data.venue}</span>
-              </div>
-            </div>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
-              {data.description}
-            </p>
-          </div>
-
-          {/* Highlights */}
-          {data.highlights && data.highlights.length > 0 && (
-            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-md rounded-2xl p-8 shadow-lg mb-16 border border-white/20 dark:border-slate-700/50">
-              <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">
-                {lang === 'en' ? 'Concert Highlights' : '演出亮点'}
-              </h2>
-              <ul className="grid md:grid-cols-3 gap-6">
-                {data.highlights.map((item, i) => (
-                  <li key={i} className="flex items-start space-x-3 bg-white/50 dark:bg-slate-700/50 p-4 rounded-xl shadow-sm">
-                    <SparklesIcon className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-200 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
           {/* Program List */}
           <div className="space-y-16">
             <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white flex items-center justify-center space-x-3">
@@ -247,22 +206,5 @@ export default function May10Performance() {
 
       <Footer />
     </div>
-  )
-}
-
-function SparklesIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
-    </svg>
   )
 }
