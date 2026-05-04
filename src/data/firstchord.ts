@@ -81,10 +81,10 @@ export const firstChordData = {
       firstHalf: {
         title: "上半场 | 主题：声启·心望",
         items: [
-          { no: 1, title: "听见音乐", desc: "Ruth Elaine Schram", lang: "英语" },
-          { no: 2, title: "赞美上主", desc: "Sherri Porterfield", lang: "拉丁语" },
-          { no: 3, title: "哦，我温柔的眼睛", desc: "意大利传统", lang: "意大利语" },
-          { no: 4, title: "啦啦啦，我不敢说", desc: "Pierre Certon", lang: "法语" },
+          { no: 1, title: "Hear the Music (听见音乐)", desc: "Ruth Elaine Schram", lang: "英语" },
+          { no: 2, title: "Laudate Dominum (赞美上主)", desc: "Sherri Porterfield", lang: "拉丁语" },
+          { no: 3, title: "O occhi, manza mia (哦，我温柔的眼睛)", desc: "意大利传统", lang: "意大利语" },
+          { no: 4, title: "La, la, la, je ne l'ose dire (啦啦啦，我不敢说)", desc: "Pierre Certon", lang: "法语" },
           { no: 5, title: "闻笛", desc: "李抱忱 曲 / 桂乃舜 编", lang: "中文" },
           { no: 6, title: "拥抱夕阳", desc: "傅春安 曲 / 李永乐 词 / 桂乃舜 和声", lang: "中文" },
           { no: 7, title: "希望", desc: "淡莹 词 / 吴世铭 曲", lang: "中文" }
@@ -94,10 +94,10 @@ export const firstChordData = {
       secondHalf: {
         title: "下半场 | 主题：情聚·声融",
         items: [
-          { no: 8, title: "魔法公主", desc: "久石让 / 信長貴富 编曲", lang: "日语" },
-          { no: 9, title: "伴随着你", desc: "久石让 / 信長貴富 编曲", lang: "日语" },
-          { no: 10, title: "永远同在", desc: "桂乃舜 编曲", lang: "日语" },
-          { no: 11, title: "花园之美", desc: "Jennifer Leong / Iskander Ismail 编曲", lang: "马来语" },
+          { no: 8, title: "もののけ姫 (魔法公主)", desc: "久石让 / 信長貴富 编曲", lang: "日语" },
+          { no: 9, title: "君をのせて (伴随着你)", desc: "久石让 / 信長貴富 编曲", lang: "日语" },
+          { no: 10, title: "いつも何度でも (永远同在)", desc: "桂乃舜 编曲", lang: "日语" },
+          { no: 11, title: "Keindahan Taman (花园之美)", desc: "Jennifer Leong / Iskander Ismail 编曲", lang: "马来语" },
           { no: 12, title: "细水长流", desc: "梁文福 / 桂乃舜 编曲", lang: "中文" },
           { no: 13, title: "牧羊姑娘", desc: "桂乃舜 编曲", lang: "中文" },
           { no: 14, title: "友谊的歌声展开翅膀", desc: "桂乃舜 编曲", lang: "中文" }
@@ -226,24 +226,24 @@ export const firstChordData = {
         items: [
           { no: 1, title: "Hear the Music", desc: "Ruth Elaine Schram", lang: "English" },
           { no: 2, title: "Laudate Dominum", desc: "Sherri Porterfield", lang: "Latin" },
-          { no: 3, title: "O Occhi Manza Mia", desc: "Italian Traditional", lang: "Italian" },
-          { no: 4, title: "La La La Je ne l'ose", desc: "Pierre Certon", lang: "French" },
-          { no: 5, title: "Hearing the Flute", desc: "Music by Pao-Ch'en Lee / Arr. Nelson Kwei", lang: "Chinese" },
-          { no: 6, title: "Embrace the Sunset", desc: "Music by Poh Choon Ann / Lyrics by Lee Eng Lock / Harmony by Nelson Kwei", lang: "Chinese" },
-          { no: 7, title: "Hope", desc: "Lyrics by Dan Ying / Music by Wu Shiming", lang: "Chinese" }
+          { no: 3, title: "O occhi, manza mia", desc: "Italian Traditional", lang: "Italian" },
+          { no: 4, title: "La, la, la, je ne l'ose dire", desc: "Pierre Certon", lang: "French" },
+          { no: 5, title: "闻笛 (Hearing the Flute)", desc: "Music by Pao-Ch'en Lee / Arr. Nelson Kwei", lang: "Chinese" },
+          { no: 6, title: "拥抱夕阳 (Embrace the Sunset)", desc: "Music by Poh Choon Ann / Lyrics by Lee Eng Lock / Harmony by Nelson Kwei", lang: "Chinese" },
+          { no: 7, title: "希望 (Hope)", desc: "Lyrics by Dan Ying / Music by Wu Shiming", lang: "Chinese" }
         ]
       },
       intermission: "Intermission (15 minutes)",
       secondHalf: {
         title: "Second Half: Hearts Gather, Voices Unite",
         items: [
-          { no: 8, title: "Princess Mononoke", desc: "Hisaishi / Arr. Takatomi Nobunaga", lang: "Japanese" },
-          { no: 9, title: "Carrying You (Kimi o nosete)", desc: "Hisaishi / Arr. Takatomi Nobunaga", lang: "Japanese" },
-          { no: 10, title: "Always With Me (Itsumo Nando demo)", desc: "Arr. Nelson Kwei", lang: "Japanese" },
+          { no: 8, title: "もののけ姫 (Princess Mononoke)", desc: "Hisaishi / Arr. Takatomi Nobunaga", lang: "Japanese" },
+          { no: 9, title: "君をのせて (Carrying You)", desc: "Hisaishi / Arr. Takatomi Nobunaga", lang: "Japanese" },
+          { no: 10, title: "いつも何度でも (Always With Me)", desc: "Arr. Nelson Kwei", lang: "Japanese" },
           { no: 11, title: "Keindahan Taman", desc: "Jennifer Leong / Arr. Iskander Ismail", lang: "Malay" },
-          { no: 12, title: "Love Endures", desc: "Liang Wern Fook / Arr. Nelson Kwei", lang: "Chinese" },
-          { no: 13, title: "The Shepherd Girl", desc: "Arr. Nelson Kwei", lang: "Chinese" },
-          { no: 14, title: "Friendship's Song Spreads Its Wings", desc: "Arr. Nelson Kwei", lang: "Chinese" }
+          { no: 12, title: "细水长流 (Love Endures)", desc: "Liang Wern Fook / Arr. Nelson Kwei", lang: "Chinese" },
+          { no: 13, title: "牧羊姑娘 (The Shepherd Girl)", desc: "Arr. Nelson Kwei", lang: "Chinese" },
+          { no: 14, title: "友谊的歌声展开翅膀 (Wings of Friendship)", desc: "Arr. Nelson Kwei", lang: "Chinese" }
         ]
       }
     },
