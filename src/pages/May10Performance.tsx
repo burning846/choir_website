@@ -13,6 +13,7 @@ interface Song {
   language?: string
   description: string
   lyrics: string[]
+  translation?: string[]
 }
 
 interface PerformancePart {
@@ -169,15 +170,29 @@ export default function May10Performance() {
                           </p>
                         </div>
                         
-                        <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-6 md:p-8">
-                          <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
-                            {lang === 'en' ? 'Lyrics' : '歌词'}
-                          </h5>
-                          <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
-                            {song.lyrics.map((line, i) => (
-                              <p key={i}>{line}</p>
-                            ))}
+                        <div className="space-y-4">
+                          <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-6 md:p-8">
+                            <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
+                              {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
+                            </h5>
+                            <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
+                              {song.lyrics.map((line, i) => (
+                                <p key={i}>{line}</p>
+                              ))}
+                            </div>
                           </div>
+                          {song.translation && (
+                            <div className="bg-blue-50/50 dark:bg-blue-900/20 rounded-xl p-6 md:p-8 border border-blue-100 dark:border-blue-800/30">
+                              <h5 className="text-sm font-semibold text-blue-400 dark:text-blue-500 uppercase tracking-wider mb-4">
+                                {lang === 'en' ? 'Translation' : '歌词大意'}
+                              </h5>
+                              <div className="space-y-2 font-medium text-gray-600 dark:text-gray-300 text-lg leading-relaxed italic">
+                                {song.translation.map((line, i) => (
+                                  <p key={i}>{line}</p>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
