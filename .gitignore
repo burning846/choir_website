@@ -43,3 +43,6 @@ docs/*
 !public/Konzert_Singers_First_Chord_Brochure.pdf
 
 .trae/
+*.md
+# Agent handover
+agent.md
