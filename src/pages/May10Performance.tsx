@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
-import { ArrowLeft, Music, Loader2, Moon, Sun } from 'lucide-react'
+import { ArrowLeft, Music, Moon, Sun } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLang } from '@/lib/lang'
 import { useTheme } from '@/hooks/useTheme'
 import Footer from '@/components/Footer'
 import { uiTranslations } from '@/lib/i18n'
+import { performanceMay10Data } from '@/data/performance-may-10'
 
 interface Song {
   id?: number
@@ -36,33 +36,9 @@ export default function May10Performance() {
   const { lang, setLang } = useLang()
   const { isDark, toggleTheme } = useTheme()
   const tc = uiTranslations[lang].common
-  const [data, setData] = useState<PerformanceData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+  const data = performanceMay10Data[lang] as PerformanceData
 
-  useEffect(() => {
-    setLoading(true)
-    const jsonFile = lang === 'en' ? '/performance-may-10.en.json' : '/performance-may-10.json'
-    fetch(jsonFile)
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to load data')
-        return res.json()
-      })
-      .then(setData)
-      .catch(() => setError(true))
-      .finally(() => setLoading(false))
-  }, [lang])
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900 flex flex-col items-center justify-center space-y-4">
-        <Loader2 className="w-10 h-10 text-blue-500 animate-spin" />
-        <p className="text-gray-600 dark:text-gray-300 font-medium">{tc.loading}</p>
-      </div>
-    )
-  }
-
-  if (error || !data) {
+  if (!data) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900 flex flex-col items-center justify-center p-6 text-center">
         <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl max-w-md w-full space-y-4 border border-red-100 dark:border-red-900/30">
