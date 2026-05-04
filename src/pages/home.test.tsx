@@ -4,6 +4,19 @@ import Home from '@/pages/Home'
 import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
 import { ThemeProvider } from '@/context/theme'
+import { Doc } from '@/lib/types'
+
+// Create a variable we can modify in tests
+const mockData: { en: Partial<Doc>; zh: Partial<Doc> } = {
+  en: { choirName: 'Test Choir', choirNameEn: 'Test Choir En' },
+  zh: { choirName: '测试合唱团', choirNameEn: 'Test Choir' }
+}
+
+vi.mock('@/data/choir-doc', () => ({
+  get choirDocData() {
+    return mockData
+  }
+}))
 
 // Setup matchMedia mock
 Object.defineProperty(window, 'matchMedia', {
@@ -57,30 +70,12 @@ vi.mock('@/components/ScrollToTop', () => ({
 describe('Home Page Status Rendering', () => {
   beforeEach(() => {
     vi.restoreAllMocks()
+    // Reset mockData
+    mockData.en = { choirName: 'Test Choir', choirNameEn: 'Test Choir En' }
+    mockData.zh = { choirName: '测试合唱团', choirNameEn: 'Test Choir' }
   })
 
-  it('renders loading state initially', () => {
-    // Return a promise that doesn't resolve immediately to keep it in loading state
-    vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})))
-
-    render(
-      <ThemeProvider>
-        <LangProvider>
-          <DocProvider>
-            <Home />
-          </DocProvider>
-        </LangProvider>
-      </ThemeProvider>
-    )
-
-    // Using the English translation as default
-    expect(screen.getByText('Loading content...')).toBeInTheDocument()
-  })
-
-  it('renders error state on fetch failure', async () => {
-    // Mock a failed fetch
-    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: false } as unknown as Response)))
-
+  it('renders correctly on successful load', async () => {
     render(
       <ThemeProvider>
         <LangProvider>
@@ -92,17 +87,15 @@ describe('Home Page Status Rendering', () => {
     )
 
     await waitFor(() => {
-      expect(screen.getByText('An error occurred')).toBeInTheDocument()
-      expect(screen.getByText('Failed to load content. Please try again later.')).toBeInTheDocument()
+      expect(screen.queryByText('Loading content...')).not.toBeInTheDocument()
+      expect(screen.queryByText('An error occurred')).not.toBeInTheDocument()
     })
   })
 
   it('renders error state on schema validation failure', async () => {
-    // Mock a successful fetch but invalid schema
-    vi.stubGlobal('fetch', vi.fn(async () => ({
-      ok: true,
-      json: async () => ({ members: [{ invalid: true }] }) // Invalid member schema
-    } as unknown as Response)))
+    // Mock an invalid schema
+    mockData.en = { members: [{ invalid: true }] as unknown as Doc['members'] }
+    mockData.zh = { members: [{ invalid: true }] as unknown as Doc['members'] }
 
     render(
       <ThemeProvider>

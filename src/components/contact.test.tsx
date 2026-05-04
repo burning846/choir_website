@@ -4,14 +4,27 @@ import Contact from '@/components/Contact'
 import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
 
+const mockData = {
+  en: {},
+  zh: {}
+}
+
+vi.mock('@/data/choir-doc', () => ({
+  get choirDocData() {
+    return mockData
+  }
+}))
+
 describe('Contact Component', () => {
   beforeEach(() => {
     vi.restoreAllMocks()
+    mockData.en = {}
+    mockData.zh = {}
   })
 
   it('normalizes website urls and correctly maps social icons', async () => {
     // Mock doc with specific website and social data
-    const mockDoc = {
+    mockData.en = {
       contact: {
         website: 'example.com',
         socials: [
@@ -19,12 +32,7 @@ describe('Contact Component', () => {
           { name: 'UnknownPlatform', href: 'https://unknown.com' }
         ]
       }
-    }
-    
-    vi.stubGlobal('fetch', vi.fn(async () => ({
-      ok: true,
-      json: async () => mockDoc
-    }) as unknown as Response))
+    } as any
 
     render(
       <LangProvider>
@@ -51,19 +59,14 @@ describe('Contact Component', () => {
   })
 
   it('filters out empty contact fields', async () => {
-    const mockDoc = {
+    mockData.en = {
       contact: {
         email: '',
         phone: '  ', // whitespace should be filtered
         address: '123 Test St',
         website: ''
       }
-    }
-    
-    vi.stubGlobal('fetch', vi.fn(async () => ({
-      ok: true,
-      json: async () => mockDoc
-    }) as unknown as Response))
+    } as any
 
     render(
       <LangProvider>

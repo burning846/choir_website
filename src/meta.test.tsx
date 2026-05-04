@@ -4,7 +4,13 @@ import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
 import { ThemeProvider } from '@/context/theme'
 import Home from '@/pages/Home'
-import { Doc } from '@/lib/types'
+
+vi.mock('@/data/choir-doc', () => ({
+  choirDocData: {
+    en: { choirNameEn: 'Meta Choir', choirName: 'Meta' },
+    zh: { choirNameEn: 'Meta Choir', choirName: 'Meta' }
+  }
+}))
 
 // Mock useMeta since it's used in Home
 vi.mock('@/hooks/useMeta', () => ({
@@ -18,12 +24,6 @@ vi.mock('@/components/ScrollToTop', () => ({
 
 describe('Meta Info', () => {
   it('updates document title based on doc', async () => {
-    const mockDoc: Doc = { choirNameEn: 'Meta Choir', choirName: 'Meta' }
-    vi.stubGlobal('fetch', vi.fn(async () => ({
-      ok: true,
-      json: async () => mockDoc
-    }) as unknown as Response))
-
     render(
       <ThemeProvider>
         <LangProvider>
