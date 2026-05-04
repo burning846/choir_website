@@ -56,7 +56,7 @@ export const firstChordData = {
         {
           part: "女高音",
           names: "朱亮亮、孙宇婷、曹蕴、徐雯、张文昕、马平、赵予佳",
-          imagePrefix: "seprano"
+          imagePrefix: "soprano"
         },
         {
           part: "女中音",
@@ -83,7 +83,7 @@ export const firstChordData = {
         items: [
           { no: 1, title: "Hear the Music (听见音乐)", desc: "Ruth Elaine Schram", lang: "英语" },
           { no: 2, title: "Laudate Dominum (赞美上主)", desc: "Sherri Porterfield", lang: "拉丁语" },
-          { no: 3, title: "O occhi, manza mia (哦，我温柔的眼睛)", desc: "意大利传统", lang: "意大利语" },
+          { no: 3, title: "O occhi, manza mia (哦，我温柔的眼睛)", desc: "Orlando di Lasso", lang: "意大利语" },
           { no: 4, title: "La, la, la, je ne l'ose dire (啦啦啦，我不敢说)", desc: "Pierre Certon", lang: "法语" },
           { no: 5, title: "闻笛", desc: "李抱忱 曲 / 桂乃舜 编", lang: "中文" },
           { no: 6, title: "拥抱夕阳", desc: "傅春安 曲 / 李永乐 词 / 桂乃舜 和声", lang: "中文" },
@@ -199,7 +199,7 @@ export const firstChordData = {
         {
           part: "Soprano",
           names: "Choo Lian Liang, Miu Sun, Vivian Cao, Xu Wen, Zhang Wenxin, Rollar Ma, Ellin Zhao",
-          imagePrefix: "seprano"
+          imagePrefix: "soprano"
         },
         {
           part: "Alto",
@@ -226,7 +226,7 @@ export const firstChordData = {
         items: [
           { no: 1, title: "Hear the Music", desc: "Ruth Elaine Schram", lang: "English" },
           { no: 2, title: "Laudate Dominum", desc: "Sherri Porterfield", lang: "Latin" },
-          { no: 3, title: "O occhi, manza mia", desc: "Italian Traditional", lang: "Italian" },
+          { no: 3, title: "O occhi, manza mia", desc: "Orlando di Lasso", lang: "Italian" },
           { no: 4, title: "La, la, la, je ne l'ose dire", desc: "Pierre Certon", lang: "French" },
           { no: 5, title: "闻笛 (Hearing the Flute)", desc: "Music by Pao-Ch'en Lee / Arr. Nelson Kwei", lang: "Chinese" },
           { no: 6, title: "拥抱夕阳 (Embrace the Sunset)", desc: "Music by Poh Choon Ann / Lyrics by Lee Eng Lock / Harmony by Nelson Kwei", lang: "Chinese" },
