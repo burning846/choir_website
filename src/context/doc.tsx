@@ -1,35 +1,26 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { useLang } from '@/lib/lang'
 import { logError } from '@/lib/logger'
-import { Doc, DocSchema } from '@/lib/types'
+import { DocSchema } from '@/lib/types'
 import { DocContext } from './DocContext'
 import { choirDocData } from '@/data/choir-doc'
 
 export function DocProvider({ children }: { children: React.ReactNode }) {
   const { lang } = useLang()
-  const [doc, setDoc] = useState<Doc | null>(null)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    setLoading(true)
-    setError(null)
-    
+  const value = useMemo(() => {
     try {
       const d = choirDocData[lang]
       const parseResult = DocSchema.safeParse(d)
       if (!parseResult.success) {
         console.error('Doc schema validation failed', parseResult.error)
         logError(new Error('doc schema validation failed'), 'DocProvider')
-        setDoc(null)
-        setError('validation_failed')
-        setLoading(false)
-        return
+        return { doc: null, loading: false, error: 'validation_failed' }
       }
       
       const validDoc = parseResult.data
-      setDoc(validDoc)
       
+      // Update document title
       const title =
         lang === 'en'
           ? (validDoc.choirNameEn || validDoc.choirName || document.title)
@@ -37,14 +28,13 @@ export function DocProvider({ children }: { children: React.ReactNode }) {
       if (typeof title === 'string' && title.trim()) {
         document.title = title
       }
+
+      return { doc: validDoc, loading: false, error: null }
     } catch (err) {
-      setError('failed')
       logError(err instanceof Error ? err : new Error('doc load error'), 'DocProvider')
-    } finally {
-      setLoading(false)
+      return { doc: null, loading: false, error: 'failed' }
     }
   }, [lang])
 
-  const value = useMemo(() => ({ doc, loading, error }), [doc, loading, error])
   return <DocContext.Provider value={value}>{children}</DocContext.Provider>
 }
