@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, Music, Sun, Moon, Calendar, MapPin, Clock, Heart, Users, Star, Quote, User, Award } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Music, Sun, Moon, Calendar, MapPin, Clock, Heart, Users, Star, Quote, User, Award, Download } from 'lucide-react'
 import { useLang } from '@/lib/lang'
 import { useTheme } from '@/hooks/useTheme'
 import { useDoc } from '@/hooks/useDoc'
@@ -66,15 +66,22 @@ export default function FirstChord() {
             </div>
           </div>
 
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               to="/performance-may-10" 
-              className="inline-flex items-center space-x-3 px-8 py-4 bg-white text-blue-900 hover:bg-blue-50 rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-white text-blue-900 hover:bg-blue-50 rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
             >
               <Music className="w-5 h-5" />
               <span>{lang === 'en' ? 'View Program & Lyrics' : '查看节目单与歌词'}</span>
-              <ArrowRight className="w-5 h-5" />
             </Link>
+            <a 
+              href="/Konzert_Singers_First_Chord_Brochure.pdf" 
+              download="Konzert_Singers_First_Chord_Brochure.pdf"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-blue-800/50 hover:bg-blue-700/50 border border-blue-400/30 text-white rounded-full font-bold backdrop-blur-sm shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              <Download className="w-5 h-5" />
+              <span>{lang === 'en' ? 'Download Brochure' : '下载电子宣传册'}</span>
+            </a>
           </div>
         </div>
       </div>

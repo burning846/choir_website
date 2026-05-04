@@ -40,5 +40,6 @@ docs/*
 .vercel
 
 *.pdf
+!public/Konzert_Singers_First_Chord_Brochure.pdf
 
 .trae/
