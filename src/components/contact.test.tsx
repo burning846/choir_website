@@ -3,8 +3,9 @@ import { render, screen } from '@testing-library/react'
 import Contact from '@/components/Contact'
 import { DocProvider } from '@/context/doc'
 import { LangProvider } from '@/lib/lang'
+import { Doc } from '@/lib/types'
 
-const mockData = {
+const mockData: { en: Partial<Doc>; zh: Partial<Doc> } = {
   en: {},
   zh: {}
 }
@@ -32,7 +33,17 @@ describe('Contact Component', () => {
           { name: 'UnknownPlatform', href: 'https://unknown.com' }
         ]
       }
-    } as any
+    } as unknown as Doc
+
+    mockData.zh = {
+      contact: {
+        website: 'example.com',
+        socials: [
+          { name: 'Facebook', href: 'https://fb.com' },
+          { name: 'UnknownPlatform', href: 'https://unknown.com' }
+        ]
+      }
+    } as unknown as Doc
 
     render(
       <LangProvider>
@@ -66,7 +77,16 @@ describe('Contact Component', () => {
         address: '123 Test St',
         website: ''
       }
-    } as any
+    } as unknown as Doc
+    
+    mockData.zh = {
+      contact: {
+        email: '',
+        phone: '  ', // whitespace should be filtered
+        address: '123 Test St',
+        website: ''
+      }
+    } as unknown as Doc
 
     render(
       <LangProvider>
