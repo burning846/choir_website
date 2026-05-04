@@ -94,8 +94,8 @@ export const firstChordData = {
       secondHalf: {
         title: "下半场 | 主题：情聚·声融",
         items: [
-          { no: 8, title: "魔法公主", desc: "久石让 / 信长貴富 编曲", lang: "日语" },
-          { no: 9, title: "伴随着你", desc: "久石让 / 信长貴富 编曲", lang: "日语" },
+          { no: 8, title: "魔法公主", desc: "久石让 / 信長貴富 编曲", lang: "日语" },
+          { no: 9, title: "伴随着你", desc: "久石让 / 信長貴富 编曲", lang: "日语" },
           { no: 10, title: "永远同在", desc: "桂乃舜 编曲", lang: "日语" },
           { no: 11, title: "花园之美", desc: "Jennifer Leong / Iskander Ismail 编曲", lang: "马来语" },
           { no: 12, title: "细水长流", desc: "梁文福 / 桂乃舜 编曲", lang: "中文" },
@@ -228,8 +228,8 @@ export const firstChordData = {
           { no: 2, title: "Laudate Dominum", desc: "Sherri Porterfield", lang: "Latin" },
           { no: 3, title: "O Occhi Manza Mia", desc: "Italian Traditional", lang: "Italian" },
           { no: 4, title: "La La La Je ne l'ose", desc: "Pierre Certon", lang: "French" },
-          { no: 5, title: "Hearing the Flute", desc: "Music by Li Baochen / Arr. Nelson Kwei", lang: "Chinese" },
-          { no: 6, title: "Embrace the Sunset", desc: "Music by Poh Choon Ann / Lyrics by Lee Ngoh Wah/ Harmony by Nelson Kwei", lang: "Chinese" },
+          { no: 5, title: "Hearing the Flute", desc: "Music by Pao-Ch'en Lee / Arr. Nelson Kwei", lang: "Chinese" },
+          { no: 6, title: "Embrace the Sunset", desc: "Music by Poh Choon Ann / Lyrics by Lee Eng Lock / Harmony by Nelson Kwei", lang: "Chinese" },
           { no: 7, title: "Hope", desc: "Lyrics by Dan Ying / Music by Wu Shiming", lang: "Chinese" }
         ]
       },
@@ -237,8 +237,8 @@ export const firstChordData = {
       secondHalf: {
         title: "Second Half: Hearts Gather, Voices Unite",
         items: [
-          { no: 8, title: "Princess Mononoke", desc: "Hisaishi / Arr. Nobutaka Osamu", lang: "Japanese" },
-          { no: 9, title: "Carrying You (Kimi o nosete)", desc: "Hisaishi / Arr. Nobutaka Osamu", lang: "Japanese" },
+          { no: 8, title: "Princess Mononoke", desc: "Hisaishi / Arr. Takatomi Nobunaga", lang: "Japanese" },
+          { no: 9, title: "Carrying You (Kimi o nosete)", desc: "Hisaishi / Arr. Takatomi Nobunaga", lang: "Japanese" },
           { no: 10, title: "Always With Me (Itsumo Nando demo)", desc: "Arr. Nelson Kwei", lang: "Japanese" },
           { no: 11, title: "Keindahan Taman", desc: "Jennifer Leong / Arr. Iskander Ismail", lang: "Malay" },
           { no: 12, title: "Love Endures", desc: "Liang Wern Fook / Arr. Nelson Kwei", lang: "Chinese" },
@@ -256,7 +256,7 @@ export const firstChordData = {
         photography: { role: "Choir Group Photography", name: "Ricky Lin\nUMAGIC STUDIO PTE LTD" },
         concertPhotography: { role: "Concert Photography", name: "Emora Snap" },
         platinum: { role: "Platinum Sponsor", names: ["Vivian Cao", "Patrick Koh", "Xu Wen"] },
-        gold: { role: "Gold Sponsor", names: ["Ge Dong hui"] }
+        gold: { role: "Gold Sponsor", names: ["Ge Donghui"] }
       },
       exco: {
         title: "EXCO",
