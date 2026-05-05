@@ -57,8 +57,8 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
               )}
             </div>
             
-            <div className="shrink-0 mt-3 md:mt-0 bg-slate-50/50 dark:bg-neutral-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-3 md:p-0 border border-gray-100/50 dark:border-rosegold-900/20 md:border-0">
-              <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-sm">
+            <div className="shrink-0 w-full md:w-64 lg:w-72 mt-3 md:mt-0 bg-slate-50/50 dark:bg-neutral-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-3 md:p-0 border border-gray-100/50 dark:border-rosegold-900/20 md:border-0">
+              <div className="grid grid-cols-[5rem_1fr] md:grid-cols-[5.5rem_1fr] gap-x-3 gap-y-1.5 text-sm">
                 <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
                 <span className="font-semibold text-gray-700 dark:text-gray-300">{song.composer}</span>
                 
@@ -487,9 +487,9 @@ export default function FirstChord() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-rosegold-100 border-b-2 border-lightpurple-500 dark:border-lightpurple-800 pb-2 inline-block">{d.gratitude.exco.title}</h3>
                 <div className="space-y-3">
                   {d.gratitude.exco.members.map((m, idx) => (
-                    <div key={idx} className="flex justify-between items-center border-b border-gray-100 dark:border-rosegold-900/30 pb-2">
-                      <span className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{m.role}</span>
-                      <span className="font-bold text-gray-900 dark:text-white">{m.name}</span>
+                    <div key={idx} className="flex justify-between items-baseline border-b border-gray-100 dark:border-rosegold-900/30 pb-2 gap-x-4">
+                      <span className="text-gray-600 dark:text-gray-400 text-sm md:text-base text-left leading-snug">{m.role}</span>
+                      <span className="font-bold text-gray-900 dark:text-white text-right shrink-0">{m.name}</span>
                     </div>
                   ))}
                 </div>
