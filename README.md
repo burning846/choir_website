@@ -1,14 +1,8 @@
 # 咏歌堂合唱团 (Konzert Singers) 官方网站
 
 <p align="center">
-  <a href="https://konzertsingers.sg">
-    <img src="./public/images/logo-03.png" alt="Konzert Singers Logo" width="150" />
-  </a>
-</p>
-
-<p align="center">
   <a href="https://github.com/burning846/choir_website/actions">
-    <img src="https://github.com/burning846/choir_website/actions/workflows/node.js.yml/badge.svg" alt="CI Status" />
+    <img src="https://github.com/burning846/choir_website/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
   </a>
   <a href="https://github.com/burning846/choir_website/stargazers">
     <img src="https://img.shields.io/github/stars/burning846/choir_website?style=social" alt="GitHub Stars" />
