@@ -171,7 +171,7 @@ export default function FirstChord() {
 
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-paper dark:bg-black text-paper-text dark:text-white">
-        <div className="absolute inset-0 bg-[url('/images/background-light.svg')] dark:bg-[url('/images/background-dark.svg')] bg-cover bg-center opacity-100"></div>
+        <div className="absolute inset-0 bg-[url('/images/background-light.svg')] dark:bg-[url('/images/background-dark.svg')] bg-cover bg-[75%_center] md:bg-center opacity-100"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-paper/40 to-paper/80 dark:from-transparent dark:to-black/90"></div>
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
           <div className="mb-8 flex justify-center">
