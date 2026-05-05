@@ -1,10 +1,30 @@
 # 咏歌堂合唱团 (Konzert Singers) 官方网站
 
-[![Build Status](https://github.com/burning846/choir_website/actions/workflows/ci.yml/badge.svg)](https://github.com/burning846/choir_website/actions)
-[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF.svg)](https://vitejs.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6.svg)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://konzertsingers.sg">
+    <img src="./public/images/logo-03.png" alt="Konzert Singers Logo" width="150" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/burning846/choir_website/actions">
+    <img src="https://github.com/burning846/choir_website/actions/workflows/node.js.yml/badge.svg" alt="CI Status" />
+  </a>
+  <a href="https://github.com/burning846/choir_website/stargazers">
+    <img src="https://img.shields.io/github/stars/burning846/choir_website?style=social" alt="GitHub Stars" />
+  </a>
+  <a href="https://github.com/burning846/choir_website/network/members">
+    <img src="https://img.shields.io/github/forks/burning846/choir_website?style=social" alt="GitHub Forks" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-18-blue.svg" alt="React" /></a>
+  <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-6-646CFF.svg" alt="Vite" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.0-3178C6.svg" alt="TypeScript" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind-3.0-38B2AC.svg" alt="TailwindCSS" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" /></a>
+</p>
 
 一个现代化的双语合唱团官方网站，包含合唱团信息、指挥介绍、团员风采、作品展示、演出详情（包含节目单与歌词）以及联系方式。
 
