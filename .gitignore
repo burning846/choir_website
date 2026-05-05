@@ -47,5 +47,4 @@ docs/*
 # Agent handover
 agent.md
 
-# Agent handover
-agent.md
+venv/
