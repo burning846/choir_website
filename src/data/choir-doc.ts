@@ -92,7 +92,7 @@ export const choirDocData = {
       "intro": "这是一场庆祝春天的合唱盛宴，我们将带来多首经典与现代交织的合唱作品。诚邀您与我们一同沉浸在美妙的和声中，感受初韵的生机与活力。",
       "image": "/images/about.webp",
       "venue": "The ARTS HOUSE",
-      "link": "https://konzertsingers.sg/firstchord"
+      "link": "/firstchord"
     },
     {
       "name": "SG60 新加坡建国60周年合唱节",
@@ -238,7 +238,7 @@ export const choirDocData = {
       "intro": "A choral celebration of spring, featuring a beautiful blend of classic and contemporary pieces. We invite you to immerse yourself in harmonious melodies and experience the vitality of the first rhyme.",
       "image": "/images/about.webp",
       "venue": "The ARTS HOUSE",
-      "link": "https://konzertsingers.sg/firstchord"
+      "link": "/firstchord"
     },
     {
       "name": "SG60 Singapore Choral Festival",

@@ -42,36 +42,40 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className={`transition-all duration-300 ${isExpanded ? 'border-b border-gray-100 dark:border-rosegold-900/30 pb-4 mb-4' : ''}`}>
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
-            <h4 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white group-hover:text-rosegold-600 dark:group-hover:text-rosegold-400 transition-colors">
-              <span className="text-rosegold-500 mr-2">{song.id || index + 1}.</span>
-              {song.title}
-            </h4>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-              <span className="text-gray-500 dark:text-gray-400 font-medium italic">
-                {song.composer}
-              </span>
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+            <div className="flex-1 pr-0 md:pr-4">
+              <h4 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white group-hover:text-rosegold-600 dark:group-hover:text-rosegold-400 transition-colors leading-snug">
+                <span className="text-rosegold-500 mr-2">{song.id || index + 1}.</span>
+                {song.title}
+              </h4>
               {song.language && (
-                <span className="px-2 py-0.5 bg-gray-100 dark:bg-rosegold-900/30 text-gray-600 dark:text-rosegold-300 rounded-full font-medium">
-                  {song.language}
-                </span>
-              )}
-              {(song.conductor || song.accompanist) && (
-                <div className="flex items-center space-x-3 border-l border-gray-200 dark:border-rosegold-900/30 pl-3">
-                  {song.conductor && (
-                    <span className="flex items-center space-x-1">
-                      <span className="text-gray-400 dark:text-gray-500">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
-                      <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
-                    </span>
-                  )}
-                  {song.accompanist && (
-                    <span className="flex items-center space-x-1">
-                      <span className="text-gray-400 dark:text-gray-500">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
-                      <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
-                    </span>
-                  )}
+                <div className="mt-2.5">
+                  <span className="px-2.5 py-0.5 bg-gray-100 dark:bg-rosegold-900/30 text-gray-600 dark:text-rosegold-300 rounded-full font-medium text-xs">
+                    {song.language}
+                  </span>
                 </div>
               )}
+            </div>
+            
+            <div className="shrink-0 mt-3 md:mt-0 bg-slate-50/50 dark:bg-neutral-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-3 md:p-0 border border-gray-100/50 dark:border-rosegold-900/20 md:border-0">
+              <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-sm">
+                <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
+                <span className="font-semibold text-gray-700 dark:text-gray-300">{song.composer}</span>
+                
+                {song.conductor && (
+                  <>
+                    <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
+                    <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
+                  </>
+                )}
+                
+                {song.accompanist && (
+                  <>
+                    <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
+                    <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
+                  </>
+                )}
+              </div>
             </div>
           </div>
           
@@ -98,11 +102,6 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
         >
           <div className="overflow-hidden">
             <div className="space-y-4 cursor-default" onClick={(e) => e.stopPropagation()}>
-              {song.description && (
-                <div className="bg-gray-50/80 dark:bg-neutral-800/50 rounded-xl p-4 md:p-5 border border-gray-100 dark:border-rosegold-900/20 text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                  <p>{song.description}</p>
-                </div>
-              )}
               <div className={`grid gap-4 ${song.translation ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
                 <div className="bg-slate-50 dark:bg-black/50 dark:border dark:border-rosegold-900/30 rounded-xl p-5 md:p-6">
                   <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
@@ -386,6 +385,16 @@ export default function FirstChord() {
                 )}
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center pt-8 mt-12 border-t border-gray-200 dark:border-rosegold-900/30">
+            <Link 
+              to="/performance-may-10" 
+              className="group inline-flex items-center space-x-3 px-8 py-5 bg-gradient-to-r from-rosegold-600 to-lightpurple-600 hover:from-rosegold-700 hover:to-lightpurple-700 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              <Music className="w-6 h-6 group-hover:animate-pulse" />
+              <span className="text-lg">{d.program.buttonText}</span>
+            </Link>
           </div>
         </section>
 

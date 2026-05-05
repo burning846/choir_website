@@ -54,36 +54,40 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className={`transition-all duration-300 ${isExpanded ? 'border-b border-gray-100 dark:border-slate-700 pb-6 mb-6' : ''}`}>
-          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-            <h4 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-              <span className="text-purple-500 mr-3">{song.id || index + 1}.</span>
-              {song.title}
-            </h4>
-            <div className="flex flex-col md:items-end text-sm md:text-base">
-              <span className="text-gray-500 dark:text-gray-400 font-medium italic">
-                {song.composer}
-              </span>
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+            <div className="flex-1 pr-0 md:pr-4">
+              <h4 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+                <span className="text-purple-500 mr-3">{song.id || index + 1}.</span>
+                {song.title}
+              </h4>
               {song.language && (
-                <span className="text-blue-500/80 dark:text-blue-400/80 mt-1 font-medium">
-                  {song.language}
-                </span>
-              )}
-              {(song.conductor || song.accompanist) && (
-                <div className="flex items-center space-x-3 mt-2 text-sm">
-                  {song.conductor && (
-                    <span className="flex items-center space-x-1">
-                      <span className="text-gray-400 dark:text-gray-500">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
-                      <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
-                    </span>
-                  )}
-                  {song.accompanist && (
-                    <span className="flex items-center space-x-1">
-                      <span className="text-gray-400 dark:text-gray-500">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
-                      <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
-                    </span>
-                  )}
+                <div className="mt-2.5">
+                  <span className="px-2.5 py-0.5 bg-gray-100 dark:bg-slate-700/50 text-gray-600 dark:text-gray-300 rounded-full font-medium text-sm">
+                    {song.language}
+                  </span>
                 </div>
               )}
+            </div>
+            
+            <div className="shrink-0 mt-4 md:mt-0 bg-slate-50/50 dark:bg-slate-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-4 md:p-0 border border-gray-100/50 dark:border-slate-700/30 md:border-0">
+              <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-sm md:text-base">
+                <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
+                <span className="font-semibold text-gray-700 dark:text-gray-300">{song.composer}</span>
+                
+                {song.conductor && (
+                  <>
+                    <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
+                    <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
+                  </>
+                )}
+                
+                {song.accompanist && (
+                  <>
+                    <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
+                    <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
+                  </>
+                )}
+              </div>
             </div>
           </div>
           <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
