@@ -170,31 +170,32 @@ export default function FirstChord() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-rosegold-500 via-rosegold-400 to-lightpurple-500 dark:from-rosegold-900 dark:via-black dark:to-black text-white">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay dark:mix-blend-normal dark:opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-rosegold-900/60 dark:from-transparent dark:to-black/90"></div>
+      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-paper dark:bg-black text-paper-text dark:text-white">
+        <div className="absolute inset-0 bg-[url('/images/background-light.svg')] dark:bg-[url('/images/background-dark.svg')] bg-cover bg-center opacity-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-paper/40 to-paper/80 dark:from-transparent dark:to-black/90"></div>
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
           <div className="mb-8 flex justify-center">
-            <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90" />
+            <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90 dark:hidden" style={{ filter: 'brightness(0) invert(0.2)' }} />
+            <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90 hidden dark:block" />
           </div>
-          <div className="inline-block px-4 py-1.5 rounded-full bg-paper-surface/20 dark:bg-rosegold-900/20 backdrop-blur-md border border-white/30 dark:border-rosegold-500/20 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm dark:text-rosegold-200">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/50 dark:bg-rosegold-900/20 backdrop-blur-md border border-rosegold-500/20 dark:border-rosegold-500/20 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm text-rosegold-800 dark:text-rosegold-200">
             {d.hero.subtitle}
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-rosegold-50 dark:from-rosegold-200 dark:to-rosegold-500 drop-shadow-md">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-rosegold-800 to-lightpurple-800 dark:from-rosegold-200 dark:to-rosegold-500 drop-shadow-sm dark:drop-shadow-md">
             {d.hero.title}
           </h1>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 text-lg text-white font-medium">
-            <div className="flex items-center bg-black/20 dark:bg-rosegold-900/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm dark:border dark:border-rosegold-800/30 dark:text-rosegold-100">
-              <Calendar className="w-5 h-5 mr-3 text-rosegold-100 dark:text-rosegold-400"/> 
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 text-lg font-medium">
+            <div className="flex items-center bg-white/50 dark:bg-rosegold-900/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm border border-rosegold-800/10 dark:border-rosegold-800/30 text-paper-text dark:text-rosegold-100">
+              <Calendar className="w-5 h-5 mr-3 text-rosegold-600 dark:text-rosegold-400"/> 
               {d.hero.date}
             </div>
-            <div className="flex items-center bg-black/20 dark:bg-rosegold-900/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm dark:border dark:border-rosegold-800/30 dark:text-rosegold-100">
-              <Clock className="w-5 h-5 mr-3 text-rosegold-100 dark:text-rosegold-400"/> 
+            <div className="flex items-center bg-white/50 dark:bg-rosegold-900/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm border border-rosegold-800/10 dark:border-rosegold-800/30 text-paper-text dark:text-rosegold-100">
+              <Clock className="w-5 h-5 mr-3 text-rosegold-600 dark:text-rosegold-400"/> 
               {d.hero.time}
             </div>
-            <div className="flex items-center bg-black/20 dark:bg-rosegold-900/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm dark:border dark:border-rosegold-800/30 dark:text-rosegold-100">
-              <MapPin className="w-5 h-5 mr-3 text-rosegold-100 dark:text-rosegold-400"/> 
+            <div className="flex items-center bg-white/50 dark:bg-rosegold-900/10 px-4 py-2 rounded-lg backdrop-blur-sm shadow-sm border border-rosegold-800/10 dark:border-rosegold-800/30 text-paper-text dark:text-rosegold-100">
+              <MapPin className="w-5 h-5 mr-3 text-rosegold-600 dark:text-rosegold-400"/> 
               {d.hero.location}
             </div>
           </div>
@@ -206,7 +207,7 @@ export default function FirstChord() {
               rel="noopener noreferrer"
               download="Konzert_Singers_First_Chord_Brochure.pdf"
               key={lang}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-rosegold-800/50 dark:bg-black/50 hover:bg-rosegold-700/50 dark:hover:bg-neutral-900/80 border border-rosegold-400/30 dark:border-rosegold-500/50 text-white dark:text-rosegold-400 rounded-full font-bold backdrop-blur-sm shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-neutral-900/80 border border-rosegold-400/50 dark:border-rosegold-500/50 text-rosegold-800 dark:text-rosegold-400 rounded-full font-bold backdrop-blur-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
               <Download className="w-5 h-5" />
               <span>{lang === 'en' ? 'Download Brochure' : '下载电子宣传册'}</span>
