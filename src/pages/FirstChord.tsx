@@ -98,28 +98,35 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
         >
           <div className="overflow-hidden">
             <div className="space-y-4 cursor-default" onClick={(e) => e.stopPropagation()}>
-              <div className="bg-slate-50 dark:bg-black/50 dark:border dark:border-rosegold-900/30 rounded-xl p-5 md:p-6">
-                <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
-                  {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
-                </h5>
-                <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-base leading-relaxed">
-                  {song.lyrics.map((line, i) => (
-                    <p key={i}>{line}</p>
-                  ))}
+              {song.description && (
+                <div className="bg-gray-50/80 dark:bg-neutral-800/50 rounded-xl p-4 md:p-5 border border-gray-100 dark:border-rosegold-900/20 text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                  <p>{song.description}</p>
                 </div>
-              </div>
-              {song.translation && (
-                <div className="bg-rosegold-50/50 dark:bg-rosegold-900/10 rounded-xl p-5 md:p-6 border border-rosegold-100 dark:border-rosegold-800/30">
-                  <h5 className="text-sm font-semibold text-rosegold-500 dark:text-rosegold-400 uppercase tracking-wider mb-4">
-                    {lang === 'en' ? 'Translation' : '歌词大意'}
+              )}
+              <div className={`grid gap-4 ${song.translation ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
+                <div className="bg-slate-50 dark:bg-black/50 dark:border dark:border-rosegold-900/30 rounded-xl p-5 md:p-6">
+                  <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
+                    {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
                   </h5>
-                  <div className="space-y-2 font-medium text-gray-600 dark:text-gray-300 text-base leading-relaxed italic">
-                    {song.translation.map((line, i) => (
-                      <p key={i}>{line}</p>
+                  <div className="space-y-1.5 font-medium text-gray-700 dark:text-gray-200 text-base leading-relaxed">
+                    {song.lyrics.map((line, i) => (
+                      <p key={i} className="min-h-[1.5rem]">{line}</p>
                     ))}
                   </div>
                 </div>
-              )}
+                {song.translation && (
+                  <div className="bg-rosegold-50/50 dark:bg-rosegold-900/10 rounded-xl p-5 md:p-6 border border-rosegold-100 dark:border-rosegold-800/30">
+                    <h5 className="text-sm font-semibold text-rosegold-500 dark:text-rosegold-400 uppercase tracking-wider mb-4">
+                      {lang === 'en' ? 'Translation' : '歌词大意'}
+                    </h5>
+                    <div className="space-y-1.5 font-medium text-gray-600 dark:text-gray-300 text-base leading-relaxed italic">
+                      {song.translation.map((line, i) => (
+                        <p key={i} className="min-h-[1.5rem]">{line}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -154,8 +161,8 @@ export default function FirstChord() {
             <span className="font-medium">{tc.backToHome}</span>
           </Link>
           <div className="flex items-center space-x-3">
-            <img src="/images/logo-03.png" alt="Konzert Singers Logo" className="h-8 w-auto object-contain dark:hidden" />
-            <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-8 w-auto object-contain hidden dark:block" />
+            <img src="/images/logo-01.png" alt="Konzert Singers Logo" className="h-8 w-auto object-contain dark:hidden" />
+            <img src="/images/logo-02.png" alt="Konzert Singers Logo" className="h-8 w-auto object-contain hidden dark:block" />
             <div className="hidden sm:block text-sm font-medium text-gray-500 dark:text-rosegold-400/80 border-l border-gray-300 dark:border-rosegold-900/50 pl-3">
               {lang === 'zh' ? '咏歌堂' : 'Konzert Singers'}
             </div>
@@ -169,7 +176,7 @@ export default function FirstChord() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-rosegold-900/60 dark:from-transparent dark:to-black/90"></div>
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
           <div className="mb-8 flex justify-center">
-            <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90" />
+            <img src="/images/logo-02.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90" />
           </div>
           <div className="inline-block px-4 py-1.5 rounded-full bg-white/20 dark:bg-rosegold-900/20 backdrop-blur-md border border-white/30 dark:border-rosegold-500/20 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm dark:text-rosegold-200">
             {d.hero.subtitle}

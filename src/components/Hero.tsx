@@ -21,8 +21,8 @@ export default function Hero() {
       <div className="relative container mx-auto px-4 pt-16 pb-32 z-10">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
-            <img src="/images/logo-03.png" alt="Choir Logo" className="w-40 h-40 rounded-lg object-contain dark:hidden" />
-            <img src="/images/logo-04.png" alt="Choir Logo" className="w-40 h-40 rounded-lg object-contain hidden dark:block" />
+            <img src="/images/logo-01.png" alt="Choir Logo" className="w-40 h-40 rounded-lg object-contain dark:hidden" />
+            <img src="/images/logo-02.png" alt="Choir Logo" className="w-40 h-40 rounded-lg object-contain hidden dark:block" />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pb-2 mt-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tracking-tight relative z-20">
