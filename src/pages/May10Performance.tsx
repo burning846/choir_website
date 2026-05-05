@@ -69,8 +69,8 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
               )}
             </div>
             
-            <div className="shrink-0 mt-4 md:mt-0 bg-slate-50/50 dark:bg-slate-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-4 md:p-0 border border-gray-100/50 dark:border-slate-700/30 md:border-0">
-              <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-sm md:text-base">
+            <div className="shrink-0 w-full md:w-64 lg:w-72 mt-4 md:mt-0 bg-slate-50/50 dark:bg-slate-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-4 md:p-0 border border-gray-100/50 dark:border-slate-700/30 md:border-0">
+              <div className="grid grid-cols-[5rem_1fr] md:grid-cols-[6rem_1fr] gap-x-3 gap-y-1.5 text-sm md:text-base">
                 <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
                 <span className="font-semibold text-gray-700 dark:text-gray-300">{song.composer}</span>
                 
