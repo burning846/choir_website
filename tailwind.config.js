@@ -28,7 +28,11 @@ export default {
           900: "#22367f",
         },
         paper: {
-          DEFAULT: "#fdf8f5",
+          DEFAULT: "#f3eee8",
+          hover: "#eae2d9",
+          border: "#ddd2c7",
+          surface: "#f8f5f2",
+          text: "#4a4037",
           dark: "#1e293b",
         },
         rosegold: {
