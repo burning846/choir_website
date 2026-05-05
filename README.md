@@ -1,5 +1,11 @@
 # 咏歌堂合唱团 (Konzert Singers) 官方网站
 
+[![Build Status](https://github.com/burning846/choir_website/actions/workflows/ci.yml/badge.svg)](https://github.com/burning846/choir_website/actions)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF.svg)](https://vitejs.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6.svg)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 一个现代化的双语合唱团官方网站，包含合唱团信息、指挥介绍、团员风采、作品展示、演出详情（包含节目单与歌词）以及联系方式。
 
 ## 功能特性
