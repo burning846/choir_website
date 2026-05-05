@@ -1,6 +1,6 @@
 import { User, Music, Award } from 'lucide-react'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 import { uiTranslations } from '@/lib/i18n'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
@@ -8,7 +8,7 @@ import { Conductor as ConductorType } from '@/lib/types'
 
 export default function Conductor() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   const ts = uiTranslations[lang].sections
 
   const conductors: ConductorType[] = Array.isArray(doc?.conductors) 

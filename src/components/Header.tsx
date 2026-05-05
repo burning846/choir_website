@@ -1,14 +1,12 @@
 import { Sparkles, Moon, Sun } from 'lucide-react'
- 
+
 import MobileMenu from './MobileMenu'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
 import { useTheme } from '@/hooks/useTheme'
 import { uiTranslations } from '@/lib/i18n'
 
 export default function Header() {
   const { lang, setLang } = useLang()
-  const { doc } = useDoc()
   const { isDark, toggleTheme } = useTheme()
   const t = uiTranslations[lang].nav
   const tc = uiTranslations[lang].common
@@ -39,12 +37,6 @@ export default function Header() {
                 <span className="text-gray-800 dark:text-white whitespace-nowrap">{t.conductor}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              {Array.isArray(doc?.members) && doc.members.length > 0 && (
-                <a href="#members" className="relative px-3 py-2 rounded-full group transition-colors hover:bg-black/5 dark:hover:bg-white/10">
-                  <span className="text-gray-800 dark:text-white whitespace-nowrap">{t.members}</span>
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              )}
               <a href="#videos" className="relative px-3 py-2 rounded-full group transition-colors hover:bg-black/5 dark:hover:bg-white/10">
                 <span className="text-gray-800 dark:text-white whitespace-nowrap">{t.videos}</span>
                 <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>

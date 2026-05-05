@@ -1,6 +1,6 @@
-import { Play, Calendar, MapPin, Link as LinkIcon } from 'lucide-react'
+import { Play, Link as LinkIcon } from 'lucide-react'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
 import { uiTranslations } from '@/lib/i18n'
@@ -8,7 +8,7 @@ import { Video } from '@/lib/types'
 
 export default function Videos() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   const ts = uiTranslations[lang].sections
 
   const tc = uiTranslations[lang].common
@@ -59,23 +59,6 @@ export default function Videos() {
                 <a href={getWatchUrl(video)} target="_blank" rel="noopener noreferrer" className="block group/title">
                   <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-2 group-hover/title:text-blue-600 transition-colors">{video.title}</h3>
                 </a>
-                
-                {(video.date || video.venue) && (
-                  <div className="flex flex-wrap items-center gap-3 mb-3 text-xs text-gray-500 dark:text-slate-400">
-                    {video.date && (
-                      <div className="flex items-center">
-                        <Calendar className="h-3 w-3 mr-1" />
-                        <span>{video.date}</span>
-                      </div>
-                    )}
-                    {video.venue && (
-                      <div className="flex items-center">
-                        <MapPin className="h-3 w-3 mr-1" />
-                        <span>{video.venue}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
                 
                 <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed line-clamp-3">{video.description}</p>
               </div>

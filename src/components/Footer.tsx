@@ -1,12 +1,12 @@
 import { Music, Heart } from 'lucide-react'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 import { FooterInfo } from '@/lib/types'
 import { uiTranslations } from '@/lib/i18n'
 
 export default function Footer() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   const ts = uiTranslations[lang].sections
   const tf = uiTranslations[lang].footer
 
@@ -15,7 +15,7 @@ export default function Footer() {
 
   if (doc) {
     if (doc.footer) footer = doc.footer
-    nameCn = doc.choirName || doc.choirNameEn || ''
+    nameCn = doc.choirName || ''
   }
 
   return (
@@ -37,9 +37,6 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
               <li><a href="#about" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.about}</a></li>
               <li><a href="#conductor" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.conductor}</a></li>
-              {Array.isArray(doc?.members) && doc.members.length > 0 && (
-                <li><a href="#members" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.members}</a></li>
-              )}
               <li><a href="#videos" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.videos}</a></li>
               <li><a href="#contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">{ts.contact}</a></li>
             </ul>

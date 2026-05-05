@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 import { uiTranslations } from '@/lib/i18n'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Performances() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   const ts = uiTranslations[lang].sections
   const tc = uiTranslations[lang].common
   const performances = Array.isArray(doc?.performances) 

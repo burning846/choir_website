@@ -1,16 +1,16 @@
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 import { uiTranslations } from '@/lib/i18n'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Card from '@/components/ui/Card'
 
 export default function About() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   const ts = uiTranslations[lang].sections
   
   const intro = doc?.intro || ''
-  const aboutImage = doc?.aboutImage || doc?.images?.[0]?.file || '/placeholder-banner.svg'
+  const aboutImage = doc?.aboutImage || '/placeholder-banner.svg'
 
   return (
     <section id="about" className="py-16 bg-white dark:bg-slate-900">
