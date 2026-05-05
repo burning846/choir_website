@@ -41,7 +41,7 @@ function getPersonColorClass(name: string) {
   if (name.includes('桂') || name.includes('Nelson Kwei')) return 'text-rosegold-600 dark:text-rosegold-400'
   if (name.includes('冯') || name.includes('Foong')) return 'text-lightpurple-600 dark:text-lightpurple-400'
   if (name.includes('林') || name.includes('Lim')) return 'text-emerald-600 dark:text-emerald-400'
-  return 'text-gray-400 dark:text-gray-500'
+  return 'text-gray-700 dark:text-gray-400'
 }
 
 function SongCard({ song, index, lang }: { song: Song, index: number, lang: string }) {
@@ -71,19 +71,19 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
             
             <div className="shrink-0 w-full md:w-64 lg:w-72 mt-4 md:mt-0 bg-slate-50/50 dark:bg-neutral-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-4 md:p-0 border border-gray-100/50 dark:border-rosegold-900/20 md:border-0">
               <div className="grid grid-cols-[5rem_1fr] md:grid-cols-[6rem_1fr] gap-x-3 gap-y-1.5 text-sm md:text-base">
-                <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
+                <span className="text-gray-700 dark:text-gray-400 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
                 <span className="font-semibold text-gray-700 dark:text-gray-300">{song.composer}</span>
                 
                 {song.conductor && (
                   <>
-                    <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
+                    <span className="text-gray-700 dark:text-gray-400 text-right">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
                     <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
                   </>
                 )}
                 
                 {song.accompanist && (
                   <>
-                    <span className="text-gray-400 dark:text-gray-500 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
+                    <span className="text-gray-700 dark:text-gray-400 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
                     <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
                   </>
                 )}
@@ -94,7 +94,7 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
             {song.description}
           </p>
           
-          <div className="mt-6 flex items-center justify-center text-gray-400 group-hover:text-rosegold-500 transition-colors">
+          <div className="mt-6 flex items-center justify-center text-gray-700 dark:text-gray-400 group-hover:text-rosegold-500 transition-colors">
             {isExpanded ? (
               <div className="flex items-center space-x-2 bg-transparent px-4 py-2 rounded-full">
                 <span className="text-sm font-medium uppercase tracking-wider">{lang === 'en' ? 'Hide Lyrics' : '收起歌词'}</span>
@@ -119,7 +119,7 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
             <div className="space-y-4 cursor-default" onClick={(e) => e.stopPropagation()}>
               <div className={`grid gap-4 ${song.translation ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
                 <div className="bg-slate-50 dark:bg-black/50 dark:border dark:border-rosegold-900/30 rounded-xl p-6 md:p-8">
-                  <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
+                  <h5 className="text-sm font-semibold text-gray-700 dark:text-gray-400 uppercase tracking-wider mb-4">
                     {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
                   </h5>
                   <div className="space-y-1.5 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
@@ -160,7 +160,7 @@ export default function May10Performance() {
       <div className="min-h-screen bg-paper dark:bg-black transition-colors duration-300 flex flex-col items-center justify-center p-6 text-center font-sans">
         <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl shadow-xl max-w-md w-full space-y-4 border border-red-100 dark:border-red-900/30">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{tc.error}</h2>
-          <p className="text-gray-600 dark:text-gray-400">{tc.loadError}</p>
+          <p className="text-gray-700 dark:text-gray-400">{tc.loadError}</p>
           <Link to="/" className="mt-6 px-6 py-2.5 bg-rosegold-600 hover:bg-rosegold-700 text-white font-medium rounded-lg transition-colors inline-block">
             {tc.backToHome}
           </Link>
@@ -193,7 +193,7 @@ export default function May10Performance() {
               <div key={partIndex} className="space-y-8 mb-16 last:mb-0">
                 <div className="text-center space-y-2 mb-10">
                   <h3 className="text-2xl md:text-3xl font-bold text-rosegold-800 dark:text-rosegold-300">{part.title}</h3>
-                  <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">{part.theme}</p>
+                  <p className="text-lg text-gray-700 dark:text-gray-400 font-medium">{part.theme}</p>
                 </div>
                 
                 <div className="space-y-6">
@@ -205,7 +205,7 @@ export default function May10Performance() {
                 {partIndex === 0 && (
                   <div className="flex items-center justify-center py-12 my-8">
                     <div className="h-px bg-gray-200 dark:bg-rosegold-900/30 flex-grow max-w-xs"></div>
-                    <span className="px-6 text-gray-500 dark:text-rosegold-400/80 font-medium italic whitespace-nowrap">
+                    <span className="px-6 text-gray-600 dark:text-rosegold-400/80 font-medium italic whitespace-nowrap">
                       {lang === 'en' ? 'Intermission (15 minutes)' : '中场休息 (15分钟)'}
                     </span>
                     <div className="h-px bg-gray-200 dark:bg-rosegold-900/30 flex-grow max-w-xs"></div>

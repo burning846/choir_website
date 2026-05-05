@@ -29,7 +29,7 @@ function getPersonColorClass(name: string) {
   if (name.includes('桂') || name.includes('Nelson Kwei')) return 'text-rosegold-600 dark:text-rosegold-400'
   if (name.includes('冯') || name.includes('Foong')) return 'text-lightpurple-600 dark:text-lightpurple-400'
   if (name.includes('林') || name.includes('Lim')) return 'text-emerald-600 dark:text-emerald-400'
-  return 'text-paper-text/50 dark:text-paper-text/60'
+  return 'text-paper-text/80 dark:text-gray-400'
 }
 
 function SongCard({ song, index, lang }: { song: Song, index: number, lang: string }) {
@@ -59,19 +59,19 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
             
             <div className="shrink-0 w-full md:w-64 lg:w-72 mt-3 md:mt-0 bg-paper/50 dark:bg-neutral-800/30 md:bg-transparent md:dark:bg-transparent rounded-lg p-3 md:p-0 border border-paper-border/50 dark:border-rosegold-900/20 md:border-0">
               <div className="grid grid-cols-[5rem_1fr] md:grid-cols-[5.5rem_1fr] gap-x-3 gap-y-1.5 text-sm">
-                <span className="text-paper-text/50 dark:text-paper-text/60 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
+                <span className="text-paper-text/80 dark:text-gray-400 text-right">{lang === 'en' ? 'Composer:' : '词曲:'}</span>
                 <span className="font-semibold text-paper-text/90 dark:text-gray-300">{song.composer}</span>
                 
                 {song.conductor && (
                   <>
-                    <span className="text-paper-text/50 dark:text-paper-text/60 text-right">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
+                    <span className="text-paper-text/80 dark:text-gray-400 text-right">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
                     <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
                   </>
                 )}
                 
                 {song.accompanist && (
                   <>
-                    <span className="text-paper-text/50 dark:text-paper-text/60 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
+                    <span className="text-paper-text/80 dark:text-gray-400 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
                     <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
                   </>
                 )}
@@ -79,7 +79,7 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
             </div>
           </div>
           
-          <div className="mt-4 flex justify-end text-paper-text/50 group-hover:text-rosegold-500 transition-colors">
+          <div className="mt-4 flex justify-end text-paper-text/80 group-hover:text-rosegold-500 transition-colors">
             {isExpanded ? (
               <div className="flex items-center space-x-1">
                 <span className="text-xs font-medium uppercase tracking-wider">{lang === 'en' ? 'Hide Lyrics' : '收起歌词'}</span>
@@ -104,7 +104,7 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
             <div className="space-y-4 cursor-default" onClick={(e) => e.stopPropagation()}>
               <div className={`grid gap-4 ${song.translation ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
                 <div className="bg-paper dark:bg-black/50 dark:border dark:border-rosegold-900/30 rounded-xl p-5 md:p-6">
-                  <h5 className="text-sm font-semibold text-paper-text/50 dark:text-paper-text/60 uppercase tracking-wider mb-4">
+                  <h5 className="text-sm font-semibold text-paper-text/80 dark:text-gray-400 uppercase tracking-wider mb-4">
                     {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
                   </h5>
                   <div className="space-y-1.5 font-medium text-paper-text/90 dark:text-gray-200 text-base leading-relaxed">
@@ -162,7 +162,7 @@ export default function FirstChord() {
           <div className="flex items-center space-x-3">
             <img src="/images/logo-01.png" alt="Konzert Singers Logo" className="h-8 w-auto object-contain dark:hidden" />
             <img src="/images/logo-02.png" alt="Konzert Singers Logo" className="h-8 w-auto object-contain hidden dark:block" />
-            <div className="hidden sm:block text-sm font-medium text-paper-text/60 dark:text-rosegold-400/80 border-l border-paper-border dark:border-rosegold-900/50 pl-3">
+            <div className="hidden sm:block text-sm font-medium text-paper-text/80 dark:text-rosegold-400/80 border-l border-paper-border dark:border-rosegold-900/50 pl-3">
               {lang === 'zh' ? '咏歌堂' : 'Konzert Singers'}
             </div>
           </div>
@@ -375,7 +375,7 @@ export default function FirstChord() {
               <div key={partIndex} className="mb-16 last:mb-0">
                 <div className="text-center mb-10">
                   <h3 className="text-2xl md:text-3xl font-bold text-rosegold-800 dark:text-rosegold-300 mb-2">{part.title}</h3>
-                  <p className="text-lg text-paper-text/80 dark:text-paper-text/50 font-medium">{part.theme}</p>
+                  <p className="text-lg text-paper-text/80 dark:text-gray-400 font-medium">{part.theme}</p>
                 </div>
                 
                 <div className="space-y-6">
@@ -387,7 +387,7 @@ export default function FirstChord() {
                 {partIndex === 0 && (
                   <div className="flex items-center justify-center py-12 my-8">
                     <div className="h-px bg-gray-200 dark:bg-rosegold-900/30 flex-grow max-w-xs"></div>
-                    <span className="px-6 text-paper-text/60 dark:text-rosegold-400/80 font-medium italic whitespace-nowrap">
+                    <span className="px-6 text-paper-text/80 dark:text-rosegold-400/80 font-medium italic whitespace-nowrap">
                       {d.program.intermission}
                     </span>
                     <div className="h-px bg-gray-200 dark:bg-rosegold-900/30 flex-grow max-w-xs"></div>
@@ -464,26 +464,26 @@ export default function FirstChord() {
                 <h3 className="text-2xl font-bold text-paper-text dark:text-rosegold-100 border-b-2 border-rosegold-500 dark:border-rosegold-700 pb-2 inline-block">{d.gratitude.acknowledgements.title}</h3>
                 <div className="space-y-4">
                   <div className="flex flex-col">
-                    <span className="text-sm text-paper-text/60 dark:text-paper-text/50 uppercase tracking-wider">{d.gratitude.acknowledgements.venue.role}</span>
+                    <span className="text-sm text-paper-text/80 dark:text-gray-400 uppercase tracking-wider">{d.gratitude.acknowledgements.venue.role}</span>
                     <span className="text-lg font-medium text-paper-text dark:text-rosegold-200">{d.gratitude.acknowledgements.venue.name}</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-paper-text/60 dark:text-paper-text/50 uppercase tracking-wider">{d.gratitude.acknowledgements.photography.role}</span>
+                    <span className="text-sm text-paper-text/80 dark:text-gray-400 uppercase tracking-wider">{d.gratitude.acknowledgements.photography.role}</span>
                     <span className="text-lg font-medium text-paper-text dark:text-white whitespace-pre-line">{d.gratitude.acknowledgements.photography.name}</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-sm text-paper-text/60 dark:text-paper-text/50 uppercase tracking-wider">{d.gratitude.acknowledgements.concertPhotography.role}</span>
+                    <span className="text-sm text-paper-text/80 dark:text-gray-400 uppercase tracking-wider">{d.gratitude.acknowledgements.concertPhotography.role}</span>
                     <span className="text-lg font-medium text-paper-text dark:text-white whitespace-pre-line">{d.gratitude.acknowledgements.concertPhotography.name}</span>
                   </div>
                   <div className="grid grid-cols-2 gap-4 pt-2">
                     <div className="bg-paper dark:bg-black/50 p-4 rounded-xl dark:border dark:border-rosegold-900/30">
-                      <span className="text-sm text-paper-text/60 dark:text-paper-text/50 uppercase tracking-wider block mb-1">{d.gratitude.acknowledgements.platinum.role}</span>
+                      <span className="text-sm text-paper-text/80 dark:text-gray-400 uppercase tracking-wider block mb-1">{d.gratitude.acknowledgements.platinum.role}</span>
                       {d.gratitude.acknowledgements.platinum.names.map(name => (
                         <span key={name} className="block text-lg font-bold text-rosegold-600 dark:text-rosegold-400">{name}</span>
                       ))}
                     </div>
                     <div className="bg-paper dark:bg-black/50 p-4 rounded-xl dark:border dark:border-rosegold-900/30">
-                      <span className="text-sm text-paper-text/60 dark:text-paper-text/50 uppercase tracking-wider block mb-1">{d.gratitude.acknowledgements.gold.role}</span>
+                      <span className="text-sm text-paper-text/80 dark:text-gray-400 uppercase tracking-wider block mb-1">{d.gratitude.acknowledgements.gold.role}</span>
                       {d.gratitude.acknowledgements.gold.names.map(name => (
                         <span key={name} className="block text-lg font-bold text-lightpurple-600 dark:text-lightpurple-400">{name}</span>
                       ))}
@@ -498,7 +498,7 @@ export default function FirstChord() {
                 <div className="space-y-3">
                   {d.gratitude.exco.members.map((m, idx) => (
                     <div key={idx} className="flex justify-between items-baseline border-b border-paper-border dark:border-rosegold-900/30 pb-2 gap-x-4">
-                      <span className="text-paper-text/80 dark:text-paper-text/50 text-sm md:text-base text-left leading-snug">{m.role}</span>
+                      <span className="text-paper-text/80 dark:text-gray-400 text-sm md:text-base text-left leading-snug">{m.role}</span>
                       <span className="font-bold text-paper-text dark:text-white text-right shrink-0">{m.name}</span>
                     </div>
                   ))}
@@ -506,7 +506,7 @@ export default function FirstChord() {
                 <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                   {d.gratitude.exco.teams.map((t, idx) => (
                     <div key={idx} className="flex flex-col">
-                      <span className="text-xs text-paper-text/60 dark:text-paper-text/50 uppercase tracking-wider mb-1">{t.name}</span>
+                      <span className="text-xs text-paper-text/80 dark:text-gray-400 uppercase tracking-wider mb-1">{t.name}</span>
                       <span className="text-sm font-medium text-paper-text dark:text-gray-200">{t.members}</span>
                     </div>
                   ))}
@@ -545,7 +545,7 @@ export default function FirstChord() {
           <div className="flex flex-col items-center bg-paper-hover/50 dark:bg-neutral-800/50 rounded-full p-1 space-y-1">
             <button 
               onClick={() => setLang('zh')} 
-              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${lang==='zh'?'bg-paper-surface dark:bg-neutral-700 text-rosegold-600 dark:text-rosegold-400 shadow-md scale-105':'text-paper-text/60 dark:text-paper-text/50 hover:text-paper-text dark:hover:text-white hover:bg-paper-surface/50 dark:hover:bg-neutral-700/50'}`}
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${lang==='zh'?'bg-paper-surface dark:bg-neutral-700 text-rosegold-600 dark:text-rosegold-400 shadow-md scale-105':'text-paper-text/80 dark:text-gray-400 hover:text-paper-text dark:hover:text-white hover:bg-paper-surface/50 dark:hover:bg-neutral-700/50'}`}
               title="切换到中文"
             >
               中
@@ -553,7 +553,7 @@ export default function FirstChord() {
             <div className="w-6 h-px bg-gray-300 dark:bg-neutral-700 rounded-full"></div>
             <button 
               onClick={() => setLang('en')} 
-              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${lang==='en'?'bg-paper-surface dark:bg-neutral-700 text-rosegold-600 dark:text-rosegold-400 shadow-md scale-105':'text-paper-text/60 dark:text-paper-text/50 hover:text-paper-text dark:hover:text-white hover:bg-paper-surface/50 dark:hover:bg-neutral-700/50'}`}
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs font-bold transition-all ${lang==='en'?'bg-paper-surface dark:bg-neutral-700 text-rosegold-600 dark:text-rosegold-400 shadow-md scale-105':'text-paper-text/80 dark:text-gray-400 hover:text-paper-text dark:hover:text-white hover:bg-paper-surface/50 dark:hover:bg-neutral-700/50'}`}
               title="Switch to English"
             >
               EN
