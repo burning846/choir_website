@@ -23,7 +23,7 @@ export const performanceMay10Data = {
           "segmentPre": "全体上台（报幕1-2）",
           "composer": "Ruth Elaine Schram",
           "language": "英语",
-          "description": "一首充满希望与生机的合唱作品，通过音乐唤醒心灵的共鸣，开启美妙的合唱之旅。",
+          "description": "作为本场音乐会的开篇之作，《听见音乐》（Hear the Music）是一首充满生机与希望的合唱佳作。作曲家通过轻盈灵动的旋律，描绘了生活中无处不在的音乐——从远处的钟声、海浪的呢喃，到微风的低语。作品呼吁我们敞开心扉，倾听自然与人性的和弦，在美妙的合唱之旅中感受和平与博爱。",
           "lyrics": [
             "I hear a far away bell",
             "I hear the ocean in a shell",
@@ -64,7 +64,7 @@ export const performanceMay10Data = {
           "accompanist": "林育珠",
           "composer": "Sherri Porterfield",
           "language": "拉丁语",
-          "description": "庄严而神圣的拉丁文赞美诗，以纯净的无伴奏和声表达对上主的无限崇敬与赞美。",
+          "description": "这首庄严神圣的无伴奏拉丁文赞美诗，以《诗篇》第117篇为词。全曲通过纯净的复调和声与宽广的声部织体，展现出宏大而空灵的宗教音乐之美。在层层递进的旋律中，合唱团将用虔诚纯粹的嗓音，传递对上主无限的崇敬、感恩以及永恒的赞美。",
           "lyrics": [
             "Laudate Dominum omnes gentes",
             "laudate eum omnes populi",
@@ -87,7 +87,7 @@ export const performanceMay10Data = {
           "segmentPre": "全体在台上变站位（报幕3-4）",
           "composer": "Orlando di Lasso",
           "language": "意大利语",
-          "description": "文艺复兴时期著名作曲家奥兰多·迪·拉索的经典之作，旋律温柔婉转，如同爱人的凝视，诉说着眼中流露出的无限深情。",
+          "description": "文艺复兴时期音乐巨匠奥兰多·迪·拉索（Orlando di Lasso）的经典牧歌之作。这首四声部合唱生动描绘了对爱人双眸的深情赞美。旋律温柔婉转，和声细腻丰富，将16世纪意大利诗歌中那份“如皎洁明月般”的爱慕与眷恋展现得淋漓尽致，宛如穿越时空的深情凝视。",
           "lyrics": [
             "O occhi, manza mia, cigli dorati!",
             "O faccia d'una luna stralucente!",
@@ -108,7 +108,7 @@ export const performanceMay10Data = {
           "accompanist": "Nil",
           "composer": "Pierre Certon",
           "language": "法语",
-          "description": "一首轻快活泼的文艺复兴时期法国香颂（Chanson），旋律充满趣味和幽默感，展现了民间浓厚的生活气息。",
+          "description": "这是一首极具代表性的16世纪法国世俗香颂（Chanson），由皮埃尔·塞尔东（Pierre Certon）创作。歌曲以欢快跳跃的节奏和极具民间色彩的幽默歌词，讲述了一个市井中关于嫉妒与出轨的诙谐故事。各声部之间如对话般交织呼应，充满了浓厚的生活气息与戏剧张力。",
           "lyrics": [
             "La, la, la, je ne l'ose dire",
             "la, la, la, je le vous dirai",
@@ -142,7 +142,7 @@ export const performanceMay10Data = {
           "segmentPre": "全体在台上变站位（报幕5-7）",
           "composer": "李抱忱 曲 / 桂乃舜 编",
           "language": "中文",
-          "description": "改编自经典中国艺术歌曲，笛声悠扬，意境深远。通过合唱的丰富层次，将古代诗词中的淡淡乡愁表现得淋漓尽致。",
+          "description": "本曲改编自中国近代著名音乐教育家李抱忱的经典艺术歌曲，由桂乃舜老师重新编配为合唱版本。歌词意境深远，借古人“闻笛生愁”的典故，抒发了浓郁的思乡之情。在多声部的交织下，忽隐忽现的旋律犹如夜风中飘来的阵阵笛声，清冷而悠扬，令人回味无穷。",
           "lyrics": [
             "谁家吹笛画楼中",
             "断续声随断续风",
@@ -161,7 +161,7 @@ export const performanceMay10Data = {
           "accompanist": "桂乃舜",
           "composer": "傅春安 曲 / 李永乐 词 / 桂乃舜 和声",
           "language": "中文",
-          "description": "一首温婉动人的中文合唱，在夕阳余晖的映照下，优美的和声如同温暖的拥抱，抚慰着每一颗疲惫的心灵。",
+          "description": "这是一首旋律温婉、意境唯美的中文原创合唱佳作。音乐如同一幅色彩斑斓的黄昏画卷，将岁月沉淀后的从容与豁达娓娓道来。在落日余晖的映照下，各声部优美的和声交融碰撞，宛如一个温暖而有力的拥抱，抚慰着每一颗经历岁月洗礼的心灵。",
           "lyrics": [
             "夕阳啊夕阳，最美是夕阳",
             "灿烂的夕阳，已经悄悄地染红了美丽的天地",
@@ -178,7 +178,7 @@ export const performanceMay10Data = {
           "segmentPost": ["全体下台（报幕）"],
           "composer": "淡莹 词 / 吴世铭 曲",
           "language": "中文",
-          "description": "一首点亮心底光芒的原创中文作品。合唱团用充满力量的声音，传递出对未来和生命的美好期盼。",
+          "description": "作为上半场的压轴曲目，《希望》是一首极具张力与情感深度的华语合唱作品。歌词以古树、贝壳和春风为意象，表达了对生命意义的哲思与对未来的无限期盼。合唱团将用层层递进、充满力量的和声，点亮听众心底的光芒，在漫漫长夜中化作一阵温暖的春风。",
           "lyrics": [
             "我希望我是一株古树，无叶无花无年轮",
             "参天挺拔的身躯刻着啄木鸟的祝福",
@@ -205,7 +205,7 @@ export const performanceMay10Data = {
           "segmentPre": "女生上台（报幕8-10）",
           "composer": "久石让 / 信長貴富 编曲",
           "language": "日语",
-          "description": "吉卜力动画《魔法公主》的经典配乐，在信長貴富的绝妙编曲下，宏大的史诗感与空灵纯净的合唱完美交织。",
+          "description": "选自宫崎骏经典动画电影《幽灵公主》的主题曲。在著名合唱编曲家信長貴富的绝妙改编下，女生合唱版将久石让原曲中那份宏大的史诗感与大自然的神秘气息完美融合。空灵纯净的和声仿佛来自远古森林的呼唤，诉说着人类与自然之间深沉而复杂的情感羁绊。",
           "lyrics": [
             "はりつめた弓の ふるえる弦よ",
             "月の光にざわめく おまえの心",
@@ -231,7 +231,7 @@ export const performanceMay10Data = {
           "segmentPre": "女生下台，男生上台",
           "composer": "久石让 / 信長貴富 编曲",
           "language": "日语",
-          "description": "《天空之城》的经典主题曲，耳熟能详的动人旋律在多声部合唱的演绎中，焕发出更加宽广的生命力与感动。",
+          "description": "这首陪伴无数人成长的《天空之城》经典主题曲，在男声合唱的演绎下焕发出了截然不同的宽广生命力。浑厚而深情的男声部交织，赋予了这段耳熟能详的旋律更加坚定的力量感。它不仅是对纯真梦想的追寻，更是一场充满勇气与希望的空中冒险之旅。",
           "lyrics": [
             "あの地平線 輝くのは",
             "どこかに君を かくしているから",
@@ -269,7 +269,7 @@ export const performanceMay10Data = {
           "segmentPre": "男生不下台，女生加入（报幕10-11）",
           "composer": "桂乃舜 编曲",
           "language": "日语",
-          "description": "改编自《千与千寻》片尾曲，纯真温暖的曲调，通过人声的交融，触动每个人心中最柔软的角落。",
+          "description": "改编自经典动画《千与千寻》的片尾曲，由桂乃舜老师亲自编排。当男女声部在此刻汇聚，纯真温暖的曲调在混声合唱的丰满音色中层层绽放。歌曲传达了即使历经伤痛与离别，内心依然保有希望与力量的哲理，以最温柔的方式触动每个人心中最柔软的角落。",
           "lyrics": [
             "呼んでいる 胸のどこか奥で",
             "いつも心躍る 夢を見たい",
@@ -307,7 +307,7 @@ export const performanceMay10Data = {
           "segmentPre": "个别团员上下台，换钢琴伴奏",
           "composer": "Jennifer Leong / Iskander Ismail 编曲",
           "language": "马来语",
-          "description": "一首充满南洋风情的民歌改编作品，轻快灵动的节奏展现了东南亚多元文化的独特魅力。",
+          "description": "这是一首充满浓郁南洋风情的马来语合唱作品。歌曲以轻快灵动、富有弹性的节奏，生动描绘了东南亚美丽花园中鸟语花香、孩童嬉戏的欢乐场景。多声部的错落配合与独特的律动感，完美展现了新加坡及东南亚地区多元文化交融的独特魅力与勃勃生机。",
           "lyrics": [
             "La la la la la la",
             "Duduk seorang di taman indah",
@@ -347,7 +347,7 @@ export const performanceMay10Data = {
           "segmentPre": "台上小组不变，换钢琴伴奏（报幕12-13）",
           "composer": "梁文福 / 桂乃舜 编曲",
           "language": "中文",
-          "description": "新加坡新谣经典之作，熟悉的旋律诉说着岁月静好中绵长深厚的情谊，令人回味无穷。",
+          "description": "承载着一代新加坡人集体记忆的“新谣”代表作，由梁文福创作。在这首合唱改编版中，我们用温柔而深邃的歌声，将青春岁月中那份纯粹的友谊娓娓道来。正如歌名“细水长流”，不论时光如何流转、世事如何变迁，那份同窗之谊与知心之情，将永远在心底流淌。",
           "lyrics": [
             "年少时候谁没有梦",
             "无意之中你将心愿透露",
@@ -386,7 +386,7 @@ export const performanceMay10Data = {
           "segmentPre": "个别团员上下台，换指挥老师",
           "composer": "桂乃舜 编曲",
           "language": "中文",
-          "description": "中国经典民歌改编，旋律优美动听，生动地描绘了辽阔草原上牧羊姑娘的灵动身影与纯朴情感。",
+          "description": "这是一首改编自中国大西北地区的经典民歌佳作。歌曲旋律高亢嘹亮、优美动听，生动地勾勒出清晨草原上晨露闪耀、微风拂面的画卷，以及牧羊姑娘天真烂漫、灵动活泼的身影。合唱团通过细腻的强弱对比与声部呼应，将那份辽阔与纯朴的情感表现得淋漓尽致。",
           "lyrics": [
             "青青的草原朝露在闪耀",
             "静静的小溪映照着霞光",
@@ -407,7 +407,7 @@ export const performanceMay10Data = {
           "segmentPost": ["全体下台（报幕，返场？）","最后全体留在台上，致谢拍照发奖"],
           "composer": "桂乃舜 编曲",
           "language": "中文",
-          "description": "将跨越山海的友谊化作歌声，在和谐美妙的声部中展翅高飞，作为本场音乐会温暖而充满力量的收尾。",
+          "description": "作为本场《咏歌·初韵》音乐会的压轴之作，这首气势恢宏的中文合唱承载了我们最真挚的祝愿。在激昂澎湃的和声中，跨越山海的友谊化作了自由飞翔的翅膀。我们希望用这份充满力量与温度的歌声，飞向每一位听众的心田，为这个美妙的夜晚画上最圆满的句号。",
           "lyrics": [
             "六月的大地洒满了阳光",
             "六月的田野到处是花香",
@@ -452,7 +452,7 @@ export const performanceMay10Data = {
           "segmentPre": "All on stage (Announcement 1-2)",
           "composer": "Ruth Elaine Schram",
           "language": "English",
-          "description": "An uplifting and vibrant choral piece that awakens the soul's resonance through music, embarking on a wonderful journey of harmony.",
+          "description": "As the opening piece of this concert, \"Hear the Music\" is a vibrant and uplifting choral work. The composer uses light, agile melodies to depict the music found everywhere in life—from distant bells and whispering waves to the murmuring breeze. The piece invites us to open our hearts, listen to the chords of nature and humanity, and embrace peace and universal love through this wonderful choral journey.",
           "lyrics": [
             "I hear a far away bell",
             "I hear the ocean in a shell",
@@ -477,7 +477,7 @@ export const performanceMay10Data = {
           "accompanist": "Lim Geok Choo",
           "composer": "Sherri Porterfield",
           "language": "Latin",
-          "description": "A solemn and sacred Latin hymn, expressing infinite reverence and praise to the Lord through pure a cappella harmonies.",
+          "description": "This solemn and sacred a cappella Latin hymn is based on Psalm 117. Through pure polyphonic harmonies and broad vocal textures, the piece showcases the grand and ethereal beauty of religious music. In its layered melodies, the choir will use devout and pristine voices to convey infinite reverence, gratitude, and eternal praise to the Lord.",
           "lyrics": [
             "Laudate Dominum omnes gentes",
             "laudate eum omnes populi",
@@ -500,7 +500,7 @@ export const performanceMay10Data = {
           "segmentPre": "Change formation on stage (Announcement 3-4)",
           "composer": "Orlando di Lasso",
           "language": "Italian",
-          "description": "A classic Renaissance piece composed by Orlando di Lasso. With a gentle and melodic tune, like a lover's gaze, it expresses boundless affection.",
+          "description": "A classic madrigal by the Renaissance musical giant Orlando di Lasso. This four-part choral piece vividly depicts deep admiration for a lover's eyes. The gentle and melodic tune, combined with delicate and rich harmonies, perfectly captures the affection and yearning found in 16th-century Italian poetry—like a \"shining moon\"—creating a profound gaze that transcends time.",
           "lyrics": [
             "O occhi, manza mia, cigli dorati!",
             "O faccia d'una luna stralucente!",
@@ -521,7 +521,7 @@ export const performanceMay10Data = {
           "accompanist": "Nil",
           "composer": "Pierre Certon",
           "language": "French",
-          "description": "A lively and playful French Renaissance chanson, full of humor and strong folk characteristics.",
+          "description": "A highly representative 16th-century French secular chanson composed by Pierre Certon. With a lively, bouncing rhythm and humorous, folkloric lyrics, the song tells a witty town tale of jealousy and infidelity. The vocal parts intertwine and respond to each other like a conversation, brimming with vibrant daily life and dramatic tension.",
           "lyrics": [
             "La, la, la, je ne l'ose dire",
             "la, la, la, je le vous dirai",
@@ -555,7 +555,7 @@ export const performanceMay10Data = {
           "segmentPre": "Change formation on stage (Announcement 5-7)",
           "composer": "Music by Pao-Ch'en Lee / Arr. Nelson Kwei",
           "language": "Chinese",
-          "description": "Adapted from a classic Chinese art song, the melodious flute paints a profound artistic conception, perfectly expressing the subtle nostalgia in ancient poetry.",
+          "description": "Adapted from a classic art song by the renowned modern Chinese music educator Pao-Ch'en Lee, this piece was rearranged for choir by Nelson Kwei. The lyrics carry a profound artistic conception, using the ancient motif of \"hearing the flute and feeling sorrow\" to express deep homesickness. Interwoven across multiple vocal parts, the elusive melody resembles the sound of a flute drifting on the night wind—clear, cool, and endlessly evocative.",
           "lyrics": [
             "谁家吹笛画楼中",
             "断续声随断续风",
@@ -584,7 +584,7 @@ export const performanceMay10Data = {
           "accompanist": "Nelson Kwei",
           "composer": "Music by Poh Choon Ann / Lyrics by Lee Eng Lock / Harmony by Nelson Kwei",
           "language": "Chinese",
-          "description": "A gentle and moving Chinese choral piece. Under the afterglow of the sunset, the beautiful harmony comforts every weary soul like a warm embrace.",
+          "description": "A beautifully melodic and poetic original Chinese choral masterpiece. The music unfolds like a colorful painting of dusk, gently narrating the calmness and open-mindedness that comes with the passage of time. Bathed in the glow of the setting sun, the beautiful harmonies of the different vocal parts blend together like a warm and powerful embrace, comforting every soul that has weathered the years.",
           "lyrics": [
             "夕阳啊夕阳，最美是夕阳",
             "灿烂的夕阳，已经悄悄地染红了美丽的天地",
@@ -608,7 +608,7 @@ export const performanceMay10Data = {
           "segmentPost": ["All off stage (Announcement)"],
           "composer": "Lyrics by Dan Ying / Music by Wu Shiming",
           "language": "Chinese",
-          "description": "An original Chinese work that ignites the light within. The choir conveys a beautiful hope for the future and life with powerful voices.",
+          "description": "Serving as the finale of the first half, \"Hope\" is a Chinese choral work of immense dramatic tension and emotional depth. Using imagery of ancient trees, seashells, and spring breezes, the lyrics express philosophical reflections on the meaning of life and boundless expectations for the future. The choir will use progressively powerful harmonies to ignite the light in the audience's hearts, turning into a warm spring wind through the long night.",
           "lyrics": [
             "我希望我是一株古树，无叶无花无年轮",
             "参天挺拔的身躯刻着啄木鸟的祝福",
@@ -646,7 +646,7 @@ export const performanceMay10Data = {
           "segmentPre": "Female choir on stage (Announcement 8-10)",
           "composer": "Joe Hisaishi / Arr. Takatomi Nobunaga",
           "language": "Japanese",
-          "description": "The classic soundtrack from Studio Ghibli's 'Princess Mononoke'. Under Takatomi Nobunaga's brilliant arrangement, epic grandeur perfectly intertwines with ethereal choral purity.",
+          "description": "Selected from the theme song of Hayao Miyazaki's classic animated film \"Princess Mononoke\". Brilliantly arranged by renowned choral arranger Takatomi Nobunaga, this female choir version perfectly blends the epic grandeur and mysterious breath of nature from Joe Hisaishi's original score. The ethereal and pure harmonies sound like a calling from an ancient forest, recounting the profound and complex emotional bonds between humanity and nature.",
           "lyrics": [
             "はりつめた弓の ふるえる弦よ",
             "月の光にざわめく おまえの心",
@@ -672,7 +672,7 @@ export const performanceMay10Data = {
           "segmentPre": "Female choir off stage, male choir on stage",
           "composer": "Joe Hisaishi / Arr. Takatomi Nobunaga",
           "language": "Japanese",
-          "description": "The beloved theme song from 'Castle in the Sky', radiating newfound vitality and emotion through this multi-part choral interpretation.",
+          "description": "This classic theme song from \"Castle in the Sky\", which has accompanied countless people as they grew up, radiates a completely different, expansive vitality through this male choir interpretation. The rich and soulful interweaving of male voices endows this familiar melody with a resolute sense of strength. It is not merely a pursuit of innocent dreams, but an airborne adventure filled with courage and hope.",
           "lyrics": [
             "あの地平線 輝くのは",
             "どこかに君を かくしているから",
@@ -710,7 +710,7 @@ export const performanceMay10Data = {
           "segmentPre": "Male choir remains, female choir joins (Announcement 10-11)",
           "composer": "Arr. Nelson Kwei",
           "language": "Japanese",
-          "description": "Adapted from the ending theme of 'Spirited Away', its innocent and warm melody touches the softest corners of the heart.",
+          "description": "Adapted from the ending theme of the classic animation \"Spirited Away\" and specially arranged by Nelson Kwei. As the male and female voices converge, the innocent and warm melody blossoms layer by layer in the full tone of the mixed choir. The song conveys the philosophy that even after experiencing pain and separation, the heart still retains hope and strength, touching the softest corners of everyone's heart in the gentlest way.",
           "lyrics": [
             "呼んでいる 胸のどこか奥で",
             "いつも心躍る 夢を見たい",
@@ -748,7 +748,7 @@ export const performanceMay10Data = {
           "segmentPre": "Individual members change, change accompanist",
           "composer": "Jennifer Leong / Arr. Iskander Ismail",
           "language": "Malay",
-          "description": "An adaptation of a Malay folk song full of Southeast Asian charm, its light and agile rhythm showcasing the unique beauty of multiculturalism.",
+          "description": "A Malay choral work imbued with a rich Nanyang (Southeast Asian) flavor. With a light, agile, and bouncy rhythm, the song vividly depicts a joyous scene of singing birds, fragrant flowers, and playing children in a beautiful Southeast Asian garden. The staggered coordination of multiple vocal parts and the unique groove perfectly showcase the distinct charm and vibrant vitality of the multicultural fusion in Singapore and the region.",
           "lyrics": [
             "La la la la la la",
             "Duduk seorang di taman indah",
@@ -788,7 +788,7 @@ export const performanceMay10Data = {
           "segmentPre": "Group remains, change accompanist (Announcement 12-13)",
           "composer": "Liang Wern Fook / Arr. Nelson Kwei",
           "language": "Chinese",
-          "description": "A classic piece of Singaporean Xinyao music. The familiar melody tells of the enduring and profound friendship found in quiet times.",
+          "description": "A representative work of \"Xinyao\" (Singaporean folk pop) composed by Liang Wern Fook, carrying the collective memory of a generation of Singaporeans. In this choral adaptation, we use gentle and profound voices to narrate the pure friendship of our youth. Just as the title suggests, \"Love Endures\" (like a steadily flowing stream), no matter how time passes and the world changes, the camaraderie and deep understanding will forever flow in our hearts.",
           "lyrics": [
             "年少时候谁没有梦",
             "无意之中你将心愿透露",
@@ -856,7 +856,7 @@ export const performanceMay10Data = {
           "segmentPre": "Individual members change, change conductor",
           "composer": "Arr. Nelson Kwei",
           "language": "Chinese",
-          "description": "An adaptation of a classic Chinese folk song, its beautiful melody vividly depicting the graceful figure and pure emotion of a shepherd girl on the vast grassland.",
+          "description": "A classic folk song adaptation from the great Northwest of China. The soaring, bright, and beautiful melody vividly sketches a picture of the morning grassland—shining dew and a gentle breeze—along with the innocent, lively, and graceful figure of a shepherd girl. Through delicate dynamic contrasts and vocal interplay, the choir perfectly expresses that vastness and rustic emotion.",
           "lyrics": [
             "青青的草原朝露在闪耀",
             "静静的小溪映照着霞光",
@@ -887,7 +887,7 @@ export const performanceMay10Data = {
           "segmentPost": ["All off stage (Announcement, Encore?)","All remain on stage for curtain call, photos, and awards"],
           "composer": "Arr. Nelson Kwei",
           "language": "Chinese",
-          "description": "Transforming friendship that crosses mountains and seas into song, soaring high in harmonious voices as a warm and powerful conclusion to this concert.",
+          "description": "Serving as the grand finale of the \"Ode to Song · First Rhyme\" concert, this magnificent Chinese choral piece carries our most sincere wishes. Amidst the impassioned and surging harmonies, friendship that crosses mountains and seas transforms into freely soaring wings. We hope this powerful and warm singing will fly into the hearts of every listener, bringing this wonderful evening to a perfect conclusion.",
           "lyrics": [
             "六月的大地洒满了阳光",
             "六月的田野到处是花香",
