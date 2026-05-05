@@ -49,7 +49,7 @@ export const choirDocData = {
   "intro": "咏歌堂（Konzert Singers）是一支充满活力的合唱团体，汇聚了一群热爱音乐、追求卓越的歌唱爱好者。\n\n我们坚信，声音不仅是听觉的享受，更是心灵的共鸣。在这里，不同年龄、不同背景的团员们因为对音乐的共同热爱而相聚。无论是朝气蓬勃的青年，还是沉稳睿智的长者，我们都用最真挚的情感，演绎着每一首动人的乐章。\n\n我们崇尚多元文化，既深情演绎中华文化的博大精深，也热情拥抱世界音乐的丰富多彩。我们相信，音乐是跨越国界的语言，是最动人的文化桥梁。\n\n咏歌，咏歌！在咏歌堂，我们用歌声记录生活，用和声传递真善美。欢迎加入我们，一起感受合唱的魅力，让音乐点亮生活！",
   "aboutImage": "/images/about.webp",
   "qrcode": "/images/qrcode.png",
-  "logo": "/images/logo-01.png",
+  "logo": "/images/logo-03.png",
   "youtube": {
     "channel": "https://www.youtube.com/@KonzertSingers"
   },
@@ -195,7 +195,7 @@ export const choirDocData = {
   "intro": "Konzert Singers is a vibrant choral ensemble, bringing together a community of music lovers who strive for excellence.\n\nWe believe that sound is not merely a pleasure for the ears, but a resonance of the soul. Here, members of different ages and backgrounds gather for their shared passion for music. Whether it is the energetic youth or the wise and steady seniors, we all interpret every moving movement with the most sincere emotions.\n\nWe embrace cultural diversity, passionately performing the profound depths of Chinese culture while warmly welcoming the richness of world music. We believe that music is a universal language and the most touching bridge between cultures.\n\nSing, and let the song live on! At Konzert Singers, we record life through song and convey truth, goodness, and beauty through harmony. Join us to experience the charm of choral singing and let music light up your life!",
   "aboutImage": "/images/about.webp",
   "qrcode": "/images/qrcode.png",
-  "logo": "/images/logo-01.png",
+  "logo": "/images/logo-03.png",
   "youtube": {
     "channel": "https://www.youtube.com/@KonzertSingers"
   },
