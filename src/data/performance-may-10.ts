@@ -18,6 +18,9 @@ export const performanceMay10Data = {
         {
           "id": 1,
           "title": "Hear the Music (听见音乐)",
+          "conductor": "桂乃舜",
+          "accompanist": "林育珠",
+          "segmentPre": "全体上台（报幕1-2）",
           "composer": "Ruth Elaine Schram",
           "language": "英语",
           "description": "一首充满希望与生机的合唱作品，通过音乐唤醒心灵的共鸣，开启美妙的合唱之旅。",
@@ -57,6 +60,8 @@ export const performanceMay10Data = {
         {
           "id": 2,
           "title": "Laudate Dominum (赞美上主)",
+          "conductor": "桂乃舜",
+          "accompanist": "林育珠",
           "composer": "Sherri Porterfield",
           "language": "拉丁语",
           "description": "庄严而神圣的拉丁文赞美诗，以纯净的无伴奏和声表达对上主的无限崇敬与赞美。",
@@ -77,9 +82,12 @@ export const performanceMay10Data = {
         {
           "id": 3,
           "title": "O occhi, manza mia (哦，我温柔的眼睛)",
-          "composer": "意大利传统",
+          "conductor": "桂乃舜",
+          "accompanist": "Nil",
+          "segmentPre": "全体在台上变站位（报幕3-4）",
+          "composer": "Orlando di Lasso",
           "language": "意大利语",
-          "description": "源自意大利的传统民歌，旋律温柔婉转，如同爱人的凝视，诉说着眼中流露出的无限深情。",
+          "description": "文艺复兴时期著名作曲家奥兰多·迪·拉索的经典之作，旋律温柔婉转，如同爱人的凝视，诉说着眼中流露出的无限深情。",
           "lyrics": [
             "O occhi, manza mia, cigli dorati!",
             "O faccia d'una luna stralucente!",
@@ -96,6 +104,8 @@ export const performanceMay10Data = {
         {
           "id": 4,
           "title": "La, la, la, je ne l'ose dire (啦啦啦，我不敢说)",
+          "conductor": "桂乃舜",
+          "accompanist": "Nil",
           "composer": "Pierre Certon",
           "language": "法语",
           "description": "一首轻快活泼的文艺复兴时期法国香颂（Chanson），旋律充满趣味和幽默感，展现了民间浓厚的生活气息。",
@@ -127,6 +137,9 @@ export const performanceMay10Data = {
         {
           "id": 5,
           "title": "闻笛",
+          "conductor": "冯克伦",
+          "accompanist": "桂乃舜",
+          "segmentPre": "全体在台上变站位（报幕5-7）",
           "composer": "李抱忱 曲 / 桂乃舜 编",
           "language": "中文",
           "description": "改编自经典中国艺术歌曲，笛声悠扬，意境深远。通过合唱的丰富层次，将古代诗词中的淡淡乡愁表现得淋漓尽致。",
@@ -144,6 +157,8 @@ export const performanceMay10Data = {
         {
           "id": 6,
           "title": "拥抱夕阳",
+          "conductor": "冯克伦",
+          "accompanist": "桂乃舜",
           "composer": "傅春安 曲 / 李永乐 词 / 桂乃舜 和声",
           "language": "中文",
           "description": "一首温婉动人的中文合唱，在夕阳余晖的映照下，优美的和声如同温暖的拥抱，抚慰着每一颗疲惫的心灵。",
@@ -158,6 +173,9 @@ export const performanceMay10Data = {
         {
           "id": 7,
           "title": "希望",
+          "conductor": "桂乃舜",
+          "accompanist": "桂乃舜",
+          "segmentPost": ["全体下台（报幕）"],
           "composer": "淡莹 词 / 吴世铭 曲",
           "language": "中文",
           "description": "一首点亮心底光芒的原创中文作品。合唱团用充满力量的声音，传递出对未来和生命的美好期盼。",
@@ -182,6 +200,9 @@ export const performanceMay10Data = {
         {
           "id": 8,
           "title": "もののけ姫 (魔法公主)",
+          "conductor": "冯克伦",
+          "accompanist": "林育珠",
+          "segmentPre": "女生上台（报幕8-10）",
           "composer": "久石让 / 信長貴富 编曲",
           "language": "日语",
           "description": "吉卜力动画《魔法公主》的经典配乐，在信長貴富的绝妙编曲下，宏大的史诗感与空灵纯净的合唱完美交织。",
@@ -205,6 +226,9 @@ export const performanceMay10Data = {
         {
           "id": 9,
           "title": "君をのせて (伴随着你)",
+          "conductor": "冯克伦",
+          "accompanist": "林育珠",
+          "segmentPre": "女生下台，男生上台",
           "composer": "久石让 / 信長貴富 编曲",
           "language": "日语",
           "description": "《天空之城》的经典主题曲，耳熟能详的动人旋律在多声部合唱的演绎中，焕发出更加宽广的生命力与感动。",
@@ -240,6 +264,9 @@ export const performanceMay10Data = {
         {
           "id": 10,
           "title": "いつも何度でも (永远同在)",
+          "conductor": "冯克伦",
+          "accompanist": "桂乃舜",
+          "segmentPre": "男生不下台，女生加入（报幕10-11）",
           "composer": "桂乃舜 编曲",
           "language": "日语",
           "description": "改编自《千与千寻》片尾曲，纯真温暖的曲调，通过人声的交融，触动每个人心中最柔软的角落。",
@@ -275,6 +302,9 @@ export const performanceMay10Data = {
         {
           "id": 11,
           "title": "Keindahan Taman (花园之美)",
+          "conductor": "冯克伦",
+          "accompanist": "林育珠",
+          "segmentPre": "个别团员上下台，换钢琴伴奏",
           "composer": "Jennifer Leong / Iskander Ismail 编曲",
           "language": "马来语",
           "description": "一首充满南洋风情的民歌改编作品，轻快灵动的节奏展现了东南亚多元文化的独特魅力。",
@@ -312,6 +342,9 @@ export const performanceMay10Data = {
         {
           "id": 12,
           "title": "细水长流",
+          "conductor": "冯克伦",
+          "accompanist": "桂乃舜",
+          "segmentPre": "台上小组不变，换钢琴伴奏（报幕12-13）",
           "composer": "梁文福 / 桂乃舜 编曲",
           "language": "中文",
           "description": "新加坡新谣经典之作，熟悉的旋律诉说着岁月静好中绵长深厚的情谊，令人回味无穷。",
@@ -348,6 +381,9 @@ export const performanceMay10Data = {
         {
           "id": 13,
           "title": "牧羊姑娘",
+          "conductor": "桂乃舜",
+          "accompanist": "Nil",
+          "segmentPre": "个别团员上下台，换指挥老师",
           "composer": "桂乃舜 编曲",
           "language": "中文",
           "description": "中国经典民歌改编，旋律优美动听，生动地描绘了辽阔草原上牧羊姑娘的灵动身影与纯朴情感。",
@@ -365,6 +401,10 @@ export const performanceMay10Data = {
         {
           "id": 14,
           "title": "友谊的歌声展开翅膀",
+          "conductor": "冯克伦",
+          "accompanist": "桂乃舜",
+          "segmentPre": "台上全体不变，换指挥钢伴（报幕14）",
+          "segmentPost": ["全体下台（报幕，返场？）","最后全体留在台上，致谢拍照发奖"],
           "composer": "桂乃舜 编曲",
           "language": "中文",
           "description": "将跨越山海的友谊化作歌声，在和谐美妙的声部中展翅高飞，作为本场音乐会温暖而充满力量的收尾。",
@@ -407,6 +447,9 @@ export const performanceMay10Data = {
         {
           "id": 1,
           "title": "Hear the Music",
+          "conductor": "Nelson Kwei",
+          "accompanist": "Lim Geok Choo",
+          "segmentPre": "All on stage (Announcement 1-2)",
           "composer": "Ruth Elaine Schram",
           "language": "English",
           "description": "An uplifting and vibrant choral piece that awakens the soul's resonance through music, embarking on a wonderful journey of harmony.",
@@ -430,6 +473,8 @@ export const performanceMay10Data = {
         {
           "id": 2,
           "title": "Laudate Dominum",
+          "conductor": "Nelson Kwei",
+          "accompanist": "Lim Geok Choo",
           "composer": "Sherri Porterfield",
           "language": "Latin",
           "description": "A solemn and sacred Latin hymn, expressing infinite reverence and praise to the Lord through pure a cappella harmonies.",
@@ -450,9 +495,12 @@ export const performanceMay10Data = {
         {
           "id": 3,
           "title": "O occhi, manza mia",
+          "conductor": "Nelson Kwei",
+          "accompanist": "Nil",
+          "segmentPre": "Change formation on stage (Announcement 3-4)",
           "composer": "Orlando di Lasso",
           "language": "Italian",
-          "description": "A traditional Italian folk song with a gentle and melodic tune, like a lover's gaze, expressing boundless affection.",
+          "description": "A classic Renaissance piece composed by Orlando di Lasso. With a gentle and melodic tune, like a lover's gaze, it expresses boundless affection.",
           "lyrics": [
             "O occhi, manza mia, cigli dorati!",
             "O faccia d'una luna stralucente!",
@@ -469,6 +517,8 @@ export const performanceMay10Data = {
         {
           "id": 4,
           "title": "La, la, la, je ne l'ose dire",
+          "conductor": "Nelson Kwei",
+          "accompanist": "Nil",
           "composer": "Pierre Certon",
           "language": "French",
           "description": "A lively and playful French Renaissance chanson, full of humor and strong folk characteristics.",
@@ -500,6 +550,9 @@ export const performanceMay10Data = {
         {
           "id": 5,
           "title": "闻笛 (Hearing the Flute)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Nelson Kwei",
+          "segmentPre": "Change formation on stage (Announcement 5-7)",
           "composer": "Music by Pao-Ch'en Lee / Arr. Nelson Kwei",
           "language": "Chinese",
           "description": "Adapted from a classic Chinese art song, the melodious flute paints a profound artistic conception, perfectly expressing the subtle nostalgia in ancient poetry.",
@@ -527,6 +580,8 @@ export const performanceMay10Data = {
         {
           "id": 6,
           "title": "拥抱夕阳 (Embrace the Sunset)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Nelson Kwei",
           "composer": "Music by Poh Choon Ann / Lyrics by Lee Eng Lock / Harmony by Nelson Kwei",
           "language": "Chinese",
           "description": "A gentle and moving Chinese choral piece. Under the afterglow of the sunset, the beautiful harmony comforts every weary soul like a warm embrace.",
@@ -548,6 +603,9 @@ export const performanceMay10Data = {
         {
           "id": 7,
           "title": "希望 (Hope)",
+          "conductor": "Nelson Kwei",
+          "accompanist": "Nelson Kwei",
+          "segmentPost": ["All off stage (Announcement)"],
           "composer": "Lyrics by Dan Ying / Music by Wu Shiming",
           "language": "Chinese",
           "description": "An original Chinese work that ignites the light within. The choir conveys a beautiful hope for the future and life with powerful voices.",
@@ -583,6 +641,9 @@ export const performanceMay10Data = {
         {
           "id": 8,
           "title": "もののけ姫 (Princess Mononoke)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Lim Geok Choo",
+          "segmentPre": "Female choir on stage (Announcement 8-10)",
           "composer": "Joe Hisaishi / Arr. Takatomi Nobunaga",
           "language": "Japanese",
           "description": "The classic soundtrack from Studio Ghibli's 'Princess Mononoke'. Under Takatomi Nobunaga's brilliant arrangement, epic grandeur perfectly intertwines with ethereal choral purity.",
@@ -606,6 +667,9 @@ export const performanceMay10Data = {
         {
           "id": 9,
           "title": "君をのせて (Carrying You)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Lim Geok Choo",
+          "segmentPre": "Female choir off stage, male choir on stage",
           "composer": "Joe Hisaishi / Arr. Takatomi Nobunaga",
           "language": "Japanese",
           "description": "The beloved theme song from 'Castle in the Sky', radiating newfound vitality and emotion through this multi-part choral interpretation.",
@@ -641,6 +705,9 @@ export const performanceMay10Data = {
         {
           "id": 10,
           "title": "いつも何度でも (Always With Me)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Nelson Kwei",
+          "segmentPre": "Male choir remains, female choir joins (Announcement 10-11)",
           "composer": "Arr. Nelson Kwei",
           "language": "Japanese",
           "description": "Adapted from the ending theme of 'Spirited Away', its innocent and warm melody touches the softest corners of the heart.",
@@ -676,6 +743,9 @@ export const performanceMay10Data = {
         {
           "id": 11,
           "title": "Keindahan Taman",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Lim Geok Choo",
+          "segmentPre": "Individual members change, change accompanist",
           "composer": "Jennifer Leong / Arr. Iskander Ismail",
           "language": "Malay",
           "description": "An adaptation of a Malay folk song full of Southeast Asian charm, its light and agile rhythm showcasing the unique beauty of multiculturalism.",
@@ -713,6 +783,9 @@ export const performanceMay10Data = {
         {
           "id": 12,
           "title": "细水长流 (Love Endures)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Nelson Kwei",
+          "segmentPre": "Group remains, change accompanist (Announcement 12-13)",
           "composer": "Liang Wern Fook / Arr. Nelson Kwei",
           "language": "Chinese",
           "description": "A classic piece of Singaporean Xinyao music. The familiar melody tells of the enduring and profound friendship found in quiet times.",
@@ -778,6 +851,9 @@ export const performanceMay10Data = {
         {
           "id": 13,
           "title": "牧羊姑娘 (The Shepherd Girl)",
+          "conductor": "Nelson Kwei",
+          "accompanist": "Nil",
+          "segmentPre": "Individual members change, change conductor",
           "composer": "Arr. Nelson Kwei",
           "language": "Chinese",
           "description": "An adaptation of a classic Chinese folk song, its beautiful melody vividly depicting the graceful figure and pure emotion of a shepherd girl on the vast grassland.",
@@ -805,6 +881,10 @@ export const performanceMay10Data = {
         {
           "id": 14,
           "title": "友谊的歌声展开翅膀 (Wings of Friendship)",
+          "conductor": "Foong Hak Luen",
+          "accompanist": "Nelson Kwei",
+          "segmentPre": "All remain, change conductor and accompanist (Announcement 14)",
+          "segmentPost": ["All off stage (Announcement, Encore?)","All remain on stage for curtain call, photos, and awards"],
           "composer": "Arr. Nelson Kwei",
           "language": "Chinese",
           "description": "Transforming friendship that crosses mountains and seas into song, soaring high in harmonious voices as a warm and powerful conclusion to this concert.",

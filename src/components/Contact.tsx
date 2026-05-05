@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Globe, QrCode } from 'lucide-react'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 import { uiTranslations } from '@/lib/i18n'
 import { getSocialIcon, getSocialColor } from '@/lib/social'
 import SectionTitle from '@/components/ui/SectionTitle'
@@ -23,7 +23,7 @@ interface SocialLink {
 
 export default function Contact() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   const ts = uiTranslations[lang].sections
   const tc = uiTranslations[lang].common
 

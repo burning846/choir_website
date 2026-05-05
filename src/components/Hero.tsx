@@ -1,10 +1,10 @@
 import { Heart, Star } from 'lucide-react'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
+import { choirDocData } from "@/data/choir-doc"
 
 export default function Hero() {
   const { lang } = useLang()
-  const { doc } = useDoc()
+  const doc = choirDocData[lang]
   
   const choirName = doc?.choirName || (lang === 'en' ? 'Konzert Singers' : '咏歌堂')
   

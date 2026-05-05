@@ -1,20 +1,17 @@
 import { useState } from 'react'
 import { useLang } from '@/lib/lang'
-import { useDoc } from '@/hooks/useDoc'
 import { Menu, X, Sparkles } from 'lucide-react'
 import { uiTranslations } from '@/lib/i18n'
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
   const { lang, setLang } = useLang()
-  const { doc } = useDoc()
   const t = uiTranslations[lang].nav
   const tc = uiTranslations[lang].common
 
   const menuItems = [
     { href: '#about', label: t.about },
     { href: '#conductor', label: t.conductor },
-    ...(Array.isArray(doc?.members) && doc!.members.length > 0 ? [{ href: '#members', label: t.members }] : []),
     { href: '#videos', label: t.videos },
     { href: '#performances', label: t.performances },
     { href: '#contact', label: t.contact }

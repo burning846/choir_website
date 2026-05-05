@@ -1,4 +1,5 @@
-import { ArrowLeft, Music, Moon, Sun } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowLeft, Music, Moon, Sun, ChevronDown, ChevronUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLang } from '@/lib/lang'
 import { useTheme } from '@/hooks/useTheme'
@@ -14,6 +15,10 @@ interface Song {
   description: string
   lyrics: string[]
   translation?: string[]
+  conductor?: string
+  accompanist?: string
+  segmentPre?: string
+  segmentPost?: string[]
 }
 
 interface PerformancePart {
@@ -30,6 +35,112 @@ interface PerformanceData {
   description: string
   highlights: string[]
   parts: PerformancePart[]
+}
+
+function getPersonColorClass(name: string) {
+  if (name.includes('桂') || name.includes('Nelson Kwei')) return 'text-blue-500 dark:text-blue-400'
+  if (name.includes('冯') || name.includes('Foong')) return 'text-purple-500 dark:text-purple-400'
+  if (name.includes('林') || name.includes('Lim')) return 'text-emerald-500 dark:text-emerald-400'
+  return 'text-gray-400 dark:text-gray-500'
+}
+
+function SongCard({ song, index, lang }: { song: Song, index: number, lang: string }) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-slate-700 hover:shadow-2xl transition-all duration-300">
+      <div 
+        className="p-8 md:p-10 cursor-pointer group"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <div className={`transition-all duration-300 ${isExpanded ? 'border-b border-gray-100 dark:border-slate-700 pb-6 mb-6' : ''}`}>
+          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
+            <h4 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <span className="text-purple-500 mr-3">{song.id || index + 1}.</span>
+              {song.title}
+            </h4>
+            <div className="flex flex-col md:items-end text-sm md:text-base">
+              <span className="text-gray-500 dark:text-gray-400 font-medium italic">
+                {song.composer}
+              </span>
+              {song.language && (
+                <span className="text-blue-500/80 dark:text-blue-400/80 mt-1 font-medium">
+                  {song.language}
+                </span>
+              )}
+              {(song.conductor || song.accompanist) && (
+                <div className="flex items-center space-x-3 mt-2 text-sm">
+                  {song.conductor && (
+                    <span className="flex items-center space-x-1">
+                      <span className="text-gray-400 dark:text-gray-500">{lang === 'en' ? 'Cond:' : '指挥:'}</span>
+                      <span className={`font-semibold ${getPersonColorClass(song.conductor)}`}>{song.conductor}</span>
+                    </span>
+                  )}
+                  {song.accompanist && (
+                    <span className="flex items-center space-x-1">
+                      <span className="text-gray-400 dark:text-gray-500">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
+                      <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+            {song.description}
+          </p>
+          
+          <div className="mt-6 flex items-center justify-center text-gray-400 group-hover:text-blue-500 transition-colors">
+            {isExpanded ? (
+              <div className="flex items-center space-x-2 bg-gray-50 dark:bg-slate-700/50 px-4 py-2 rounded-full">
+                <span className="text-sm font-medium">{lang === 'en' ? 'Hide Lyrics' : '收起歌词'}</span>
+                <ChevronUp className="w-4 h-4" />
+              </div>
+            ) : (
+              <div className="flex items-center space-x-2 bg-gray-50 dark:bg-slate-700/50 px-4 py-2 rounded-full">
+                <span className="text-sm font-medium">{lang === 'en' ? 'Show Lyrics' : '展开歌词'}</span>
+                <ChevronDown className="w-4 h-4" />
+              </div>
+            )}
+          </div>
+        </div>
+        
+        {/* Expanded Lyrics Area */}
+        <div 
+          className={`grid transition-all duration-500 ease-in-out ${
+            isExpanded ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="space-y-4 cursor-default" onClick={(e) => e.stopPropagation()}>
+              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-6 md:p-8">
+                <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
+                  {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
+                </h5>
+                <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
+                  {song.lyrics.map((line, i) => (
+                    <p key={i}>{line}</p>
+                  ))}
+                </div>
+              </div>
+              {song.translation && (
+                <div className="bg-blue-50/50 dark:bg-blue-900/20 rounded-xl p-6 md:p-8 border border-blue-100 dark:border-blue-800/30">
+                  <h5 className="text-sm font-semibold text-blue-400 dark:text-blue-500 uppercase tracking-wider mb-4">
+                    {lang === 'en' ? 'Translation' : '歌词大意'}
+                  </h5>
+                  <div className="space-y-2 font-medium text-gray-600 dark:text-gray-300 text-lg leading-relaxed italic">
+                    {song.translation.map((line, i) => (
+                      <p key={i}>{line}</p>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default function May10Performance() {
@@ -81,56 +192,7 @@ export default function May10Performance() {
                 
                 <div className="space-y-8">
                   {part.songs.map((song, index) => (
-                    <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-slate-700 hover:shadow-2xl transition-shadow duration-300">
-                      <div className="p-8 md:p-10">
-                        <div className="mb-6 border-b border-gray-100 dark:border-slate-700 pb-6">
-                          <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-                            <h4 className="text-2xl font-bold text-gray-900 dark:text-white">
-                              <span className="text-purple-500 mr-3">{song.id || index + 1}.</span>
-                              {song.title}
-                            </h4>
-                            <div className="flex flex-col md:items-end text-sm md:text-base">
-                              <span className="text-gray-500 dark:text-gray-400 font-medium italic">
-                                {song.composer}
-                              </span>
-                              {song.language && (
-                                <span className="text-blue-500/80 dark:text-blue-400/80 mt-1 font-medium">
-                                  {song.language}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                          <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-                            {song.description}
-                          </p>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <div className="bg-slate-50 dark:bg-slate-900/50 rounded-xl p-6 md:p-8">
-                            <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4">
-                              {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
-                            </h5>
-                            <div className="space-y-2 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
-                              {song.lyrics.map((line, i) => (
-                                <p key={i}>{line}</p>
-                              ))}
-                            </div>
-                          </div>
-                          {song.translation && (
-                            <div className="bg-blue-50/50 dark:bg-blue-900/20 rounded-xl p-6 md:p-8 border border-blue-100 dark:border-blue-800/30">
-                              <h5 className="text-sm font-semibold text-blue-400 dark:text-blue-500 uppercase tracking-wider mb-4">
-                                {lang === 'en' ? 'Translation' : '歌词大意'}
-                              </h5>
-                              <div className="space-y-2 font-medium text-gray-600 dark:text-gray-300 text-lg leading-relaxed italic">
-                                {song.translation.map((line, i) => (
-                                  <p key={i}>{line}</p>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                    <SongCard key={index} song={song} index={index} lang={lang} />
                   ))}
                 </div>
                 
