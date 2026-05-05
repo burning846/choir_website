@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>body { margin: 0; background: #000; }</style>
+</head>
+<body>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFB84D"/>
+      <stop offset="50%" stop-color="#FFC94D"/>
+      <stop offset="100%" stop-color="#FF9A3D"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#0A0A0A"/>
+
+  <!-- 主波 -->
+  <path d="M 100 600 
+           C 250 600, 350 500, 450 500
+           C 550 500, 600 600, 700 600
+           C 750 600, 800 200, 850 200
+           C 900 200, 950 850, 1000 850
+           C 1050 850, 1100 450, 1150 450
+           C 1200 450, 1250 580, 1300 580"
+        fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- 飞鸟 -->
+  <g transform="translate(1300, 420) scale(1.2) rotate(-15)" fill="none" stroke="url(#g)" stroke-width="5" filter="url(#glow)" stroke-linejoin="round">
+    <path d="M 0 150 
+             C 30 160, 60 160, 90 130
+             C 110 110, 120 100, 130 90
+             C 120 85, 110 85, 100 85
+             C 80 80, 50 30, 30 -20
+             C 50 30, 80 60, 110 70
+             C 150 50, 190 40, 230 40
+             C 190 60, 150 75, 130 85
+             C 140 110, 120 150, 80 170
+             C 40 180, 10 165, 0 150 Z" />
+  </g>
+</svg>
+</body>
+</html>
