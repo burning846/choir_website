@@ -110,8 +110,8 @@ export const firstChordData = {
       acknowledgements: {
         title: "鸣谢",
         venue: { role: "场地", name: "The ARTS HOUSE" },
-        photography: { role: "合唱团摄影", name: "优铭影视 Ricky Lin\nUMAGIC STUDIO PTE LTD" },
-        concertPhotography: { role: "音乐会摄影", name: "杏仁核照相馆\nEmora Snap" },
+        photography: { role: "合唱团摄影", name: "杏仁核照相馆\nEmora Snap" },
+        concertPhotography: { role: "音乐会摄影", name: "优铭影视 Ricky Lin\nUMAGIC STUDIO PTE LTD" },
         platinum: { role: "白金赞助", names: ["曹蕴", "许惠民", "徐雯"] },
         gold: { role: "黄金赞助", names: ["葛东辉"] }
       },
@@ -253,8 +253,8 @@ export const firstChordData = {
       acknowledgements: {
         title: "Acknowledgement",
         venue: { role: "Venue", name: "The ARTS HOUSE" },
-        photography: { role: "Choir Group Photography", name: "Ricky Lin\nUMAGIC STUDIO PTE LTD" },
-        concertPhotography: { role: "Concert Photography", name: "Emora Snap" },
+        photography: { role: "Choir Group Photography", name: "Emora Snap" },
+        concertPhotography: { role: "Concert Photography", name: "Ricky Lin\nUMAGIC STUDIO PTE LTD" },
         platinum: { role: "Platinum Sponsor", names: ["Vivian Cao", "Patrick Koh", "Xu Wen"] },
         gold: { role: "Gold Sponsor", names: ["Ge Donghui"] }
       },
