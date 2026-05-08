@@ -175,7 +175,7 @@ export default function FirstChord() {
         <div className="absolute inset-0 bg-gradient-to-b from-paper/40 to-paper/80 dark:from-transparent dark:to-black/90"></div>
         <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
           <div className="mb-8 flex justify-center">
-            <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90 dark:hidden" style={{ filter: 'brightness(0) invert(0.2)' }} />
+            <img src="/images/logo-03.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90 dark:hidden" />
             <img src="/images/logo-04.png" alt="Konzert Singers Logo" className="h-20 w-auto object-contain drop-shadow-lg opacity-90 hidden dark:block" />
           </div>
           <div className="inline-block px-4 py-1.5 rounded-full bg-white/50 dark:bg-rosegold-900/20 backdrop-blur-md border border-rosegold-500/20 dark:border-rosegold-500/20 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm text-rosegold-800 dark:text-rosegold-200">
