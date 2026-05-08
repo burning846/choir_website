@@ -214,6 +214,17 @@ export default function May10Performance() {
               </div>
             ))}
           </div>
+          
+          {/* Back to FirstChord Button at Bottom */}
+          <div className="flex justify-center pt-8 mt-12 mb-16 border-t border-gray-200 dark:border-rosegold-900/30">
+            <Link 
+              to="/firstchord" 
+              className="group inline-flex items-center space-x-3 px-8 py-5 bg-gradient-to-r from-rosegold-600 to-lightpurple-600 hover:from-rosegold-700 hover:to-lightpurple-700 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+              <span className="text-lg">{lang === 'en' ? 'Back to Performance Overview' : '返回演出介绍概览'}</span>
+            </Link>
+          </div>
         </div>
       </div>
       
