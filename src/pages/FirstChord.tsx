@@ -373,10 +373,10 @@ export default function FirstChord() {
             <div className="flex justify-center mb-12">
               <Link 
                 to="/performance-may-10" 
-                className="group inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-rosegold-600 to-lightpurple-600 hover:from-rosegold-700 hover:to-lightpurple-700 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+                className="group inline-flex items-center space-x-2 text-rosegold-600 hover:text-rosegold-800 dark:text-rosegold-400 dark:hover:text-rosegold-300 text-sm font-medium transition-colors"
               >
-                <Music className="w-5 h-5 group-hover:animate-pulse" />
-                <span className="text-base md:text-lg">{d.program.buttonText}</span>
+                <span>{d.program.buttonText}</span>
+                <ArrowLeft className="w-4 h-4 rotate-180 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
