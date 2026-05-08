@@ -32,8 +32,6 @@ interface PerformanceData {
   date: string
   time: string
   venue: string
-  description: string
-  highlights: string[]
   parts: PerformancePart[]
 }
 
@@ -120,7 +118,7 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
               <div className={`grid gap-4 ${song.translation ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
                 <div className="bg-slate-50 dark:bg-black/50 dark:border dark:border-rosegold-900/30 rounded-xl p-6 md:p-8">
                   <h5 className="text-sm font-semibold text-gray-700 dark:text-gray-400 uppercase tracking-wider mb-4">
-                    {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原唱歌词' : '歌词')}
+                    {lang === 'en' ? (song.translation ? 'Original Lyrics' : 'Lyrics') : (song.translation ? '原文歌词' : '歌词')}
                   </h5>
                   <div className="space-y-1.5 font-medium text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
                     {song.lyrics.map((line, i) => (

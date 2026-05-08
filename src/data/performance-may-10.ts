@@ -4,12 +4,6 @@ export const performanceMay10Data = {
   "date": "2026年5月10日",
   "time": "下午 5:00 - 7:00",
   "venue": "The ARTS HOUSE",
-  "description": "这是一场庆祝春天的合唱盛宴，我们将带来多首经典与现代交织的合唱作品。诚邀您与我们一同沉浸在美妙的和声中，感受初韵的生机与活力。",
-  "highlights": [
-    "多语言、跨文化的精彩合唱曲目",
-    "特邀知名客座指挥及全新编曲首演",
-    "演出后设有互动交流环节"
-  ],
   "parts": [
     {
       "title": "上半场",
@@ -67,21 +61,22 @@ export const performanceMay10Data = {
           "description": "这首庄严神圣的无伴奏拉丁文赞美诗，以《诗篇》第117篇为词。全曲通过纯净的复调和声与宽广的声部织体，展现出宏大而空灵的宗教音乐之美。在层层递进的旋律中，合唱团将用虔诚纯粹的嗓音，传递对上主无限的崇敬、感恩以及永恒的赞美。",
           "lyrics": [
             "Laudate Dominum omnes gentes",
-            "laudate eum omnes populi",
+            "Laudate eum omnes populi",
             "Quoniam confirmata est super nos",
-            "misericordia ejus",
-            "et veritas Domini manet in aeternum"
+            "Misericordia ejus",
+            "Et veritas Domini manet in aeternum"
           ],
           "translation": [
-            "万民哪，你们都要赞美主！",
-            "万国哪，你们都当赞美他！",
-            "因为他向我们大施慈爱，",
+            "万国啊，你们都要赞美主！",
+            "万民哪，你们都当颂赞他！",
+            "因为坚定地临到我们身上的，",
+            "是他的慈爱，",
             "主的诚实存到永远。"
           ]
         },
         {
           "id": 3,
-          "title": "O occhi, manza mia (哦，我温柔的眼睛)",
+          "title": "O occhi, manza mia (哦，我爱人的眼睛)",
           "conductor": "桂乃舜",
           "accompanist": "Nil",
           "segmentPre": "全体在台上变站位（报幕3-4）",
@@ -95,7 +90,7 @@ export const performanceMay10Data = {
             "Guardam'un poc'a me, fa mi contento."
           ],
           "translation": [
-            "哦，我的爱人，你那金色的睫毛！",
+            "哦，我爱人的眼睛，金色的睫毛！",
             "哦，你那如皎洁明月般的脸庞！",
             "将我铭记在心吧，我美丽的欢乐，",
             "请稍稍看着我，让我心满意足。"
@@ -111,7 +106,7 @@ export const performanceMay10Data = {
           "description": "这是一首极具代表性的16世纪法国世俗香颂（Chanson），由皮埃尔·塞尔东（Pierre Certon）创作。歌曲以欢快跳跃的节奏和极具民间色彩的幽默歌词，讲述了一个市井中关于嫉妒与出轨的诙谐故事。各声部之间如对话般交织呼应，充满了浓厚的生活气息与戏剧张力。",
           "lyrics": [
             "La, la, la, je ne l'ose dire",
-            "la, la, la, je le vous dirai",
+            "La, la, la, je le vous dirai",
             "Il est un homme en notre ville",
             "Qui de sa femme est jaloux",
             "Il n'est pas jaloux sans cause",
@@ -119,13 +114,13 @@ export const performanceMay10Data = {
             "Il l'apprête et s'il la mène",
             "Au marché s'en va à tout",
             "La, la, la, je ne l'ose dire",
-            "la, la, la, je le vous dirai"
+            "La, la, la, je le vous dirai"
           ],
           "translation": [
             "啦啦啦，我不敢说，",
             "啦啦啦，我这就告诉你。",
             "我们城里有个男人，",
-            "总是对他的妻子嫉妒。",
+            "总是猜忌他的妻子。",
             "他的嫉妒并非毫无根据，",
             "因为他确确实实被戴了绿帽。",
             "他把她打扮好带出门去，",
@@ -205,7 +200,7 @@ export const performanceMay10Data = {
           "segmentPre": "女生上台（报幕8-10）",
           "composer": "久石让 / 信長貴富 编曲",
           "language": "日语",
-          "description": "选自宫崎骏经典动画电影《幽灵公主》的主题曲。在著名合唱编曲家信長貴富的绝妙改编下，女生合唱版将久石让原曲中那份宏大的史诗感与大自然的神秘气息完美融合。空灵纯净的和声仿佛来自远古森林的呼唤，诉说着人类与自然之间深沉而复杂的情感羁绊。",
+          "description": "选自宫崎骏经典动画电影《魔法公主》的主题曲。在著名合唱编曲家信長貴富的绝妙改编下，女生合唱版将久石让原曲中那份宏大的史诗感与大自然的神秘气息完美融合。空灵纯净的和声仿佛来自远古森林的呼唤，诉说着人类与自然之间深沉而复杂的情感羁绊。",
           "lyrics": [
             "はりつめた弓の ふるえる弦よ",
             "月の光にざわめく おまえの心",
@@ -216,9 +211,9 @@ export const performanceMay10Data = {
           ],
           "translation": [
             "紧绷的弓上颤动的弦啊，",
-            "在月光下喧闹的你的心。",
+            "在月光下骚动的你的心。",
             "磨得锋利的刀刃如此美丽，",
-            "就如同你那侧脸一般。",
+            "你的侧脸，正像那刀尖。",
             "隐藏在悲伤与愤怒中的真心，",
             "只有森林中的精灵们才知道，只有精灵们才知道。"
           ]
@@ -321,7 +316,21 @@ export const performanceMay10Data = {
             "Burung-burung yang berterbang",
             "Mengecap kebebasan",
             "Anak-anak yang berlarian",
-            "Membayang kebahagiaan"
+            "Membayang kebahagiaan",
+            "La la la la la la",
+            "Sang suria",
+            "Memancar terang menyinar jiwa senang",
+            "Duduk seorang dan rasakan",
+            "Keindahannya taman",
+            "Alam cantik suasana segar",
+            "Bunga-bunga yang mekar",
+            "Melambai-lambai pohon nyiur",
+            "Melambang hidup subur",
+            "Burung-burung yang berterbang",
+            "Mengecap kebebasan",
+            "Anak-anak yang berlarian",
+            "Membayang kebahagiaan",
+            "La la la la la la"
           ],
           "translation": [
             "啦啦啦啦啦啦",
@@ -336,7 +345,21 @@ export const performanceMay10Data = {
             "鸟儿飞翔",
             "享受自由",
             "孩子们奔跑着",
-            "映照着幸福"
+            "映照着幸福",
+            "啦啦啦啦啦啦",
+            "太阳啊",
+            "明亮地照耀，照亮快乐的心灵",
+            "独自坐着，感受",
+            "花园的美丽",
+            "大自然美丽，气氛清新",
+            "盛开的花朵",
+            "摇曳的椰树",
+            "象征着富饶的生活",
+            "鸟儿飞翔",
+            "享受自由",
+            "孩子们奔跑着",
+            "映照着幸福",
+            "啦啦啦啦啦啦"
           ]
         },
         {
@@ -400,7 +423,7 @@ export const performanceMay10Data = {
         },
         {
           "id": 14,
-          "title": "友谊的歌声展开翅膀",
+          "title": "让友谊的歌声展开翅膀",
           "conductor": "冯克伦",
           "accompanist": "桂乃舜",
           "segmentPre": "台上全体不变，换指挥钢伴（报幕14）",
@@ -433,12 +456,6 @@ export const performanceMay10Data = {
   "date": "May 10, 2026",
   "time": "5:00 PM - 7:00 PM",
   "venue": "The ARTS HOUSE",
-  "description": "A choral celebration of spring, featuring a beautiful blend of classic and contemporary pieces. We invite you to immerse yourself in harmonious melodies and experience the vitality of the first rhyme.",
-  "highlights": [
-    "Multilingual and cross-cultural choral masterpieces",
-    "Special guest conductor & premiere of new arrangements",
-    "Interactive session after the performance"
-  ],
   "parts": [
     {
       "title": "First Half",
@@ -480,16 +497,17 @@ export const performanceMay10Data = {
           "description": "This solemn and sacred a cappella Latin hymn is based on Psalm 117. Through pure polyphonic harmonies and broad vocal textures, the piece showcases the grand and ethereal beauty of religious music. In its layered melodies, the choir will use devout and pristine voices to convey infinite reverence, gratitude, and eternal praise to the Lord.",
           "lyrics": [
             "Laudate Dominum omnes gentes",
-            "laudate eum omnes populi",
+            "Laudate eum omnes populi",
             "Quoniam confirmata est super nos",
-            "misericordia ejus",
-            "et veritas Domini manet in aeternum"
+            "Misericordia ejus",
+            "Et veritas Domini manet in aeternum"
           ],
           "translation": [
             "O praise the Lord, all ye nations:",
-            "praise him, all ye people.",
-            "For his merciful kindness is great toward us:",
-            "and the truth of the Lord endureth for ever."
+            "Praise him, all ye people.",
+            "For firmly established upon us",
+            "Is his merciful kindness:",
+            "And the truth of the Lord endureth for ever."
           ]
         },
         {
@@ -508,7 +526,7 @@ export const performanceMay10Data = {
             "Guardam'un poc'a me, fa mi contento."
           ],
           "translation": [
-            "Oh eyes, my beloved, golden eyelashes!",
+            "Oh eyes of my beloved, golden eyelashes!",
             "Oh face of a shining moon!",
             "Keep me in mind, my beautiful joy,",
             "Look at me a little, make me happy."
@@ -524,7 +542,7 @@ export const performanceMay10Data = {
           "description": "A highly representative 16th-century French secular chanson composed by Pierre Certon. With a lively, bouncing rhythm and humorous, folkloric lyrics, the song tells a witty town tale of jealousy and infidelity. The vocal parts intertwine and respond to each other like a conversation, brimming with vibrant daily life and dramatic tension.",
           "lyrics": [
             "La, la, la, je ne l'ose dire",
-            "la, la, la, je le vous dirai",
+            "La, la, la, je le vous dirai",
             "Il est un homme en notre ville",
             "Qui de sa femme est jaloux",
             "Il n'est pas jaloux sans cause",
@@ -532,11 +550,11 @@ export const performanceMay10Data = {
             "Il l'apprête et s'il la mène",
             "Au marché s'en va à tout",
             "La, la, la, je ne l'ose dire",
-            "la, la, la, je le vous dirai"
+            "La, la, la, je le vous dirai"
           ],
           "translation": [
             "La, la, la, I dare not say it,",
-            "la, la, la, I will tell you.",
+            "La, la, la, I will tell you.",
             "There is a man in our town,",
             "Who is jealous of his wife.",
             "He is not jealous without cause,",
@@ -544,7 +562,7 @@ export const performanceMay10Data = {
             "He dresses her up and takes her out,",
             "And at the market she goes off with anyone.",
             "La, la, la, I dare not say it,",
-            "la, la, la, I will tell you."
+            "La, la, la, I will tell you."
           ]
         },
         {
@@ -656,12 +674,12 @@ export const performanceMay10Data = {
             "森の精 もののけ達だけ もののけ達だけ"
           ],
           "translation": [
-            "Trembling bowstring drawn tight,",
-            "Your heart noisy in the moonlight.",
+            "Trembling string of the taut bow,",
+            "Your heart stirs in the moonlight.",
             "The sharpened blade is beautiful,",
-            "Much like your profile.",
-            "Knowing the true heart hidden in sorrow and anger,",
-            "Only the spirits of the forest know, only the spirits know."
+            "Your profile resembles its keen tip.",
+            "The true heart hidden in sorrow and anger",
+            "Is known only to the spirits of the forest, only to the spirits."
           ]
         },
         {
@@ -735,7 +753,7 @@ export const performanceMay10Data = {
             "Though the road seems to continue endlessly,",
             "These two hands can embrace the light.",
             "The quiet heart at the time of farewell,",
-            "The body becoming zero listens closely.",
+            "The body, emptied to zero, listens closely.",
             "The wonder of living, the wonder of dying,",
             "Flowers, wind, and city, they are all the same."
           ]
@@ -762,7 +780,21 @@ export const performanceMay10Data = {
             "Burung-burung yang berterbang",
             "Mengecap kebebasan",
             "Anak-anak yang berlarian",
-            "Membayang kebahagiaan"
+            "Membayang kebahagiaan",
+            "La la la la la la",
+            "Sang suria",
+            "Memancar terang menyinar jiwa senang",
+            "Duduk seorang dan rasakan",
+            "Keindahannya taman",
+            "Alam cantik suasana segar",
+            "Bunga-bunga yang mekar",
+            "Melambai-lambai pohon nyiur",
+            "Melambang hidup subur",
+            "Burung-burung yang berterbang",
+            "Mengecap kebebasan",
+            "Anak-anak yang berlarian",
+            "Membayang kebahagiaan",
+            "La la la la la la"
           ],
           "translation": [
             "La la la la la la",
@@ -777,7 +809,21 @@ export const performanceMay10Data = {
             "Birds flying around",
             "Tasting freedom",
             "Children running around",
-            "Reflecting happiness"
+            "Reflecting happiness",
+            "La la la la la la",
+            "The sun",
+            "Shines brightly, lighting a joyful soul",
+            "Sitting alone and feeling",
+            "The beauty of the garden",
+            "Beautiful nature, fresh atmosphere",
+            "Blooming flowers",
+            "Waving coconut trees",
+            "Symbolizing a fertile life",
+            "Birds flying around",
+            "Tasting freedom",
+            "Children running around",
+            "Reflecting happiness",
+            "La la la la la la"
           ]
         },
         {
@@ -843,7 +889,7 @@ export const performanceMay10Data = {
             "We all have tired smiles",
             "Asking my friend, when will you play for me again",
             "Is it still the same, is it still the same",
-            "There are thousands of life experiences, but knowing hearts value each other",
+            "Life's fortunes come in countless forms, but kindred hearts cherish each other",
             "May people live long, may water flow long",
             "In our youth"
           ]
@@ -880,7 +926,7 @@ export const performanceMay10Data = {
         },
         {
           "id": 14,
-          "title": "友谊的歌声展开翅膀 (Wings of Friendship)",
+          "title": "让友谊的歌声展开翅膀 (Let Friendship's Song Take Wing)",
           "conductor": "Foong Hak Luen",
           "accompanist": "Nelson Kwei",
           "segmentPre": "All remain, change conductor and accompanist (Announcement 14)",
