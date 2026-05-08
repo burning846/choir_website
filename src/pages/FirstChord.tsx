@@ -368,7 +368,17 @@ export default function FirstChord() {
         <section className="scroll-mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-paper-text dark:text-rosegold-400 mb-4">{d.program.title}</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-rosegold-500 to-lightpurple-500 dark:from-rosegold-600 dark:to-rosegold-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-rosegold-500 to-lightpurple-500 dark:from-rosegold-600 dark:to-rosegold-400 mx-auto rounded-full mb-8"></div>
+            
+            <div className="flex justify-center mb-12">
+              <Link 
+                to="/performance-may-10" 
+                className="group inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-rosegold-600 to-lightpurple-600 hover:from-rosegold-700 hover:to-lightpurple-700 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <Music className="w-5 h-5 group-hover:animate-pulse" />
+                <span className="text-base md:text-lg">{d.program.buttonText}</span>
+              </Link>
+            </div>
           </div>
 
           <div className="bg-transparent">
@@ -396,16 +406,6 @@ export default function FirstChord() {
                 )}
               </div>
             ))}
-          </div>
-
-          <div className="flex justify-center pt-8 mt-12 border-t border-paper-border dark:border-rosegold-900/30">
-            <Link 
-              to="/performance-may-10" 
-              className="group inline-flex items-center space-x-3 px-8 py-5 bg-gradient-to-r from-rosegold-600 to-lightpurple-600 hover:from-rosegold-700 hover:to-lightpurple-700 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
-            >
-              <Music className="w-6 h-6 group-hover:animate-pulse" />
-              <span className="text-lg">{d.program.buttonText}</span>
-            </Link>
           </div>
         </section>
 
