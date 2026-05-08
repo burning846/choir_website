@@ -81,7 +81,7 @@ function SongCard({ song, index, lang }: { song: Song, index: number, lang: stri
                   </>
                 )}
                 
-                {song.accompanist && (
+                {song.accompanist && song.accompanist !== 'Nil' && (
                   <>
                     <span className="text-gray-700 dark:text-gray-400 text-right">{lang === 'en' ? 'Acc:' : '伴奏:'}</span>
                     <span className={`font-semibold ${getPersonColorClass(song.accompanist)}`}>{song.accompanist}</span>
