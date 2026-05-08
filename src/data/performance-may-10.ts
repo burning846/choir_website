@@ -173,7 +173,7 @@ export const performanceMay10Data = {
         {
           "id": 7,
           "title": "希望",
-          "conductor": "桂乃舜",
+          "conductor": "冯克伦",
           "accompanist": "桂乃舜",
           "segmentPost": ["全体下台（报幕）"],
           "composer": "淡莹 词 / 吴世铭 曲",
@@ -603,7 +603,7 @@ export const performanceMay10Data = {
         {
           "id": 7,
           "title": "希望 (Hope)",
-          "conductor": "Nelson Kwei",
+          "conductor": "Foong Hak Luen",
           "accompanist": "Nelson Kwei",
           "segmentPost": ["All off stage (Announcement)"],
           "composer": "Lyrics by Dan Ying / Music by Wu Shiming",
