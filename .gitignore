@@ -43,8 +43,9 @@ docs/*
 !public/Konzert_Singers_First_Chord_Brochure.pdf
 
 .trae/
-*.md
-# Agent handover
+
+# Agent handover (local notes, not tracked)
 agent.md
 
+# Python virtual env
 venv/
