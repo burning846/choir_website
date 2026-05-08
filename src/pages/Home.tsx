@@ -7,6 +7,7 @@ import Performances from '@/components/Performances'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
+import FirstChordFAB from '@/components/FirstChordFAB'
 import { useMeta } from '@/hooks/useMeta'
 import { useLang } from '@/lib/lang'
 import { choirDocData } from '@/data/choir-doc'
@@ -32,6 +33,7 @@ export default function Home() {
       </main>
       <Footer />
       <ScrollToTop />
+      <FirstChordFAB />
     </div>
   )
 }
